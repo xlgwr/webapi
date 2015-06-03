@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "About";
+    Layout = "~/Views/Shared/_iframe.cshtml";
+}
+
+<div class="ms-controller" ms-controller="aboutController">
+
+    <div id="message" ms-class="h4 alert alert-{{messagecss}}" role="alert">
+        {{message}}
+    </div>
+
+</div>
+@Scripts.Render("~/bundles/about")

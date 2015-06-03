@@ -1,0 +1,149 @@
+﻿/* File Created: May 4, 2015 */
+body.tabbody {
+    width: 98%;
+    margin: 5px;
+}
+
+.ms-controller {
+    visibility: hidden;
+}
+
+.l-tab-links ul {
+    background-color: #c7c7cd !important;
+}
+
+.l-tab-links li a {
+    color: Black !important;
+}
+
+.l-tab-content-item, .l-tab-content {
+    min-height: 671px !important;
+    _height: 671px !important;
+}
+
+.oni-datepicker-input-wrapper input {
+    border: 0 none !important;
+    cursor: pointer !important;
+    outline: none !important;
+    padding: 3px 30px 3px 6px !important;
+    width: 160px !important;
+    height: auto !important;
+    margin: 0 !important;
+    font-size: 12px !important;
+}
+
+#tabsone table {
+    margin-left: 5px;
+    text-align: left;
+    vertical-align: bottom;
+}
+
+    #tabsone table input[type="text"], #tabsone table select, #tabsone table textarea, #tabsone table span {
+        margin: 2px;
+        left: 0;
+        vertical-align: bottom;
+    }
+
+#headtable table input[type="text"], #headtable table select, #headtable table textarea, #headtable table span {
+    margin: 2px;
+    left: 0;
+    vertical-align: bottom;
+}
+
+.tdhead {
+    text-align: right;
+    font-size: 1em;
+    color: Black;
+    z-index: 999;
+}
+
+.TitleCSS {
+    font-size: 1.2em;
+    font-weight: bold;
+    height: 2.5em;
+    vertical-align: middle;
+    text-align: left;
+}
+
+.imgbtngo {
+    margin-left: -5px !important;
+    background-position: center center;
+    height: 25px !important;
+    width: 27px !important;
+    background-image: url('images/readPart.png');
+    background-repeat: no-repeat;
+}
+
+table.datalist {
+    width: 100%;
+}
+
+    table.datalist th, table.datalist td {
+        width: auto;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+        border-right: 1px solid #DFDFDF;
+        text-align: center;
+    }
+
+.sTitle {
+    margin: 10px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+input.submit {
+    border-style: none;
+    width: 97px;
+    height: 28px;
+    cursor: pointer;
+    font-weight: bold !important;
+}
+
+input.default {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.autowith{
+    width:98%!important;
+}
+.dialogoniui{
+    overflow:auto;
+}
+.autowithDialog{
+    left:0;
+    margin-left:-8px!important;
+    /*margin-top:-20px!important;*/
+    width:99.9%!important;
+}
+.oni-state-hover{
+    cursor:pointer;
+    background-color: #b2dba1!important;
+}
+.onistatehover{
+    cursor:pointer;
+    background-color: #b2dba1!important;
+}
+.oni-smartgrid .oni-state-hidden{
+    /*display:none!important;*/
+    visibility:hidden!important;
+    width:10px;
+}
+.fixieInput{
+    _padding:0;
+    _margin:0;
+    _font-size:2em;
+    _height:20px;
+    *height:20px!important;
+    _min-width:60px;
+}
+*+html .fixieInput{
+    padding:0!important;
+    margin:0!important;
+    font-size:1.5em!important;
+    height:20px!important;
+    min-width:60px!important;
+
+}

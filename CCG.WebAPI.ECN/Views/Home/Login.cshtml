@@ -1,0 +1,73 @@
+﻿@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_iframe.cshtml";
+    var baseUrl = Url.Content("~/");
+}
+<div class="ms-controller" ms-controller="loginController">
+    <div class="text-center">
+        <h3>登  陆</h3>
+    </div>
+    <div style="width:369px; margin-left:auto; margin-right:auto; margin-top:26px;">
+        <div class="form-horizontal">
+            <div class="form-group">
+                <label for="domain" class="col-sm-3 control-label text-right">Domain:</label>
+                <div class="col-sm-9">
+                    <input ms-duplex="domain" type="text" class="form-control" id="domain" placeholder="Domain" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="UserName" class="col-sm-3 control-label text-right">用户名称:</label>
+                <div class="col-sm-9">
+                    <input ms-duplex="userid" type="text" class="form-control" id="userid" placeholder="用户名称" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="checkPasswd" class="col-sm-3 control-label text-right">登陆密码:</label>
+                <div class="col-sm-9">
+                    <input ms-duplex="checkPasswd" type="password" class="form-control" id="checkPasswd" placeholder="登陆密码" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="newAuditPasswd" class="col-sm-3 control-label text-right">审核密码:</label>
+                <div class="col-sm-9">
+                    <input ms-duplex="newAuditPasswd" type="password" class="form-control" id="newAuditPasswd" placeholder="审核密码" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6 text-right">
+                    <button ms-click="onRegister('Register',this)" id="Register" type="button" class="btn btn-default">Register</button>
+                </div>
+                <div class="col-xs-6 text-left">
+                    <button ms-click="oncheckPasswd('个人中心',this)" id="change" type="button" class="btn btn-default">Change</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="message" class="h4 alert text-center" ms-class="{{messagecss}}">
+        <span>{{message | html}}</span>
+    </div>
+    <span id="baseUrl" class="hide">@baseUrl</span>
+</div>
+@Scripts.Render("~/bundles/login")
+
+@section scripts{
+    <script type="text/javascript">
+        var token = sessionStorage.getItem(token);
+        var headers = {};
+        if (token) {
+            headers.Authorization = 'Bearer ' + token;
+        }
+        var tmpurl ="@baseUrl" +"api/values/1";
+        $.ajax({
+            type: 'GET',
+            url: tmpurl,
+            headers: headers
+        }).done(function (data) {
+            avalon.log(data);
+            //self.result(data);
+        }).fail(function (err) {
+            //showError
+            avalon.log(err);
+        });
+    </script>
+}

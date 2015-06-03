@@ -1,0 +1,935 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FAD43151-5965-4380-B451-28BB6BDCC5BF}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CCG.WebAPI.ECN</RootNamespace>
+    <AssemblyName>CCG.WebAPI.ECN</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.DirectoryServices.Protocols" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.Owin, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Owin.5.2.3\lib\net45\System.Web.Http.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
+    <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
+    <Compile Include="Areas\HelpPage\Controllers\HelpController.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageAreaRegistration.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageConfigurationExtensions.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\CollectionModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ComplexTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\DictionaryModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumValueDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\IModelDocumentationProvider.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\KeyValuePairModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescriptionGenerator.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameAttribute.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameHelper.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterAnnotation.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\SimpleTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\Models\HelpPageApiModel.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleKey.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ImageSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\InvalidSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ObjectGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
+    <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DomainController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="helper\Auth.cs" />
+    <Compile Include="Migrations\201506010311517_initAccount.cs" />
+    <Compile Include="Migrations\201506010311517_initAccount.Designer.cs">
+      <DependentUpon>201506010311517_initAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201506020154374_adddomain.cs" />
+    <Compile Include="Migrations\201506020154374_adddomain.Designer.cs">
+      <DependentUpon>201506020154374_adddomain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AccountBindingModels.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AD.cs" />
+    <Compile Include="Models\domains.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\ApplicationOAuthProvider.cs" />
+    <Compile Include="Results\ChallengeResult.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="bower_components\avalon\avalon.js" />
+    <Content Include="bower_components\avalon\avalon.mobile.js" />
+    <Content Include="bower_components\avalon\avalon.mobile.old.js" />
+    <Content Include="bower_components\avalon\avalon.mobile.shim.js" />
+    <Content Include="bower_components\avalon\avalon.modern.js" />
+    <Content Include="bower_components\avalon\avalon.modern.shim.js" />
+    <Content Include="bower_components\avalon\avalon.shim.js" />
+    <Content Include="bower_components\avalon\gulpfile.js" />
+    <Content Include="bower_components\avalon\min\avalon.min.js" />
+    <Content Include="bower_components\avalon\min\avalon.mobile.min.js" />
+    <Content Include="bower_components\avalon\min\avalon.modern.min.js" />
+    <Content Include="bower_components\avalon\new.js" />
+    <Content Include="bower_components\avalon\test.html" />
+    <Content Include="bower_components\jquery\dist\jquery.js" />
+    <Content Include="bower_components\jquery\dist\jquery.min.js" />
+    <Content Include="bower_components\jquery\jquery-1.3.2.min.js" />
+    <Content Include="bower_components\jquery\jquery-1.4.4.min.js" />
+    <Content Include="bower_components\jquery\jquery-1.5.2.min.js" />
+    <Content Include="bower_components\jquery\MIT-LICENSE.txt" />
+    <Content Include="bower_components\jquery\src\ajax.js" />
+    <Content Include="bower_components\jquery\src\ajax\jsonp.js" />
+    <Content Include="bower_components\jquery\src\ajax\load.js" />
+    <Content Include="bower_components\jquery\src\ajax\parseJSON.js" />
+    <Content Include="bower_components\jquery\src\ajax\parseXML.js" />
+    <Content Include="bower_components\jquery\src\ajax\script.js" />
+    <Content Include="bower_components\jquery\src\ajax\var\nonce.js" />
+    <Content Include="bower_components\jquery\src\ajax\var\rquery.js" />
+    <Content Include="bower_components\jquery\src\ajax\xhr.js" />
+    <Content Include="bower_components\jquery\src\attributes.js" />
+    <Content Include="bower_components\jquery\src\attributes\attr.js" />
+    <Content Include="bower_components\jquery\src\attributes\classes.js" />
+    <Content Include="bower_components\jquery\src\attributes\prop.js" />
+    <Content Include="bower_components\jquery\src\attributes\support.js" />
+    <Content Include="bower_components\jquery\src\attributes\val.js" />
+    <Content Include="bower_components\jquery\src\callbacks.js" />
+    <Content Include="bower_components\jquery\src\core.js" />
+    <Content Include="bower_components\jquery\src\core\access.js" />
+    <Content Include="bower_components\jquery\src\core\init.js" />
+    <Content Include="bower_components\jquery\src\core\parseHTML.js" />
+    <Content Include="bower_components\jquery\src\core\ready.js" />
+    <Content Include="bower_components\jquery\src\core\var\rsingleTag.js" />
+    <Content Include="bower_components\jquery\src\css.js" />
+    <Content Include="bower_components\jquery\src\css\addGetHookIf.js" />
+    <Content Include="bower_components\jquery\src\css\curCSS.js" />
+    <Content Include="bower_components\jquery\src\css\defaultDisplay.js" />
+    <Content Include="bower_components\jquery\src\css\hiddenVisibleSelectors.js" />
+    <Content Include="bower_components\jquery\src\css\support.js" />
+    <Content Include="bower_components\jquery\src\css\swap.js" />
+    <Content Include="bower_components\jquery\src\css\var\cssExpand.js" />
+    <Content Include="bower_components\jquery\src\css\var\isHidden.js" />
+    <Content Include="bower_components\jquery\src\css\var\rmargin.js" />
+    <Content Include="bower_components\jquery\src\css\var\rnumnonpx.js" />
+    <Content Include="bower_components\jquery\src\data.js" />
+    <Content Include="bower_components\jquery\src\data\accepts.js" />
+    <Content Include="bower_components\jquery\src\data\support.js" />
+    <Content Include="bower_components\jquery\src\deferred.js" />
+    <Content Include="bower_components\jquery\src\deprecated.js" />
+    <Content Include="bower_components\jquery\src\dimensions.js" />
+    <Content Include="bower_components\jquery\src\effects.js" />
+    <Content Include="bower_components\jquery\src\effects\animatedSelector.js" />
+    <Content Include="bower_components\jquery\src\effects\support.js" />
+    <Content Include="bower_components\jquery\src\effects\Tween.js" />
+    <Content Include="bower_components\jquery\src\event.js" />
+    <Content Include="bower_components\jquery\src\event\ajax.js" />
+    <Content Include="bower_components\jquery\src\event\alias.js" />
+    <Content Include="bower_components\jquery\src\event\support.js" />
+    <Content Include="bower_components\jquery\src\exports\amd.js" />
+    <Content Include="bower_components\jquery\src\exports\global.js" />
+    <Content Include="bower_components\jquery\src\intro.js" />
+    <Content Include="bower_components\jquery\src\jquery.js" />
+    <Content Include="bower_components\jquery\src\manipulation.js" />
+    <Content Include="bower_components\jquery\src\manipulation\support.js" />
+    <Content Include="bower_components\jquery\src\manipulation\var\rcheckableType.js" />
+    <Content Include="bower_components\jquery\src\manipulation\_evalUrl.js" />
+    <Content Include="bower_components\jquery\src\offset.js" />
+    <Content Include="bower_components\jquery\src\outro.js" />
+    <Content Include="bower_components\jquery\src\queue.js" />
+    <Content Include="bower_components\jquery\src\queue\delay.js" />
+    <Content Include="bower_components\jquery\src\selector-sizzle.js" />
+    <Content Include="bower_components\jquery\src\selector.js" />
+    <Content Include="bower_components\jquery\src\serialize.js" />
+    <Content Include="bower_components\jquery\src\sizzle\dist\sizzle.js" />
+    <Content Include="bower_components\jquery\src\sizzle\dist\sizzle.min.js" />
+    <Content Include="bower_components\jquery\src\support.js" />
+    <Content Include="bower_components\jquery\src\traversing.js" />
+    <Content Include="bower_components\jquery\src\traversing\findFilter.js" />
+    <Content Include="bower_components\jquery\src\traversing\var\rneedsContext.js" />
+    <Content Include="bower_components\jquery\src\var\class2type.js" />
+    <Content Include="bower_components\jquery\src\var\concat.js" />
+    <Content Include="bower_components\jquery\src\var\deletedIds.js" />
+    <Content Include="bower_components\jquery\src\var\hasOwn.js" />
+    <Content Include="bower_components\jquery\src\var\indexOf.js" />
+    <Content Include="bower_components\jquery\src\var\pnum.js" />
+    <Content Include="bower_components\jquery\src\var\push.js" />
+    <Content Include="bower_components\jquery\src\var\rnotwhite.js" />
+    <Content Include="bower_components\jquery\src\var\slice.js" />
+    <Content Include="bower_components\jquery\src\var\strundefined.js" />
+    <Content Include="bower_components\jquery\src\var\support.js" />
+    <Content Include="bower_components\jquery\src\var\toString.js" />
+    <Content Include="bower_components\jquery\src\wrap.js" />
+    <Content Include="bower_components\ligerUI\js\core\base.js" />
+    <Content Include="bower_components\ligerUI\js\core\inject.js" />
+    <Content Include="bower_components\ligerUI\js\ligerui.all.js" />
+    <Content Include="bower_components\ligerUI\js\ligerui.min.js" />
+    <Content Include="bower_components\ligerUI\js\plugins\ligerAccordion.js" />
+    <Content Include="bower_components\ligerUI\js\plugins\ligerButton.js" />
+    <Content Include="bower_components\ligerUI\js\plugins\ligerCheckBox.js" />
+    <Content Include="bower_components\ligerUI\js\plugins\ligerCheckBoxList.js" />
+    <Content Include="bower_components\ligerUI\js\plugins\ligerComboBox.js" />
+    <Content Include="bower_components\ligerUI\js\plugins\ligerDateEditor.js" />
+    <Content Include="bower_components\ligerUI\js\plugins\ligerDialog.js" />
+    <Content Include="bower_components\ligerUI\js\plugins\ligerDrag.js" />
+    <Content Include="bower_components\ligerUI\js\plugins\ligerEasyTab.js" />
+    <Content Include="bower_components\ligerUI\js\plugins\ligerFilter.js" />
+    <Content Include="bower_components\ligerUI\js\plugins\ligerForm.js" />
+    <Content Include="bower_components\ligerUI\js\plugins\ligerGrid.js" />
+    <Content Include="bower_components\ligerUI\js\plugins\ligerLayout.js" />
+    <Content Include="bower_components\ligerUI\js\plugins\ligerListBox.js" />
+    <Content Include="bower_components\ligerUI\js\plugins\ligerMenu.js" />
+    <Content Include="bower_components\ligerUI\js\plugins\ligerMenuBar.js" />
+    <Content Include="bower_components\ligerUI\js\plugins\ligerMessageBox.js" />
+    <Content Include="bower_components\ligerUI\js\plugins\ligerPanel.js" />
+    <Content Include="bower_components\ligerUI\js\plugins\ligerPopupEdit.js" />
+    <Content Include="bower_components\ligerUI\js\plugins\ligerPortal.js" />
+    <Content Include="bower_components\ligerUI\js\plugins\ligerRadio.js" />
+    <Content Include="bower_components\ligerUI\js\plugins\ligerRadioList.js" />
+    <Content Include="bower_components\ligerUI\js\plugins\ligerResizable.js" />
+    <Content Include="bower_components\ligerUI\js\plugins\ligerSpinner.js" />
+    <Content Include="bower_components\ligerUI\js\plugins\ligerTab.js" />
+    <Content Include="bower_components\ligerUI\js\plugins\ligerTextBox.js" />
+    <Content Include="bower_components\ligerUI\js\plugins\ligerTip.js" />
+    <Content Include="bower_components\ligerUI\js\plugins\ligerToolBar.js" />
+    <Content Include="bower_components\ligerUI\js\plugins\ligerTree.js" />
+    <Content Include="bower_components\ligerUI\js\plugins\ligerWindow.js" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\css\ligerui-all.css" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\css\ligerui-common.css" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\css\ligerui-dialog.css" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\css\ligerui-form.css" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\css\ligerui-grid.css" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\css\ligerui-layout.css" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\css\ligerui-menu.css" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\css\ligerui-tab.css" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\css\ligerui-tree.css" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\common\bigloading.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\common\button-disabled.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\common\button-over.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\common\button.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\common\drop-icons.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\common\exclamation.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\common\invalid-line.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\common\loading.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\common\table.png" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\common\toggle.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\controls\bg-panel-title-over.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\controls\bg-panel-title-pressed.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\controls\bg-panel-title.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\controls\bg-tab-title-over.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\controls\bg-tab-title-pressed.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\controls\bg-tab-title.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\controls\bg-text.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\controls\bg-trigger-over.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\controls\bg-trigger-pressed.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\controls\bg-trigger.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\controls\btn-l.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\controls\btn-r.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\controls\btn.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\controls\button-bg-over.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\controls\button-bg.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\controls\checkbox.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\controls\dateeditor-bar-bg.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\controls\dateeditor-header-bg.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\controls\radio.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\dateeditor\date.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\dateeditor\icon-first.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\dateeditor\icon-last.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\dateeditor\icon-next.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\dateeditor\icon-prev.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\form\verify-corner.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\grid\grid-checkbox-checked.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\grid\grid-checkbox.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\grid\grid-detail-close.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\grid\grid-detail-open.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\grid\grid-tree-close.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\grid\grid-tree-open.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\grid\header-bg-over.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\grid\header-bg.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\grid\header2-bg.jpg" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\grid\popup-line.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\grid\popup-row-over.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\icon\bar-button-over.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\icon\checkbox-checked.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\icon\checkbox.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\icon\cross.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\icon\icon-close-over.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\icon\icon-close.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\icon\icon-down.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\icon\icon-drop.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\icon\icon-edited.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\icon\icon-first.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\icon\icon-last.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\icon\icon-line.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\icon\icon-load.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\icon\icon-next.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\icon\icon-prev.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\icon\icon-select.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\icon\icon-sort-asc.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\icon\icon-sort-desc.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\icon\icon-unselect.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\icon\icon-up.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\icon\spr_icons.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\layout\accordion-content.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\layout\accordion-header-over.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\layout\accordion-header.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\layout\layout-header-over.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\layout\layout-header.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\layout\layout-sidebar-header.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\layout\mini-bottom.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\layout\mini-left.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\layout\mini-right.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\layout\mini-top.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\layout\panel-content.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\layout\panel-header-over.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\layout\panel-header.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\layout\panel-header2.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\layout\tabs-bg.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\layout\tabs-item-bg.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\layout\tabs-item-left-bg.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\layout\tabs-item-over-bg.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\layout\tabs-item-right-bg.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\layout\tabs-tools.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\layout\togglebar.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\menu\menu-item-arrow.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\menu\menu-item-down.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\menu\menu-item-over-l.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\menu\menu-item-over-m.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\menu\menu-item-over-r.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\menu\menu-line-x.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\menu\menu-line-y.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\panel\bar-bg.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\panel\header-bg.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\panel\header-bg.jpg" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\panel\header2-bg.jpg" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\panel\panel-btn-l.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\panel\panel-btn-r.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\panel\panel-btn.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\panel\panel-header.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\panel\panel-menu-item-down.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\panel\panel-menu.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\panel\panel-toolbar.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\panel\panel-tools.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\tree\folder-open.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\tree\folder.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\tree\loading.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\tree\nodeloading.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\tree\nodeloading2.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\tree\nodeloading3.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\tree\nodeloading4.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\tree\tree-leaf.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\tree\tree-level.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\tree\tree-noline.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\tree\tree-status-close.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\tree\tree-status-open.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\tree\tree-status.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\tree\tree.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\ui\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\ui\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\ui\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\ui\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\ui\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\ui\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\win\box-icons.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\win\box.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\win\dialog-bc.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\win\dialog-icons.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\win\dialog-tc.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\win\dialog-winbtns.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\win\dialog.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\win\dialogbtn.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\win\taskbar-task.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\win\taskbar.gif" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\win\taskbar.png" />
+    <Content Include="bower_components\ligerUI\skins\Aqua\images\win\taskicon.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\css\all.css" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\css\common.css" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\css\dialog.css" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\css\form.css" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\css\grid.css" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\css\layout.css" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\css\tab.css" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\images\bigloading.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\images\button-disabled.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\images\button-over.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\images\button.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\images\drop-icons.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\images\exclamation.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\images\gridheader.png" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\images\invalid-line.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\images\layout\accordion-header.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\images\layout\icon-close-over.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\images\layout\icon-close.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\images\layout\layout-header.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\images\layout\tabs-bg.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\images\layout\tabs-item-bg.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\images\layout\tabs-item-left-bg.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\images\layout\tabs-item-left-selected.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\images\layout\tabs-item-right-bg.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\images\layout\tabs-item-right-selected.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\images\layout\tabs-item-selected.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\images\layout\togglebar.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\images\loading.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\images\table.png" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\images\tab_arrow_spr.png" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\images\tab_close.png" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\images\toggle.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\images\ui\btn.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\images\ui\button-disabled.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\images\ui\button-over.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\images\ui\button.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\images\ui\button1.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\images\ui\button2.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\images\ui\date.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\images\ui\dateeditor-bar.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\images\ui\dateeditor-btn-over.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\images\ui\dateeditor-btn.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\images\ui\dateeditor-thead.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\images\ui\grid-detail-close.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\images\ui\grid-detail-open.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\images\ui\gridalt.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\images\ui\gridbar.jpg" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\images\ui\grideditor.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\images\ui\icon-down.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\images\ui\icon-select.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\images\ui\icon-select2.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\images\ui\icon-unselect.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\images\ui\icon-up.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\images\ui\input.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\images\ui\inputdisabled.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\images\ui\loading.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\images\ui\loading2.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\images\ui\loading3.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\images\ui\loading4.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\images\ui\loadingl.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\images\ui\panel-btn.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\images\ui\spr_icons.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\images\ui\trigger.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\images\win\dialog-winbtns.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\images\win\dialogbtn.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray2014\images\win\dialogicon.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray\css\all.css" />
+    <Content Include="bower_components\ligerUI\skins\Gray\css\common.css" />
+    <Content Include="bower_components\ligerUI\skins\Gray\css\dialog.css" />
+    <Content Include="bower_components\ligerUI\skins\Gray\css\form.css" />
+    <Content Include="bower_components\ligerUI\skins\Gray\css\grid.css" />
+    <Content Include="bower_components\ligerUI\skins\Gray\css\layout.css" />
+    <Content Include="bower_components\ligerUI\skins\Gray\css\tab.css" />
+    <Content Include="bower_components\ligerUI\skins\Gray\images\layout\accordion-header.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray\images\layout\icon-close-over.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray\images\layout\icon-close.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray\images\layout\layout-header.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray\images\layout\tabs-bg.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray\images\layout\tabs-item-bg.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray\images\layout\tabs-item-left-bg.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray\images\layout\tabs-item-left-selected.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray\images\layout\tabs-item-right-bg.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray\images\layout\tabs-item-right-selected.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray\images\layout\tabs-item-selected.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray\images\layout\togglebar.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray\images\ui\btn.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray\images\ui\button-disabled.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray\images\ui\button-over.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray\images\ui\button.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray\images\ui\button1.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray\images\ui\button2.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray\images\ui\dateeditor-bar.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray\images\ui\dateeditor-btn-over.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray\images\ui\dateeditor-btn.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray\images\ui\dateeditor-thead.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray\images\ui\grid-detail-close.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray\images\ui\grid-detail-open.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray\images\ui\gridalt.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray\images\ui\gridbar.jpg" />
+    <Content Include="bower_components\ligerUI\skins\Gray\images\ui\grideditor.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray\images\ui\icon-down.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray\images\ui\icon-select.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray\images\ui\icon-unselect.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray\images\ui\icon-up.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray\images\ui\input.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray\images\ui\inputdisabled.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray\images\ui\loading.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray\images\ui\loading2.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray\images\ui\loading3.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray\images\ui\loading4.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray\images\ui\trigger.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray\images\win\dialog-winbtns.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray\images\win\dialogbtn.gif" />
+    <Content Include="bower_components\ligerUI\skins\Gray\images\win\dialogicon.gif" />
+    <Content Include="bower_components\ligerUI\skins\icons\add.gif" />
+    <Content Include="bower_components\ligerUI\skins\icons\archives.gif" />
+    <Content Include="bower_components\ligerUI\skins\icons\attibutes.gif" />
+    <Content Include="bower_components\ligerUI\skins\icons\back.gif" />
+    <Content Include="bower_components\ligerUI\skins\icons\bluebook.gif" />
+    <Content Include="bower_components\ligerUI\skins\icons\bookpen.gif" />
+    <Content Include="bower_components\ligerUI\skins\icons\busy.gif" />
+    <Content Include="bower_components\ligerUI\skins\icons\calendar.gif" />
+    <Content Include="bower_components\ligerUI\skins\icons\candle.gif" />
+    <Content Include="bower_components\ligerUI\skins\icons\coffee.gif" />
+    <Content Include="bower_components\ligerUI\skins\icons\comment.gif" />
+    <Content Include="bower_components\ligerUI\skins\icons\communication.gif" />
+    <Content Include="bower_components\ligerUI\skins\icons\config.gif" />
+    <Content Include="bower_components\ligerUI\skins\icons\customers.gif" />
+    <Content Include="bower_components\ligerUI\skins\icons\cut.gif" />
+    <Content Include="bower_components\ligerUI\skins\icons\database.gif" />
+    <Content Include="bower_components\ligerUI\skins\icons\delete.gif" />
+    <Content Include="bower_components\ligerUI\skins\icons\discuss.gif" />
+    <Content Include="bower_components\ligerUI\skins\icons\down.gif" />
+    <Content Include="bower_components\ligerUI\skins\icons\edit.gif" />
+    <Content Include="bower_components\ligerUI\skins\icons\graywarn.gif" />
+    <Content Include="bower_components\ligerUI\skins\icons\greenwarn.gif" />
+    <Content Include="bower_components\ligerUI\skins\icons\help.gif" />
+    <Content Include="bower_components\ligerUI\skins\icons\home.gif" />
+    <Content Include="bower_components\ligerUI\skins\icons\lock.gif" />
+    <Content Include="bower_components\ligerUI\skins\icons\logout.gif" />
+    <Content Include="bower_components\ligerUI\skins\icons\mailbox.gif" />
+    <Content Include="bower_components\ligerUI\skins\icons\memeber.gif" />
+    <Content Include="bower_components\ligerUI\skins\icons\modify.gif" />
+    <Content Include="bower_components\ligerUI\skins\icons\msn.gif" />
+    <Content Include="bower_components\ligerUI\skins\icons\myaccount.gif" />
+    <Content Include="bower_components\ligerUI\skins\icons\ok.gif" />
+    <Content Include="bower_components\ligerUI\skins\icons\outbox.gif" />
+    <Content Include="bower_components\ligerUI\skins\icons\pager.gif" />
+    <Content Include="bower_components\ligerUI\skins\icons\photograph.gif" />
+    <Content Include="bower_components\ligerUI\skins\icons\plus.gif" />
+    <Content Include="bower_components\ligerUI\skins\icons\prev.gif" />
+    <Content Include="bower_components\ligerUI\skins\icons\print.gif" />
+    <Content Include="bower_components\ligerUI\skins\icons\process.gif" />
+    <Content Include="bower_components\ligerUI\skins\icons\qq.gif" />
+    <Content Include="bower_components\ligerUI\skins\icons\refresh.gif" />
+    <Content Include="bower_components\ligerUI\skins\icons\right.gif" />
+    <Content Include="bower_components\ligerUI\skins\icons\role.gif" />
+    <Content Include="bower_components\ligerUI\skins\icons\save-disabled.gif" />
+    <Content Include="bower_components\ligerUI\skins\icons\save.gif" />
+    <Content Include="bower_components\ligerUI\skins\icons\search.gif" />
+    <Content Include="bower_components\ligerUI\skins\icons\search2.gif" />
+    <Content Include="bower_components\ligerUI\skins\icons\settings.gif" />
+    <Content Include="bower_components\ligerUI\skins\icons\true.gif" />
+    <Content Include="bower_components\ligerUI\skins\icons\up.gif" />
+    <Content Include="bower_components\ligerUI\skins\icons\view.gif" />
+    <Content Include="bower_components\ligerUI\skins\ligerui-icons.css" />
+    <Content Include="bower_components\ligerUI\skins\Silvery\css\form.css" />
+    <Content Include="bower_components\ligerUI\skins\Silvery\css\grid.css" />
+    <Content Include="bower_components\ligerUI\skins\Silvery\css\layout.css" />
+    <Content Include="bower_components\ligerUI\skins\Silvery\css\style.css" />
+    <Content Include="bower_components\ligerUI\skins\Silvery\images\form\checkboxradio.gif" />
+    <Content Include="bower_components\ligerUI\skins\Silvery\images\form\icon-down-over.gif" />
+    <Content Include="bower_components\ligerUI\skins\Silvery\images\form\icon-down.gif" />
+    <Content Include="bower_components\ligerUI\skins\Silvery\images\form\icon-up-over.gif" />
+    <Content Include="bower_components\ligerUI\skins\Silvery\images\form\icon-up.gif" />
+    <Content Include="bower_components\ligerUI\skins\Silvery\images\form\invalid_line.gif" />
+    <Content Include="bower_components\ligerUI\skins\Silvery\images\form\text-date-icon.gif" />
+    <Content Include="bower_components\ligerUI\skins\Silvery\images\form\text-down-icon.gif" />
+    <Content Include="bower_components\ligerUI\skins\Silvery\images\form\text-focus.gif" />
+    <Content Include="bower_components\ligerUI\skins\Silvery\images\form\text-l-focus.gif" />
+    <Content Include="bower_components\ligerUI\skins\Silvery\images\form\text-l-over.gif" />
+    <Content Include="bower_components\ligerUI\skins\Silvery\images\form\text-l.gif" />
+    <Content Include="bower_components\ligerUI\skins\Silvery\images\form\text-over.gif" />
+    <Content Include="bower_components\ligerUI\skins\Silvery\images\form\text-r-focus.gif" />
+    <Content Include="bower_components\ligerUI\skins\Silvery\images\form\text-r-over.gif" />
+    <Content Include="bower_components\ligerUI\skins\Silvery\images\form\text-r.gif" />
+    <Content Include="bower_components\ligerUI\skins\Silvery\images\form\text.gif" />
+    <Content Include="bower_components\ligerUI\skins\Silvery\images\grid\gridheaderbg.jpg" />
+    <Content Include="bower_components\ligerUI\skins\Silvery\images\layout\accordion-header-over.jpg" />
+    <Content Include="bower_components\ligerUI\skins\Silvery\images\layout\accordion-header.jpg" />
+    <Content Include="bower_components\ligerUI\skins\Silvery\images\layout\layout-header-over.jpg" />
+    <Content Include="bower_components\ligerUI\skins\Silvery\images\layout\layout-header.jpg" />
+    <Content Include="bower_components\ligerUI\skins\Silvery\images\layout\tabs-bg.jpg" />
+    <Content Include="bower_components\ligerUI\skins\Silvery\images\layout\tabs-item-bg.jpg" />
+    <Content Include="bower_components\ligerUI\skins\Silvery\images\layout\tabs-item-left-bg.gif" />
+    <Content Include="bower_components\ligerUI\skins\Silvery\images\layout\tabs-item-over-bg.gif" />
+    <Content Include="bower_components\ligerUI\skins\Silvery\images\layout\tabs-item-right-bg.gif" />
+    <Content Include="bower_components\ligerUI\skins\Silvery\images\layout\tabs-tools.gif" />
+    <Content Include="bower_components\ligerUI\skins\Tab\css\all.css" />
+    <Content Include="bower_components\ligerUI\skins\Tab\css\dialog.css" />
+    <Content Include="bower_components\ligerUI\skins\Tab\css\form.css" />
+    <Content Include="bower_components\ligerUI\skins\Tab\css\grid.css" />
+    <Content Include="bower_components\ligerUI\skins\Tab\css\tab.css" />
+    <Content Include="bower_components\ligerUI\skins\Tab\images\gridheader.png" />
+    <Content Include="bower_components\ligerUI\skins\Tab\images\layout\accordion-header.gif" />
+    <Content Include="bower_components\ligerUI\skins\Tab\images\layout\icon-close-over.gif" />
+    <Content Include="bower_components\ligerUI\skins\Tab\images\layout\icon-close.gif" />
+    <Content Include="bower_components\ligerUI\skins\Tab\images\layout\layout-header.gif" />
+    <Content Include="bower_components\ligerUI\skins\Tab\images\layout\tabs-bg.gif" />
+    <Content Include="bower_components\ligerUI\skins\Tab\images\layout\tabs-item-bg.gif" />
+    <Content Include="bower_components\ligerUI\skins\Tab\images\layout\tabs-item-left-bg.gif" />
+    <Content Include="bower_components\ligerUI\skins\Tab\images\layout\tabs-item-left-selected.gif" />
+    <Content Include="bower_components\ligerUI\skins\Tab\images\layout\tabs-item-right-bg.gif" />
+    <Content Include="bower_components\ligerUI\skins\Tab\images\layout\tabs-item-right-selected.gif" />
+    <Content Include="bower_components\ligerUI\skins\Tab\images\layout\tabs-item-selected.gif" />
+    <Content Include="bower_components\ligerUI\skins\Tab\images\layout\togglebar.gif" />
+    <Content Include="bower_components\ligerUI\skins\Tab\images\tab_arrow_spr.png" />
+    <Content Include="bower_components\ligerUI\skins\Tab\images\tab_close.png" />
+    <Content Include="bower_components\ligerUI\skins\Tab\images\ui\btn.gif" />
+    <Content Include="bower_components\ligerUI\skins\Tab\images\ui\button-disabled.gif" />
+    <Content Include="bower_components\ligerUI\skins\Tab\images\ui\button-over.gif" />
+    <Content Include="bower_components\ligerUI\skins\Tab\images\ui\button.gif" />
+    <Content Include="bower_components\ligerUI\skins\Tab\images\ui\button1.gif" />
+    <Content Include="bower_components\ligerUI\skins\Tab\images\ui\button2.gif" />
+    <Content Include="bower_components\ligerUI\skins\Tab\images\ui\date.gif" />
+    <Content Include="bower_components\ligerUI\skins\Tab\images\ui\dateeditor-bar.gif" />
+    <Content Include="bower_components\ligerUI\skins\Tab\images\ui\dateeditor-btn-over.gif" />
+    <Content Include="bower_components\ligerUI\skins\Tab\images\ui\dateeditor-btn.gif" />
+    <Content Include="bower_components\ligerUI\skins\Tab\images\ui\dateeditor-thead.gif" />
+    <Content Include="bower_components\ligerUI\skins\Tab\images\ui\grid-detail-close.gif" />
+    <Content Include="bower_components\ligerUI\skins\Tab\images\ui\grid-detail-open.gif" />
+    <Content Include="bower_components\ligerUI\skins\Tab\images\ui\gridalt.gif" />
+    <Content Include="bower_components\ligerUI\skins\Tab\images\ui\gridbar.jpg" />
+    <Content Include="bower_components\ligerUI\skins\Tab\images\ui\grideditor.gif" />
+    <Content Include="bower_components\ligerUI\skins\Tab\images\ui\icon-down.gif" />
+    <Content Include="bower_components\ligerUI\skins\Tab\images\ui\icon-select.gif" />
+    <Content Include="bower_components\ligerUI\skins\Tab\images\ui\icon-select2.gif" />
+    <Content Include="bower_components\ligerUI\skins\Tab\images\ui\icon-unselect.gif" />
+    <Content Include="bower_components\ligerUI\skins\Tab\images\ui\icon-up.gif" />
+    <Content Include="bower_components\ligerUI\skins\Tab\images\ui\input.gif" />
+    <Content Include="bower_components\ligerUI\skins\Tab\images\ui\inputdisabled.gif" />
+    <Content Include="bower_components\ligerUI\skins\Tab\images\ui\loading.gif" />
+    <Content Include="bower_components\ligerUI\skins\Tab\images\ui\loading2.gif" />
+    <Content Include="bower_components\ligerUI\skins\Tab\images\ui\loading3.gif" />
+    <Content Include="bower_components\ligerUI\skins\Tab\images\ui\loading4.gif" />
+    <Content Include="bower_components\ligerUI\skins\Tab\images\ui\loadingl.gif" />
+    <Content Include="bower_components\ligerUI\skins\Tab\images\ui\spr_icons.gif" />
+    <Content Include="bower_components\ligerUI\skins\Tab\images\ui\trigger.gif" />
+    <Content Include="bower_components\ligerUI\skins\Tab\images\win\dialog-winbtns.gif" />
+    <Content Include="bower_components\ligerUI\skins\Tab\images\win\dialogbtn.gif" />
+    <Content Include="bower_components\ligerUI\skins\Tab\images\win\dialogicon.gif" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\loading.gif" />
+    <Content Include="Content\images\logo-chi.png" />
+    <Content Include="Content\images\top.jpg" />
+    <Content Include="Content\images\topicon.gif" />
+    <Content Include="Content\images\topicon.png" />
+    <Content Include="Content\images\topiconold.gif" />
+    <Content Include="Content\commMe.css" />
+    <Content Include="Content\me.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Areas\HelpPage\Views\Web.config" />
+    <Content Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\ResourceModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Index.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\TextSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\SimpleTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Samples.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Parameters.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ModelDescriptionLink.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\KeyValuePairModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\InvalidSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ImageSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\EnumTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\DictionaryModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ComplexTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="bower_components\avalon\.bower.json" />
+    <Content Include="bower_components\avalon\bower.json" />
+    <Content Include="bower_components\avalon\package.json" />
+    <Content Include="bower_components\avalon\README.md" />
+    <Content Include="bower_components\jquery\.bower.json" />
+    <Content Include="bower_components\jquery\bower.json" />
+    <Content Include="bower_components\jquery\dist\jquery.min.map" />
+    <Content Include="bower_components\jquery\src\sizzle\dist\sizzle.min.map" />
+    <None Include="Scripts\jquery-2.1.4.intellisense.js" />
+    <Content Include="Icon.png" />
+    <Content Include="index.html" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-2.1.4.js" />
+    <Content Include="Scripts\jquery-2.1.4.min.js" />
+    <Content Include="Scripts\jquery-2.1.4.min.map" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\me\loginJquery.js" />
+    <Content Include="Scripts\me\loginAvalon.js" />
+    <Content Include="Scripts\me\avalon.adminMant.js" />
+    <Content Include="Scripts\me\avalon.AuditMant.js" />
+    <Content Include="Scripts\me\avalon.mdtMain.js" />
+    <Content Include="Scripts\me\about.js" />
+    <Content Include="Scripts\me\index.js" />
+    <Content Include="Scripts\me\init.js" />
+    <Content Include="Scripts\me\main.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\npm.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.js" />
+    <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_iframe.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201506010311517_initAccount.resx">
+      <DependentUpon>201506010311517_initAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506020154374_adddomain.resx">
+      <DependentUpon>201506020154374_adddomain.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CCG.dbEntity.ECN\CCG.dbEntity.ECN.csproj">
+      <Project>{f31a0f48-039d-4fb5-a625-ed3da39b2787}</Project>
+      <Name>CCG.dbEntity.ECN</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>13859</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:9539/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

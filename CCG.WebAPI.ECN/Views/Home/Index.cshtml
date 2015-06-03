@@ -1,0 +1,82 @@
+﻿@{
+    Layout = null;
+    var baseUrl = Url.Action("About", "Home");
+    var apiurldomain = Url.Action("getDomains", "api/domains");
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body class="container-fluid ms-controller" ms-controller="indexvm">
+    <div id="pageloading">
+    </div>
+    <div id="topmenu" class="l-topmenu">
+        <div class="l-topmenu-logo">
+            <span><strong>ECN系统-捷和電機集團</strong> </span>
+        </div>
+        <div class="l-topmenu-welcome">
+            <span>
+                <strong>
+                    Domain :
+                    <asp:Label ID="ldomain" runat="server" Text=""></asp:Label>
+                    User ID :
+                    <asp:Label ID="lUserID" runat="server" Text=""></asp:Label>
+                    Name :
+                    <asp:Label ID="lName" runat="server" Text=""></asp:Label>
+                    Dept :
+                    <asp:Label ID="lDept" runat="server" Text=""></asp:Label>
+                    Group :<asp:Label ID="lGroup" runat="server" Text=""></asp:Label>
+                    [
+                    <asp:LinkButton ID="lblogout" runat="server" OnClick="lblogout_Click">Log Out</asp:LinkButton>
+                    ]
+                </strong>
+            </span>
+        </div>
+    </div>
+    <div id="layout1" style="width: 99.6%; margin: 0 auto; margin-top: 4px;">
+        <div position="left" title="主要菜单" id="accordion1">
+            <div title="ECN管理">
+                <div style="height: 7px;">
+                </div>
+                <a class="l-link" ms-repeat="jsonlidata" ms-if-loop="el.page_fun==='ECN流程'" ms-hover="l-link-over" ms-click="addtab('listpage'+$index, el.page_ch, el.page_loc+'?tfuserid='+top.users.userid)">{{el.page_ch}}</a>
+                <a class="l-link3" href="#">------------------------------</a>
+                <a class="l-link" ms-repeat="jsonlidata" ms-if-loop="el.page_fun==='系统查询'" ms-hover="l-link-over" ms-click="addtab('listpage'+$index, el.page_ch, el.page_loc+'?tfuserid='+top.users.userid)">{{el.page_ch}}</a>
+                <a class="l-link3" href="#">------------------------------</a>
+                <a class="l-link" ms-repeat="jsonlidata" ms-if-loop="el.page_fun==='系统设置'" ms-hover="l-link-over" ms-click="addtab('listpage'+$index, el.page_ch, el.page_loc+'?tfuserid='+top.users.userid)">{{el.page_ch}}</a>
+                <a class="l-link3" href="#">------------------------------</a>
+                @apiurldomain
+                <a class="l-link" href="#" ms-click="addtab('about', 'about', '@baseUrl?tfuserid='+top.users.userid)">about</a>
+                <a class="l-link" href="#" ms-click="addtab('auditMain', '个人中心', 'ConfigPages/auditMant.aspx?tfuserid='+top.users.userid)">个人中心</a>
+            </div>
+            <div title="其它">
+                <div style="height: 7px;">
+                </div>
+                <a class="l-link" ms-visible="is_ADMIN" href="#" ms-click="addtab('adminMain', '管理中心', 'ConfigPages/adminMant.aspx?tfuserid='+top.users.userid)">管理中心</a>
+            </div>
+        </div>
+        <div position="center" id="framecenter">
+            <div tabid="home" title="我的主页" style="height: 300px">
+                <iframe frameborder="0" name="home" id="home" src=""></iframe>
+
+            </div>
+        </div>
+    </div>
+    <div style="height: 32px; line-height: 32px; text-align: center;">
+        Copyright © 2015 捷和电机集团有限公司 版权所有
+    </div>
+    <div style="display: none">
+    </div>
+    @Scripts.Render("~/bundles/init")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/ligerUI")
+    @Scripts.Render("~/bundles/avalon")
+    @Scripts.Render("~/bundles/index")
+
+</body>
+</html>
