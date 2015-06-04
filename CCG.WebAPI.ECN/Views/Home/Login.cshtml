@@ -18,19 +18,19 @@
             <div class="form-group">
                 <label for="UserName" class="col-sm-3 control-label text-right">用户名称:</label>
                 <div class="col-sm-9">
-                    <input ms-duplex="userid" type="text" class="form-control" id="userid" placeholder="用户名称" />
+                    <input ms-duplex="userid" type="text" class="form-control" id="userid" placeholder="用户名称" autofocus />
                 </div>
             </div>
             <div class="form-group">
-                <label for="checkPasswd" class="col-sm-3 control-label text-right">登陆密码:</label>
+                <label for="password" class="col-sm-3 control-label text-right">登陆密码:</label>
                 <div class="col-sm-9">
-                    <input ms-duplex="checkPasswd" type="password" class="form-control" id="checkPasswd" placeholder="登陆密码" />
+                    <input ms-duplex="password" type="password" class="form-control" id="password" placeholder="登陆密码" />
                 </div>
             </div>
             <div class="form-group">
-                <label for="newAuditPasswd" class="col-sm-3 control-label text-right">审核密码:</label>
+                <label for="confirmPassword" class="col-sm-3 control-label text-right">确认密码:</label>
                 <div class="col-sm-9">
-                    <input ms-duplex="newAuditPasswd" type="password" class="form-control" id="newAuditPasswd" placeholder="审核密码" />
+                    <input ms-duplex="confirmPassword" type="password" class="form-control" id="confirmPassword" placeholder="确认密码" />
                 </div>
             </div>
             <div class="row">
@@ -38,7 +38,7 @@
                     <button ms-click="onRegister('Register',this)" id="Register" type="button" class="btn btn-default">Register</button>
                 </div>
                 <div class="col-xs-6 text-left">
-                    <button ms-click="oncheckPasswd('个人中心',this)" id="change" type="button" class="btn btn-default">Change</button>
+                    <button ms-click="onLogin('Login',this)" id="Login" type="button" class="btn btn-primary">Login</button>
                 </div>
             </div>
         </div>
@@ -52,11 +52,13 @@
 
 @section scripts{
     <script type="text/javascript">
-        var token = sessionStorage.getItem(token);
+        var token = sessionStorage.getItem(tokenKey);
         var headers = {};
         if (token) {
             headers.Authorization = 'Bearer ' + token;
         }
+        avalon.log(headers);
+
         var tmpurl ="@baseUrl" +"api/values/1";
         $.ajax({
             type: 'GET',

@@ -19,7 +19,7 @@ namespace CCG.WebAPI.ECN.Controllers
         // GET api/values/5
         public string Get(int id)
         {
-            return "value";
+            return "Success:get value";
         }
 
         // POST api/values

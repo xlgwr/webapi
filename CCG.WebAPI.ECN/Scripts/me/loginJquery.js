@@ -23,7 +23,7 @@
                 avalon.log("success.")
                 avalon.vmodels.loginController.messagecss = "hidden";
                 avalon.vmodels.loginController.message = " ";
-            }
+            }                                                                          
         });
         $(this).keydown(function (e) {
 
