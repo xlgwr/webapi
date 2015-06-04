@@ -793,7 +793,7 @@
     <Content Include="Content\images\topicon.png" />
     <Content Include="Content\images\topiconold.gif" />
     <Content Include="Content\commMe.css" />
-    <Content Include="Content\me.css" />
+    <Content Include="Content\ligerUIme.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -843,13 +843,15 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\me\indexAvalon.js" />
+    <Content Include="Scripts\me\auth.js" />
     <Content Include="Scripts\me\loginJquery.js" />
     <Content Include="Scripts\me\loginAvalon.js" />
     <Content Include="Scripts\me\avalon.adminMant.js" />
     <Content Include="Scripts\me\avalon.AuditMant.js" />
     <Content Include="Scripts\me\avalon.mdtMain.js" />
     <Content Include="Scripts\me\about.js" />
-    <Content Include="Scripts\me\index.js" />
+    <Content Include="Scripts\me\indexJquery.js" />
     <Content Include="Scripts\me\init.js" />
     <Content Include="Scripts\me\main.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
@@ -873,7 +875,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Shared\_iframe.cshtml" />
+    <Content Include="Views\Shared\_Base.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
   </ItemGroup>

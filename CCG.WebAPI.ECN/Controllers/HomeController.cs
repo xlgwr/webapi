@@ -8,7 +8,8 @@ namespace CCG.WebAPI.ECN.Controllers
 {
     public class HomeController : Controller
     {
-     
+
+
         [Authorize]
         public ActionResult Index()
         {
@@ -16,16 +17,17 @@ namespace CCG.WebAPI.ECN.Controllers
             return View();
         }
 
-        [Authorize]
+        [AllowAnonymous]
         public ActionResult About()
         {
             ViewBag.Title = "About";
             return View();
         }
         [AllowAnonymous]
-        public ActionResult Login()
+        public ActionResult Login(string redirectUrl)
         {
             return View();
+            
         }
     }
 }

@@ -1,18 +1,15 @@
 ﻿@{
-    Layout = null;
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Base.cshtml";
+    
+    var rootUrl = Url.Content("~/");
     var baseUrl = Url.Action("About", "Home");
     var apiurldomain = Url.Action("getDomains", "api/domains");
 }
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
-</head>
-<body class="container-fluid ms-controller" ms-controller="indexvm">
+@Styles.Render("~/Content/ligerUI")
+@Scripts.Render("~/bundles/auth")
+
+<div class="ms-controller" ms-controller="indexvm">
     <div id="pageloading">
     </div>
     <div id="topmenu" class="l-topmenu">
@@ -32,7 +29,7 @@
                     <asp:Label ID="lDept" runat="server" Text=""></asp:Label>
                     Group :<asp:Label ID="lGroup" runat="server" Text=""></asp:Label>
                     [
-                    <asp:LinkButton ID="lblogout" runat="server" OnClick="lblogout_Click">Log Out</asp:LinkButton>
+                    <a href="#" ms-click="onLogout('Logout',this)" class="btn btn-warning btn-xs text-danger" role="button">Log Out</a>
                     ]
                 </strong>
             </span>
@@ -71,12 +68,9 @@
     </div>
     <div style="display: none">
     </div>
-    @Scripts.Render("~/bundles/init")
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @Scripts.Render("~/bundles/ligerUI")
-    @Scripts.Render("~/bundles/avalon")
-    @Scripts.Render("~/bundles/index")
+</div>
 
-</body>
-</html>
+@Scripts.Render("~/bundles/init")
+@Scripts.Render("~/bundles/ligerUI")
+@Scripts.Render("~/bundles/index")
+

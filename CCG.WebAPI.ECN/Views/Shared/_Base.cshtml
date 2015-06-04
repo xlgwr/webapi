@@ -1,0 +1,24 @@
+﻿@{
+    var rootUrl = Url.Content("~/");
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/commMe")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/avalon")
+    <script type="text/javascript">
+        var tokenKey = 'accessToken';
+    </script>
+</head>
+<body id="baseBody" class="container-fluid" rooturl="@rootUrl">
+
+    @RenderBody()
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

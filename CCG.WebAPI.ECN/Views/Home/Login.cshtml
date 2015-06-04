@@ -1,6 +1,6 @@
 ﻿@{
     ViewBag.Title = "Login";
-    Layout = "~/Views/Shared/_iframe.cshtml";
+    Layout = "~/Views/Shared/_Base.cshtml";
     var baseUrl = Url.Content("~/");
 }
 <div class="ms-controller" ms-controller="loginController">
@@ -34,11 +34,14 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-xs-6 text-right">
+                <div class="col-xs-4">
                     <button ms-click="onRegister('Register',this)" id="Register" type="button" class="btn btn-default">Register</button>
                 </div>
-                <div class="col-xs-6 text-left">
+                <div class="col-xs-4">
                     <button ms-click="onLogin('Login',this)" id="Login" type="button" class="btn btn-primary">Login</button>
+                </div>
+                <div class="col-xs-4">
+                    <button ms-click="onLogout('Logout',this)" id="Logout" type="button" class="btn btn-danger">Logout</button>
                 </div>
             </div>
         </div>

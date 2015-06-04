@@ -28,14 +28,19 @@ namespace CCG.WebAPI.ECN
                       "~/Content/bootstrap.css",
                       "~/Content/bootstrap-theme.css",
                       "~/Content/site.css",
-                      "~/Content/me.css"));
+                      "~/Content/commMe.css",
+                      "~/Content/ligerUIme.css"));
             bundles.Add(new StyleBundle("~/Content/commMe").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/bootstrap-theme.css",
                       "~/Content/commMe.css"));
-
+            bundles.Add(new StyleBundle("~/Content/ligerUI").Include(
+                        "~/bower_components/ligerUI/skins/Aqua/css/ligerui-all.css",
+                        "~/bower_components/ligerUI/skins/Gray2014/css/all.css",
+                        "~/Content/ligerUIme.css"));
             //add other
-            //1.11.X
+            //1.11.X   
+            //base js
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/bower_components/jquery/dist/jquery.js"));
 
@@ -45,14 +50,20 @@ namespace CCG.WebAPI.ECN
             bundles.Add(new ScriptBundle("~/bundles/ligerUI").Include(
                         "~/bower_components/ligerUI/js/ligerui.min.js"));
 
+            //use define
+
+            bundles.Add(new ScriptBundle("~/bundles/auth").Include(
+                        "~/Scripts/me/auth*"));
+
             bundles.Add(new ScriptBundle("~/bundles/init").Include(
                         "~/Scripts/me/init*"));
 
             bundles.Add(new ScriptBundle("~/bundles/index").Include(
                         "~/Scripts/me/index*"));
-            //iframe js
+        
             bundles.Add(new ScriptBundle("~/bundles/about").Include(
                         "~/Scripts/me/about*"));
+
             bundles.Add(new ScriptBundle("~/bundles/login").Include(
                         "~/Scripts/me/login*"));
 

@@ -8,6 +8,7 @@ var baseuri = $("#baseUrl").text().toString();
 var apiUri = baseuri + 'api/domains/getDomains';
 var apiUriDomain = baseuri + 'api/domains/getDomains';
 var apiUrionRegister = baseuri + 'api/Account/Register';
+var apiUrionLogout = baseuri + 'api/Account/Logout';
 var apiUrionLogin = baseuri + 'Token';
 
 avalon.log(baseuri);
@@ -141,6 +142,21 @@ require(["avalon", 'domReady!'], function (avalon) {
             }).fail(showerr);
 
         },
+        onLogout: function (prefix, currbtn) {  
+            var oldtime = new Date();
+            currbtn.disabled = true;
+
+            // Cache the access token in session storage.
+            sessionStorage.removeItem(tokenKey);
+
+            avalon.log("Done!");
+
+            login.messagecss = "show alert-success";
+            login.message = prefix + ": Success.";
+
+            currbtn.disabled = false;
+            currbtn.className = 'btn btn-success';    
+        },
         onpassword: function (prefix, currbtn) {
             currbtn.disabled = true;
             currbtn.value = "Load...";
@@ -269,7 +285,7 @@ function showerr(err) {
 
     avalon.log(this);
     avalon.log(err);
-                      
+
     $('#password').focus();
 
     avalon.vmodels.loginController.messagecss = "show alert-danger";
