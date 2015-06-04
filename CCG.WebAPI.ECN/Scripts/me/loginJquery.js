@@ -20,9 +20,9 @@
                 avalon.vmodels.loginController.message = (dindex + 1) + ".请输入正确内容:" + placeholder;
 
             } else {
-                avalon.log("success.")
-                avalon.vmodels.loginController.messagecss = "hidden";
-                avalon.vmodels.loginController.message = " ";
+                avalon.log("has contents.")
+               // avalon.vmodels.loginController.messagecss = "hidden";
+               // avalon.vmodels.loginController.message = " ";
             }                                                                          
         });
         $(this).keydown(function (e) {
@@ -45,7 +45,7 @@
                 if (dindex >= csize) {
                     //$('#checkPasswd').focus();
                     //$input.eq(0).focus();
-                    $('#change').focus();
+                    $('#Login').focus();
                 } else {
 
                     avalon.vmodels.loginController.messagecss = "show alert-warning";

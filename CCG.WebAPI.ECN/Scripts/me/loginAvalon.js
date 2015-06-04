@@ -94,7 +94,7 @@ require(["avalon", 'domReady!'], function (avalon) {
                 login.message = prefix + ": Success.";
 
                 this.currbtn.disabled = false;
-                this.currbtn.className='btn btn-success';
+                this.currbtn.className = 'btn btn-success';
 
             }).fail(showerr);
 
@@ -136,7 +136,7 @@ require(["avalon", 'domReady!'], function (avalon) {
                 login.message = prefix + ": Success.";
 
                 this.currbtn.disabled = false;
-                this.currbtn.className='btn btn-success';
+                this.currbtn.className = 'btn btn-success';
 
             }).fail(showerr);
 
@@ -266,13 +266,15 @@ function ajaxHelper(uri, method, data) {
     });
 }
 function showerr(err) {
-                    
+
     avalon.log(this);
     avalon.log(err);
+                      
+    $('#password').focus();
 
     avalon.vmodels.loginController.messagecss = "show alert-danger";
     this.currbtn.disabled = false;
-    this.currbtn.className='btn btn-danger';
+    this.currbtn.className = 'btn btn-danger';
 
     switch (err.status) {
         case 404:
@@ -283,15 +285,26 @@ function showerr(err) {
 
     }
 
-    //{Message:'',responseText:[]}
-    var vdata = JSON.parse(err.responseText);
-    //ModelState              
-    var errarr = [];
-    var icount = 1;
-    for (var i in vdata.ModelState) {
-        errarr.push(icount + "." + vdata.ModelState[i][0]);
-        icount++;
+    //{Message:'',responseText:[],responseJSON}
+    var vdata = err.responseJSON//JSON.parse(err.responseText);
+
+    avalon.log(vdata);
+
+    //{error:'',error_description:''}
+    if (vdata.error) {
+        avalon.vmodels.loginController.message = vdata.error + "<br/>" + vdata.error_description;
     }
-    avalon.vmodels.loginController.message = "Error:<br/>" + errarr.join("<br/><br/>");
-   
+    //{Message:'',ModelState:[]}
+    if (vdata.Message) {
+        //ModelState              
+        var errarr = [];
+        var icount = 1;
+        for (var i in vdata.ModelState) {
+            errarr.push(icount + "." + vdata.ModelState[i][0]);
+            icount++;
+        }
+        avalon.vmodels.loginController.message = vdata.Message + "<br/>" + errarr.join("<br/><br/>");
+    }
+
+
 }
