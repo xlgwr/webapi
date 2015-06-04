@@ -52,6 +52,9 @@ namespace CCG.WebAPI.ECN
 
             //use define
 
+            bundles.Add(new ScriptBundle("~/bundles/me").Include(
+                        "~/Scripts/me/me*"));
+
             bundles.Add(new ScriptBundle("~/bundles/auth").Include(
                         "~/Scripts/me/auth*"));
 

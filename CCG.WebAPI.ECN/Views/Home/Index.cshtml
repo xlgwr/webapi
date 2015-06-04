@@ -1,7 +1,7 @@
 ﻿@{
     ViewBag.Title = "Login";
     Layout = "~/Views/Shared/_Base.cshtml";
-    
+
     var rootUrl = Url.Content("~/");
     var baseUrl = Url.Action("About", "Home");
     var apiurldomain = Url.Action("getDomains", "api/domains");
@@ -20,17 +20,16 @@
             <span>
                 <strong>
                     Domain :
-                    <asp:Label ID="ldomain" runat="server" Text=""></asp:Label>
+                    <span id="ldomain"></span>
                     User ID :
-                    <asp:Label ID="lUserID" runat="server" Text=""></asp:Label>
+                    <span id="lUserID" class="text-success"></span>
                     Name :
-                    <asp:Label ID="lName" runat="server" Text=""></asp:Label>
+                    <span id="lName"></span>
                     Dept :
-                    <asp:Label ID="lDept" runat="server" Text=""></asp:Label>
-                    Group :<asp:Label ID="lGroup" runat="server" Text=""></asp:Label>
-                    [
+                    <span id="lDept"></span>
+                    Group :
+                    <span id="lGroup"></span>
                     <a href="#" ms-click="onLogout('Logout',this)" class="btn btn-warning btn-xs text-danger" role="button">Log Out</a>
-                    ]
                 </strong>
             </span>
         </div>

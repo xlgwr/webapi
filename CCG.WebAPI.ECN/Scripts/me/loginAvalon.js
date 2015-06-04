@@ -11,6 +11,8 @@ var apiUrionRegister = baseuri + 'api/Account/Register';
 var apiUrionLogout = baseuri + 'api/Account/Logout';
 var apiUrionLogin = baseuri + 'Token';
 
+var redirectUrl = GetQueryString('redirectUrl');
+
 avalon.log(baseuri);
 
 //avalon.log("me:" + userid + "," + userrole + "," + ecnnbr);
@@ -130,6 +132,7 @@ require(["avalon", 'domReady!'], function (avalon) {
                 // Cache the access token in session storage.
                 sessionStorage.setItem(tokenKey, data.access_token);
 
+
                 avalon.log("Done!");
                 avalon.log(data);
 
@@ -139,10 +142,14 @@ require(["avalon", 'domReady!'], function (avalon) {
                 this.currbtn.disabled = false;
                 this.currbtn.className = 'btn btn-success';
 
+                if (redirectUrl) {
+                    top.location.href = redirectUrl;
+                }
+
             }).fail(showerr);
 
         },
-        onLogout: function (prefix, currbtn) {  
+        onLogout: function (prefix, currbtn) {
             var oldtime = new Date();
             currbtn.disabled = true;
 
@@ -155,7 +162,7 @@ require(["avalon", 'domReady!'], function (avalon) {
             login.message = prefix + ": Success.";
 
             currbtn.disabled = false;
-            currbtn.className = 'btn btn-success';    
+            currbtn.className = 'btn btn-success';
         },
         onpassword: function (prefix, currbtn) {
             currbtn.disabled = true;

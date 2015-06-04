@@ -1,14 +1,4 @@
-﻿/* File Created: May 5, 2015 */
-var users = {
-    domain: '',
-    userid: '',
-    dept:'',
-    userrole: ''
-};
-var ecnnbrs = {
-    ecnnbr: ''
-};
-//custom function
+﻿//custom function
 function GetQueryString(name) {
     var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
     var r = window.location.search.substr(1).match(reg);

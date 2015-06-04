@@ -52,6 +52,8 @@ var indexvm = avalon.define({
         sessionStorage.removeItem(tokenKey);
 
         avalon.log("onLogout Done!");
+
+        top.location.href = setLoginhref;
     }
 }, function (vm) {
     avalon.log("vmindex.")
