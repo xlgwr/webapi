@@ -1,20 +1,29 @@
 ﻿//gobal define
+
 if (!tokenKey) {
     var tokenKey = 'accessToken';
 }
+
 var rooturl = '';
 var setLoginhref = '';
-var topcurrUrl = top.location.href;
+var topcurrUrl = top.location.protocol + '//' + top.location.hostname + location.pathname;//top.location.href;
 
-var apiGetUserInfoUrl = 'api/Account/UserInfo';
-var redirLogin = 'Home/Login/';
-
+var remoteHost = 'http://172.16.122.61/webapiECNDev/'
+var apiGetUserInfoUrl = remoteHost + 'api/Account/UserInfo';
+var remoteLoginUrl = remoteHost + 'Home/Login/';
+//init tokenkey
+var gettokenKey = GetQueryString('tokenkey');
+if (gettokenKey) {
+    sessionStorage.setItem(tokenKey, gettokenKey);
+}
 
 $(function () {
+
+
     //init top basegody define
     rooturl = $("#baseBody").attr('rooturl');
     //url to loginin url add curr url
-    setLoginhref = 'http://' + top.location.hostname + rooturl + redirLogin + "?redirectUrl=" + encodeURI(topcurrUrl);  
+    setLoginhref = remoteLoginUrl + "?redirectUrl=" + encodeURI(topcurrUrl);
 
     //get tokenkey
     var token = sessionStorage.getItem(tokenKey);
@@ -31,10 +40,9 @@ $(function () {
     }
     avalon.log(headers);
 
-    var tmpurl = rooturl + apiGetUserInfoUrl; //"api/values/1";
     $.ajax({
         type: 'GET',
-        url: tmpurl,
+        url: apiGetUserInfoUrl,
         headers: headers
     }).done(function (data) {
         avalon.log(data);

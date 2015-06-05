@@ -130,7 +130,7 @@ require(["avalon", 'domReady!'], function (avalon) {
             }).done(function (data) {
 
                 // Cache the access token in session storage.
-                sessionStorage.setItem(tokenKey, data.access_token);
+                //sessionStorage.setItem(tokenKey, data.access_token);
 
 
                 avalon.log("Done!");
@@ -143,7 +143,7 @@ require(["avalon", 'domReady!'], function (avalon) {
                 this.currbtn.className = 'btn btn-success';
 
                 if (redirectUrl) {
-                    top.location.href = redirectUrl;
+                    top.location.href = decodeURI(redirectUrl) + "?tokenkey=" + data.access_token;
                 }
 
             }).fail(showerr);
