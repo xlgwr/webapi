@@ -1,0 +1,17 @@
+﻿/*fix ie*/
+.fixieInput {
+    _padding: 0;
+    _margin: 0;
+    _font-size: 2em;
+    _height: 20px;
+    *height: 20px !important;
+    _min-width: 60px;
+}
+
+* + html .fixieInput {
+    padding: 0 !important;
+    margin: 0 !important;
+    font-size: 1.5em !important;
+    height: 20px !important;
+    min-width: 60px !important;
+}

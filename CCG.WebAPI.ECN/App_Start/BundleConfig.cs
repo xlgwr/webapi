@@ -29,11 +29,13 @@ namespace CCG.WebAPI.ECN
                       "~/Content/bootstrap-theme.css",
                       "~/Content/site.css",
                       "~/Content/commMe.css",
+                      "~/Content/ieFix.css",
                       "~/Content/ligerUIme.css"));
             bundles.Add(new StyleBundle("~/Content/commMe").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/bootstrap-theme.css",
-                      "~/Content/commMe.css"));
+                      "~/Content/commMe.css",
+                      "~/Content/ieFix.css"));
             bundles.Add(new StyleBundle("~/Content/ligerUI").Include(
                         "~/bower_components/ligerUI/skins/Aqua/css/ligerui-all.css",
                         "~/bower_components/ligerUI/skins/Gray2014/css/all.css",
@@ -63,7 +65,7 @@ namespace CCG.WebAPI.ECN
 
             bundles.Add(new ScriptBundle("~/bundles/index").Include(
                         "~/Scripts/me/index*"));
-        
+
             bundles.Add(new ScriptBundle("~/bundles/about").Include(
                         "~/Scripts/me/about*"));
 

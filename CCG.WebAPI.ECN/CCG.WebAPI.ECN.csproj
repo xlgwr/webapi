@@ -786,6 +786,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\ieFix.css" />
     <Content Include="Content\images\loading.gif" />
     <Content Include="Content\images\logo-chi.png" />
     <Content Include="Content\images\top.jpg" />

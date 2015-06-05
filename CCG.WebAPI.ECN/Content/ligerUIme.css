@@ -9,6 +9,13 @@
     overflow: hidden;
 }
 
+
+body {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
 .l-link {
     display: block;
     height: 26px;
@@ -61,9 +68,9 @@
 
 #pageloading {
     position: absolute;
-    left: 0;
-    top: 0;
-    background: white url('images/loading.gif') no-repeat center;
+    left: 0px;
+    top: 0px;
+    background: white url('Lib/images/loading.gif') no-repeat center;
     width: 100%;
     height: 100%;
     z-index: 99999;
@@ -73,8 +80,8 @@
     background: #2B5A76;
     height: 30px;
     position: absolute;
-    left: 0;
-    bottom: 0;
+    left: 0px;
+    bottom: 0px;
     width: 100%;
     z-index: 99999;
 }
@@ -82,20 +89,21 @@
 .space {
     color: #E7E7E7;
 }
-/* 顶部   background:url('images/top.jpg') repeat-x bottom; */
+/* 顶部   background:url('lib/images/top.jpg') repeat-x bottom; */
 .l-topmenu {
     margin: 0;
     padding: 0;
     height: 31px;
     line-height: 31px;
     position: relative;
+    border-top: 1px solid #1D438B;
 }
 
 .l-topmenu-logo {
     color: Black;
     padding-left: 35px;
     line-height: 26px;
-    background: url('data:image/gif;base64,R0lGODlhGQAYAPMMAAArZgArmQBVZgBVmTNVmTNVzDOAmWaAmWaAzJmqzJnVzP///wAAAAAAAAAAAAAAACH5BAUAAAwALAAAAAAZABgAAATecK1kBrHDrDFWvWAiSVfAcQCxAMBynag2BcJQA+cSBBsu0JyA6GU6pVYCVxBl6zR/UM6Kx6wtlUULwYDQtQ7bUu23eapGCzKaUCtiBwHZCMBDG0zQXvM8CrTQBT85RBZoKx12HHknNXISfoYXOHAugkdodJFBNRtZjj2GBj4mSoJ8EplrMElwe4aQdiY4PGytp4eabayKca9/I2xZbwK3qSMVAzgtiidhGskeYa05SycmKplLN8kdF1BAnJDe0zkJk0sB2E5wYzRCEqLuYx3iQEWXEhQYF88dH/sKRkQAADs=') /*images/topicon.gif*/ no-repeat 10px 1px;
+    background: url('Lib/images/topicon.gif') no-repeat 10px 1px;
     margin-top: 5px;
 }
 
@@ -113,3 +121,7 @@
     color: Black;
 }
 
+    .l-topmenu-welcome a {
+        color: Black;
+        text-decoration: underline;
+    }
