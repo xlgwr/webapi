@@ -27,6 +27,7 @@ session.
 *.*#
 /bower_components/*
 /node_modules/*
+/publish/*
 
 /api/bower_components/*
 /api/node_modules/*

@@ -845,6 +845,7 @@
     <Content Include="bower_components\normalize.css\LICENSE.md" />
     <Content Include="bower_components\normalize.css\README.md" />
     <Content Include="bower.json" />
+    <None Include="Properties\PublishProfiles\default.pubxml" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Icon.png" />
     <Content Include="index.html" />
