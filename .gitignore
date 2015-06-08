@@ -45,6 +45,9 @@ session.
 /CCG.WebAPI.ECN/bin/*
 /CCG.WebAPI.ECN/obj/*
 
+/CCG.MVC.ECN/bin/*
+/CCG.MVC.ECN/obj/*
+
 /CCG.dbEntity.ECN/bin/*
 /CCG.dbEntity.ECN/obj/*
 
