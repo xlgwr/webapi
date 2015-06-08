@@ -6,11 +6,12 @@ using System.Web.Mvc;
 
 namespace CCG.WebAPI.ECN.Controllers
 {
+    [AllowAnonymous]
     public class HomeController : Controller
     {
 
 
-        [AllowAnonymous]
+        //[Authorize]
         public ActionResult Index()
         {
             ViewBag.Title = "Home Page";
@@ -22,11 +23,10 @@ namespace CCG.WebAPI.ECN.Controllers
             ViewBag.Title = "About";
             return View();
         }
-
         public ActionResult Login(string redirectUrl)
         {
             return View();
-            
+
         }
     }
 }
