@@ -10,20 +10,19 @@ namespace CCG.WebAPI.ECN.Controllers
     {
 
 
-        [Authorize]
+        [AllowAnonymous]
         public ActionResult Index()
         {
             ViewBag.Title = "Home Page";
             return View();
         }
 
-        [AllowAnonymous]
         public ActionResult About()
         {
             ViewBag.Title = "About";
             return View();
         }
-        [AllowAnonymous]
+
         public ActionResult Login(string redirectUrl)
         {
             return View();

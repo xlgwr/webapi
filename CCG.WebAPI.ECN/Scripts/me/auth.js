@@ -6,7 +6,7 @@ if (!tokenKey) {
 
 var rooturl = '';
 var setLoginhref = '';
-var topcurrUrl = top.location.protocol + '//' + top.location.hostname + location.pathname;//top.location.href;
+var topcurrUrl = top.location.protocol + '//' + top.location.hostname + ":" + top.location.port + location.pathname;//top.location.href;
 
 var remoteHost = 'http://172.16.122.61/webapiECNDev/'
 var apiGetUserInfoUrl = remoteHost + 'api/Account/UserInfo';
