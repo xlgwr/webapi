@@ -5,7 +5,8 @@ var jsonmenu = [];
 
 
 //init         
-$(function () {     
+$(function () {
+    avalon.log('JqueryLog:');
     //
     $("#home").attr("src", "home.htm");
     //布局

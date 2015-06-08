@@ -4,16 +4,17 @@ var userid = '';
 var userrole = '';
 //var tokenKey = 'accessToken';
 
-var baseuri = $("#baseUrl").text().toString();
-var apiUri = baseuri + 'api/domains/getDomains';
-var apiUriDomain = baseuri + 'api/domains/getDomains';
-var apiUrionRegister = baseuri + 'api/Account/Register';
-var apiUrionLogout = baseuri + 'api/Account/Logout';
-var apiUrionLogin = baseuri + 'Token';
+var rooturl = $("#baseBody").attr('rooturl');
+
+var apiUri = rooturl + 'api/domains/getDomains';
+var apiUriDomain = rooturl + 'api/domains/getDomains';
+var apiUrionRegister = rooturl + 'api/Account/Register';
+var apiUrionLogout = rooturl + 'api/Account/Logout';
+var apiUrionLogin = rooturl + 'Token';
 
 var redirectUrl = GetQueryString('redirectUrl');
 
-avalon.log(baseuri);
+avalon.log("avalon:"+rooturl);
 
 //avalon.log("me:" + userid + "," + userrole + "," + ecnnbr);
 
@@ -22,7 +23,7 @@ require(["avalon", 'domReady!'], function (avalon) {
         $id: "loginController",
         message: "login",
         messagecss: "info",
-        baseUrl: baseuri,
+        baseUrl: rooturl,
         //duplex      
         domain: domain,
         userid: userid,
@@ -83,7 +84,7 @@ require(["avalon", 'domReady!'], function (avalon) {
 
                 //ajax option
                 type: 'POST',
-                url: apiUrionRegister,//'/webapiECNDev/api/Account/Register',
+                url: apiUrionRegister,
                 contentType: 'application/json; charset=utf-8',
                 data: JSON.stringify(data)
 
@@ -123,9 +124,8 @@ require(["avalon", 'domReady!'], function (avalon) {
 
                 //ajax option
                 type: 'POST',
-                url: apiUrionLogin,  //'/Token',                        
-                //contentType: 'application/json; charset=utf-8',  
-                data: data                // JSON.stringify(data)   
+                url: apiUrionLogin,                        
+                data: data 
 
             }).done(function (data) {
 

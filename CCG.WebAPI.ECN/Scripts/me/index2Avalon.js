@@ -11,13 +11,14 @@ var indexvm = avalon.define({
     addtab: function (tabid, text, url) {
         f_addTab(tabid, text, url);
     },
-    initli: function () {
+    initli: function () { 
         //init userinfo
         $.ajax({
             type: 'GET',
             url: apiGetUserInfoUrl,
             headers: headers
         }).done(function (data) {
+            avalon.log("avalonLog:ajaxInitLi.");
 
             avalon.log(data);
             indexvm.user.userid = data.Email;

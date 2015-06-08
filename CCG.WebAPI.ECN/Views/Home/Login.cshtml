@@ -1,7 +1,6 @@
 ﻿@{
     ViewBag.Title = "Login";
     Layout = "~/Views/Shared/_Base.cshtml";
-    var baseUrl = Url.Content("~/");
 }
 <div class="ms-controller" ms-controller="loginController">
     <div class="text-center">
@@ -49,7 +48,6 @@
     <div id="message" class="h4 alert text-center" ms-class="{{messagecss}}">
         <span>{{message | html}}</span>
     </div>
-    <span id="baseUrl" class="hide">@baseUrl</span>
 </div>
 @Scripts.Render("~/bundles/login")
 

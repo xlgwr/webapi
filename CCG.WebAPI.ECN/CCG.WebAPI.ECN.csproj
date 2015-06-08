@@ -862,8 +862,8 @@
     <Content Include="Scripts\me\index2Avalon.js" />
     <Content Include="Scripts\me\auth.js" />
     <Content Include="Scripts\me\me.js" />
-    <Content Include="Scripts\me\loginJquery.js" />
-    <Content Include="Scripts\me\loginAvalon.js" />
+    <Content Include="Scripts\me\login1Jquery.js" />
+    <Content Include="Scripts\me\login2Avalon.js" />
     <Content Include="Scripts\me\avalon.adminMant.js" />
     <Content Include="Scripts\me\avalon.AuditMant.js" />
     <Content Include="Scripts\me\avalon.mdtMain.js" />

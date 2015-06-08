@@ -79,7 +79,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/08/2015 14:29:50</publishTime>
     </File>
     <File Include="bin/CCG.WebAPI.ECN.dll">
-      <publishTime>06/08/2015 16:19:43</publishTime>
+      <publishTime>06/08/2015 17:44:55</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>06/01/2015 08:48:44</publishTime>
@@ -3223,7 +3223,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/01/2015 14:57:10</publishTime>
     </File>
     <File Include="Scripts/me/auth.js">
-      <publishTime>06/08/2015 17:12:22</publishTime>
+      <publishTime>06/08/2015 17:38:19</publishTime>
     </File>
     <File Include="Scripts/me/avalon.adminMant.js">
       <publishTime>05/30/2015 08:32:29</publishTime>
@@ -3235,10 +3235,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/29/2015 11:09:58</publishTime>
     </File>
     <File Include="Scripts/me/index1Jquery.js">
-      <publishTime>06/08/2015 17:20:17</publishTime>
+      <publishTime>06/08/2015 17:28:45</publishTime>
     </File>
     <File Include="Scripts/me/index2Avalon.js">
-      <publishTime>06/08/2015 17:20:45</publishTime>
+      <publishTime>06/08/2015 17:29:52</publishTime>
     </File>
     <File Include="Scripts/me/indexAvalon.js">
       <publishTime>06/08/2015 16:05:38</publishTime>
@@ -3248,6 +3248,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="Scripts/me/init.js">
       <publishTime>06/08/2015 16:43:32</publishTime>
+    </File>
+    <File Include="Scripts/me/login1Jquery.js">
+      <publishTime>06/04/2015 11:02:41</publishTime>
+    </File>
+    <File Include="Scripts/me/login2Avalon.js">
+      <publishTime>06/08/2015 17:44:05</publishTime>
     </File>
     <File Include="Scripts/me/loginAvalon.js">
       <publishTime>06/05/2015 08:21:48</publishTime>
@@ -3280,7 +3286,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/01/2015 08:53:54</publishTime>
     </File>
     <File Include="Scripts/_references.js">
-      <publishTime>06/08/2015 16:18:53</publishTime>
+      <publishTime>06/08/2015 17:32:24</publishTime>
     </File>
     <File Include="Views/Home/About.cshtml">
       <publishTime>06/04/2015 12:52:42</publishTime>
@@ -3289,7 +3295,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/08/2015 17:01:58</publishTime>
     </File>
     <File Include="Views/Home/Login.cshtml">
-      <publishTime>06/08/2015 13:43:37</publishTime>
+      <publishTime>06/08/2015 17:37:05</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>06/01/2015 08:51:51</publishTime>
