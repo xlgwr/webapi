@@ -2,6 +2,7 @@
 var users = {
     domain: '',
     userid: '',
+    username:'',
     dept:'',
     userrole: ''
 };

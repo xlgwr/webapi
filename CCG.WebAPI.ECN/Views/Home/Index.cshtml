@@ -10,6 +10,7 @@
 <link href="~/Content/ligerUI/skins/Gray2014/css/all.css" rel="stylesheet" />
 <link href="~/Content/ligerUIme.css?t=20150608001" rel="stylesheet" />
 
+@Scripts.Render("~/bundles/init")
 @Scripts.Render("~/bundles/auth")
 
 <div class="ms-controller" ms-controller="indexvm">
@@ -23,15 +24,15 @@
             <span>
                 <strong>
                     Domain :
-                    <span id="ldomain"></span>
+                    <span id="domain">{{user.domain}}</span>
                     User ID :
-                    <span id="lUserID" class="text-success"></span>
+                    <span  id="UserID" class="text-success">{{user.userid}}</span>
                     Name :
-                    <span id="lName"></span>
+                    <span id="Name">{{user.username}}</span>
                     Dept :
-                    <span id="lDept"></span>
+                    <span id="Dept">{{user.dept}}</span>
                     Group :
-                    <span id="lGroup"></span>
+                    <span id="Group"></span>
                     <a href="#" ms-click="onLogout('Logout',this)" class="btn btn-warning btn-xs text-danger" role="button">Log Out</a>
                 </strong>
             </span>
@@ -72,7 +73,6 @@
     </div>
 </div>
 
-@Scripts.Render("~/bundles/init")
 @Scripts.Render("~/bundles/ligerUI")
 @Scripts.Render("~/bundles/index")
 

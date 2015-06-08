@@ -3,16 +3,9 @@ var accordion = null;
 var tree = null;
 var jsonmenu = [];
 
-//init
-users.domain = $("#ldomain").text().replace(/[\[\]]/g, '')
-users.userid = $("#lUserID").text().replace(/[\[\]]/g, '')
-users.dept = $("#lDept").text().replace(/[\[\]]/g, '');
-users.userrole = $("#lGroup").text().replace(/[\[\]]/g, '');
 
-//avalon.log(users);
-
-$(function () {
-
+//init         
+$(function () {     
     //
     $("#home").attr("src", "home.htm");
     //布局
@@ -43,10 +36,11 @@ $(function () {
     //tree = $("#tree1").ligerGetTreeManager();
     $("#pageloading").hide();
 
+    //init from avalon ******************************************************
+    indexvm.initli();   
+    avalon.log(indexvm.user)
+    //end *******************************************************************
 
-    avalon.log(users);
-    indexvm.initli(users.domain);
-    avalon.log(indexvm.domain)
 });
 function f_heightChanged(options) {
     if (tab)

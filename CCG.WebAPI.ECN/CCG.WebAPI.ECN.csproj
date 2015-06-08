@@ -859,7 +859,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\me\indexAvalon.js" />
+    <Content Include="Scripts\me\index2Avalon.js" />
     <Content Include="Scripts\me\auth.js" />
     <Content Include="Scripts\me\me.js" />
     <Content Include="Scripts\me\loginJquery.js" />
@@ -868,7 +868,7 @@
     <Content Include="Scripts\me\avalon.AuditMant.js" />
     <Content Include="Scripts\me\avalon.mdtMain.js" />
     <Content Include="Scripts\me\about.js" />
-    <Content Include="Scripts\me\indexJquery.js" />
+    <Content Include="Scripts\me\index1Jquery.js" />
     <Content Include="Scripts\me\init.js" />
     <Content Include="Scripts\me\main.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
