@@ -23,11 +23,11 @@ namespace CCG.WebAPI.ECN
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/bower_components/ligerUI/skins/Aqua/css/ligerui-all.css",
-                      "~/bower_components/ligerUI/skins/Gray2014/css/all.css",
                       "~/Content/bootstrap.css",
                       "~/Content/bootstrap-theme.css",
                       "~/bower_components/normalize.css/normalize.css",
+                      "~/Content/ligerUI/skins/Aqua/css/ligerui.min.css",
+                      "~/Content/ligerUI/skins/Gray2014/css/all.css",
                       "~/Content/site.css",
                       "~/Content/commMe.css",
                       "~/Content/ieFix.css",
@@ -38,21 +38,22 @@ namespace CCG.WebAPI.ECN
                       "~/bower_components/normalize.css/normalize.css",
                       "~/Content/commMe.css",
                       "~/Content/ieFix.css"));
+
             bundles.Add(new StyleBundle("~/Content/ligerUI").Include(
-                        "~/bower_components/ligerUI/skins/Aqua/css/ligerui-all.css",
-                        "~/bower_components/ligerUI/skins/Gray2014/css/all.css",
+                        "~/Content/ligerUI/skins/Aqua/css/ligerui-all.css",
+                        "~/Content/ligerUI/skins/Gray2014/css/all.css",
                         "~/Content/ligerUIme.css"));
             //add other
             //1.11.X   
             //base js
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/bower_components/jquery/dist/jquery.js"));
+                        "~/bower_components/jquery/dist/jquery.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/avalon").Include(
-                        "~/bower_components/avalon/avalon.js"));
+                        "~/bower_components/avalon/min/avalon.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/ligerUI").Include(
-                        "~/bower_components/ligerUI/js/ligerui.min.js"));
+                        "~/Content/ligerUI/js/ligerui.min.js"));
 
             //use define
 
