@@ -27,6 +27,7 @@ namespace CCG.WebAPI.ECN
                       "~/bower_components/ligerUI/skins/Gray2014/css/all.css",
                       "~/Content/bootstrap.css",
                       "~/Content/bootstrap-theme.css",
+                      "~/bower_components/normalize.css/normalize.css",
                       "~/Content/site.css",
                       "~/Content/commMe.css",
                       "~/Content/ieFix.css",
@@ -34,6 +35,7 @@ namespace CCG.WebAPI.ECN
             bundles.Add(new StyleBundle("~/Content/commMe").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/bootstrap-theme.css",
+                      "~/bower_components/normalize.css/normalize.css",
                       "~/Content/commMe.css",
                       "~/Content/ieFix.css"));
             bundles.Add(new StyleBundle("~/Content/ligerUI").Include(

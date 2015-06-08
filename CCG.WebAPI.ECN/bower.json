@@ -1,0 +1,24 @@
+{
+  "name": "webApi",
+  "version": "0.0.0",
+  "dependencies": {
+    "avalon": "~1.4.3",
+    "jquery": "1.11.x",
+    "normalize.css": "~3.0.3"
+  },
+  "authors": [
+    "'xlgwr' <xlgwr@163.com>"
+  ],
+  "description": "WebApi",
+  "keywords": [
+    "webApi"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
