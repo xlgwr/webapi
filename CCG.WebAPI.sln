@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CCG.WebAPI.Core", "CCG.WebAPI.ECN\CCG.WebAPI.Core.csproj", "{FAD43151-5965-4380-B451-28BB6BDCC5BF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CCG.WebAPI.Core", "CCG.WebAPI.Core\CCG.WebAPI.Core.csproj", "{FAD43151-5965-4380-B451-28BB6BDCC5BF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CCG.dbEntity.ECN", "CCG.dbEntity.ECN\CCG.dbEntity.ECN.csproj", "{F31A0F48-039D-4FB5-A625-ED3DA39B2787}"
 EndProject

@@ -40,15 +40,10 @@ session.
 /bin/*
 /obj/*
 
-/CCG.WebAPI.ECN/bower_components/*
-/CCG.WebAPI.ECN/node_modules/*
+/CCG.*/bower_components/*
+/CCG.*/node_modules/*
 
-/CCG.WebAPI.ECN/bin/*
-/CCG.WebAPI.ECN/obj/*
+/CCG.*/bin/*
+/CCG.*/obj/*
 
-/CCG.MVC.ECN/bin/*
-/CCG.MVC.ECN/obj/*
-
-/CCG.dbEntity.ECN/bin/*
-/CCG.dbEntity.ECN/obj/*
 
