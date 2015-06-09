@@ -2,9 +2,12 @@
     ViewBag.Title = "Login";
     Layout = "~/Views/Shared/_Base.cshtml";
 }
-<div class="ms-controller panel panel-success" ms-controller="loginController" style="width:369px; margin-left:auto; margin-right:auto; margin-top:26px;">
-    <div class="panel-heading text-center">
-        <h3>登  陆</h3>
+<div class="ms-controller login panel panel-success" ms-controller="loginController">
+    <div class="panel-heading">
+        <div class="relative">
+            <span class="glyphicon glyphicon-lock loginIcon" aria-hidden="true"></span>
+            <p class="fonth3 clearMargin text-center">登  陆</p>
+        </div>
     </div>
     <div class="panel-body">
         <div class="form-horizontal">

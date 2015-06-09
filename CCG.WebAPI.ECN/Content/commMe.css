@@ -11,3 +11,25 @@ body.tabbody {
 .ms-controller {
     visibility: hidden;
 }
+.login{
+    width:369px; 
+    margin-left:auto; 
+    margin-right:auto;
+    margin-top:5px;
+}
+.loginIcon{
+    position:absolute;
+    right:0;
+}
+.clearMargin{
+    margin:0;
+    padding:0;
+}
+.relative{
+    position:relative;
+}
+.fonth3{
+    font-size:x-large;
+    font-weight:bolder;
+    width:100%;
+}
