@@ -17,7 +17,7 @@
             if (!ival) {
 
                 avalon.vmodels.loginController.messagecss = "show alert-warning";
-                avalon.vmodels.loginController.message = (dindex + 1) + ".请输入正确内容:" + placeholder;
+                avalon.vmodels.loginController.message = (dindex + 1) + messages.n2 + placeholder;
 
             } else {
                 avalon.log("has contents.")
@@ -38,7 +38,7 @@
                 if (!ival) {
                     $(this).focus();
                     avalon.vmodels.loginController.messagecss = "show alert-warning";
-                    avalon.vmodels.loginController.message = (dindex + 1) + ".请输入正确内容:" + placeholder;
+                    avalon.vmodels.loginController.message = (dindex + 1) + messages.n2 + placeholder;
                     return;
                 }
                 //avalon.log('focus');
@@ -49,7 +49,7 @@
                 } else {
 
                     avalon.vmodels.loginController.messagecss = "show alert-warning";
-                    avalon.vmodels.loginController.message = (dindex + 1) + ".请输入正确内容:" + placeholder;
+                    avalon.vmodels.loginController.message = (dindex + 1) + messages.n2 + placeholder;
                     $input.eq(dindex + 1).focus();
                 }
             }

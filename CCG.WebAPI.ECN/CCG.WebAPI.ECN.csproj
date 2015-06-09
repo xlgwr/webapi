@@ -861,6 +861,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\me\index2Avalon.js" />
     <Content Include="Scripts\me\auth.js" />
+    <Content Include="Scripts\me\initMessage.js" />
     <Content Include="Scripts\me\me.js" />
     <Content Include="Scripts\me\login1Jquery.js" />
     <Content Include="Scripts\me\login2Avalon.js" />

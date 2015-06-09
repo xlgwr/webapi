@@ -49,6 +49,7 @@
         <span>{{message | html}}</span>
     </div>
 </div>
+@Scripts.Render("~/bundles/init")
 @Scripts.Render("~/bundles/login")
 
 @section scripts{
@@ -58,6 +59,7 @@
         if (token) {
             headers.Authorization = 'Bearer ' + token;
         }
+        avalon.log("Login:html.62");
         avalon.log(headers);
 
         //test api

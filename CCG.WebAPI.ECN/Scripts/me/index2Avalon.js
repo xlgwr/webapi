@@ -11,12 +11,12 @@ var indexvm = avalon.define({
     addtab: function (tabid, text, url) {
         f_addTab(tabid, text, url);
     },
-    initli: function () { 
+    initli: function () {
         //init userinfo
         $.ajax({
             type: 'GET',
-            url: apiGetUserInfoUrl,
-            headers: headers
+            url: rmSet.apiGetUserInfoUrl,
+            headers: rmSet.headers
         }).done(function (data) {
             avalon.log("avalonLog:ajaxInitLi.");
 
@@ -42,7 +42,7 @@ var indexvm = avalon.define({
                         //avalon.log(indexvm.jsonlidata);
                     } else {
                         indexvm.jsonlidata = [];
-                        indexvm.message = "无相关记录。";
+                        indexvm.message = messages.n1;  //from initMessage
                     }
                 }
 
@@ -62,7 +62,7 @@ var indexvm = avalon.define({
 
         avalon.log("onLogout Done!");
 
-        top.location.href = setLoginhref;
+        top.location.href = rmSet.setLoginhref;
     }
 }, function (vm) {
     avalon.log("vmindex.")

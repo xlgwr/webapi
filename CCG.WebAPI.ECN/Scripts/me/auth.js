@@ -1,41 +1,27 @@
-﻿//gobal define
-if (!tokenKey) {
-    var tokenKey = 'accessToken';
-}
-var headers = {};
-var rooturl = '';
-var setLoginhref = '';
-
-var topcurrUrl = top.location.protocol + '//' + top.location.host + location.pathname;//top.location.href;
-
-var remoteHost = 'http://172.16.122.61/webapiECNDev/'
-var apiGetUserInfoUrl = remoteHost + 'api/Account/UserInfo';
-var remoteLoginUrl = remoteHost + 'Home/Login/';
-//init tokenkey
+﻿//init tokenkey
 var gettokenKey = GetQueryString('tokenkey');
 if (gettokenKey) {
-    sessionStorage.setItem(tokenKey, gettokenKey);
+    sessionStorage.setItem(rmSet.tokenKey, gettokenKey);
 }
 
 $(function () {
     //init top basegody define
-    rooturl = $("#baseBody").attr('rooturl');
+    rmSet.rooturl = $("#baseBody").attr('rooturl');
     //url to loginin url add curr url
-    setLoginhref = remoteLoginUrl + "?redirectUrl=" + encodeURI(topcurrUrl);
+    rmSet.setLoginhref = rmSet.remoteLoginUrl + "?redirectUrl=" + encodeURI(rmSet.topcurrUrl);
 
     //get tokenkey
-    var token = sessionStorage.getItem(tokenKey);
-
+    var token = sessionStorage.getItem(rmSet.tokenKey);  
 
     avalon.log(token);
 
     if (token) {
-        headers.Authorization = 'Bearer ' + token;
+        rmSet.headers.Authorization = 'Bearer ' + token;
     } else {
         // avalon.log(sethref);
-        top.location.href = setLoginhref;
+        top.location.href = rmSet.setLoginhref;
 
     }
-    avalon.log(headers);    
+    avalon.log(rmSet);
 })
 

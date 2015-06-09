@@ -1,44 +1,35 @@
-﻿'use strict';
-var domain = 'ccl';
-var userid = '';
-var userrole = '';
-//var tokenKey = 'accessToken';
+﻿require(["avalon", 'domReady!'], function (avalon) {
+    'use strict';
+    //init 
+    rooturl = $("#baseBody").attr('rooturl');
+    var redirectUrl = GetQueryString('redirectUrl');
 
-var rooturl = $("#baseBody").attr('rooturl');
+    loginApi.rooturl = rooturl;
+    avalon.log("avalon:8");
+    avalon.log(loginApi);
 
-var apiUri = rooturl + 'api/domains/getDomains';
-var apiUriDomain = rooturl + 'api/domains/getDomains';
-var apiUrionRegister = rooturl + 'api/Account/Register';
-var apiUrionLogout = rooturl + 'api/Account/Logout';
-var apiUrionLogin = rooturl + 'Token';
-
-var redirectUrl = GetQueryString('redirectUrl');
-
-avalon.log("avalon:"+rooturl);
-
-//avalon.log("me:" + userid + "," + userrole + "," + ecnnbr);
-
-require(["avalon", 'domReady!'], function (avalon) {
+    //start define
     var login = avalon.define({
         $id: "loginController",
         message: "login",
         messagecss: "info",
-        baseUrl: rooturl,
+        rooturl: rooturl,
+        iloginApi: loginApi,
         //duplex      
-        domain: domain,
-        userid: userid,
+        domain: users.domain,
+        userid: users.userid,
         password: '',
         confirmPassword: '',
         //check validate
         checkbase: function (prefix) {
             login.messagecss = "show alert-info";
-            login.message = prefix + ": 正在处理中。。。";
+            login.message = prefix + messages.n4;
 
             if (!(login.domain && login.userid && login.password && login.confirmPassword)) {
                 avalon.log(login.domain + ',' + login.userid + ',' + login.password + ',' + login.confirmPassword)
                 $('#password').focus();
                 login.messagecss = "show alert-danger";
-                login.message = prefix + ": 请把内容填完整，不能为空";
+                login.message = prefix + messages.n3;
                 return false;
             }
             return true;
@@ -52,7 +43,7 @@ require(["avalon", 'domReady!'], function (avalon) {
             avalon.log(data);
             $.ajax({
                 type: 'POST',
-                url: apiUrionRegister,//'/webapiECNDev/api/Account/Register',
+                url: rooturl + login.iloginApi.apiUrionRegister,//'/webapiECNDev/api/Account/Register',
                 contentType: 'application/json; charset=utf-8',
                 data: JSON.stringify(data)
             }).done(function (data) {
@@ -84,7 +75,7 @@ require(["avalon", 'domReady!'], function (avalon) {
 
                 //ajax option
                 type: 'POST',
-                url: apiUrionRegister,
+                url: rooturl + login.iloginApi.apiUrionRegister,
                 contentType: 'application/json; charset=utf-8',
                 data: JSON.stringify(data)
 
@@ -124,8 +115,8 @@ require(["avalon", 'domReady!'], function (avalon) {
 
                 //ajax option
                 type: 'POST',
-                url: apiUrionLogin,                        
-                data: data 
+                url: rooturl + login.iloginApi.apiUrionLogin,
+                data: data
 
             }).done(function (data) {
 
@@ -143,7 +134,8 @@ require(["avalon", 'domReady!'], function (avalon) {
                 this.currbtn.className = 'btn btn-success';
 
                 if (redirectUrl) {
-                    top.location.href = decodeURI(redirectUrl) + "?tokenkey=" + data.access_token;
+                    login.message = prefix + ": Success.正在转向：" + decodeURI(redirectUrl);
+                    top.location.href = decodeURI(redirectUrl) + "?tokenkey=" + data.access_token; 
                 }
 
             }).fail(showerr);
@@ -163,91 +155,8 @@ require(["avalon", 'domReady!'], function (avalon) {
 
             currbtn.disabled = false;
             currbtn.className = 'btn btn-success';
-        },
-        onpassword: function (prefix, currbtn) {
-            currbtn.disabled = true;
-            currbtn.value = "Load...";
-
-
-            var oldtime = new Date();
-
-            if (!(login.domain && login.userid && login.password && login.confirmPassword)) {
-                avalon.log(login.domain + ',' + login.userid + ',' + login.password + ',' + login.confirmPassword)
-                $('#password').focus();
-                login.messagecss = "danger";
-                login.message = prefix + ",请把内容填完整，不能为空";
-                currbtn.disabled = false;
-                currbtn.value = "Change";
-                return;
-            }
-            //changeAuditPasswd(string domain, string username, string password, string confirmPassword, bool initfirst)
-
-            ajaxHelper(apiUri, 'GET', ajaxself).done(function (data) {
-                var ajaxmodel = data;
-
-                ajaxself.json = data;
-
-                avalon.log(ajaxself);
-
-                var currtime = new Date();
-                var difftime = currtime - oldtime;
-
-                if (ajaxmodel.error) {
-                    login.messagecss = "danger";
-                } else {
-                    //avalon.log("Admin.start.");
-                    //avalon.log(ajaxmodel.value);
-
-                    if (!ajaxmodel.value) {
-
-                        login.password = '';
-                        //$('#password').focus();
-                        login.messagecss = "danger";
-                        login.message = prefix + ",Error: 系统不存在任何记录 . ---->Used:" + difftime + " ms.";
-
-                    } else {
-                        login.messagecss = "success";
-                        $('#userid').focus();
-
-                        switch (ajaxmodel.value) {
-                            case 2:
-                                login.message = prefix + ",审核密码，保存成功." + ajaxmodel.value + " ---->Used:" + difftime + " ms.";
-                                break;
-                            case -1:
-                                login.password = '';
-                                //$('#password').focus();
-                                login.messagecss = "danger";
-                                login.message = prefix + ",error:登陆密码错误." + ajaxmodel.value + " ---->Used:" + difftime + " ms.";
-                                break;
-                            case -2:
-                                login.messagecss = "danger";
-                                login.message = prefix + ",error update." + ajaxmodel.value + " ---->Used:" + difftime + " ms.";
-                                break;
-                            case 3:
-                                login.message = prefix + ",success add." + ajaxmodel.value + " ---->Used:" + difftime + " ms.";
-                                break;
-                            case -3:
-                                login.messagecss = "danger";
-                                login.message = prefix + ",error add." + ajaxmodel.value + " ---->Used:" + difftime + " ms.";
-                                break;
-                            case -4:
-                                login.messagecss = "danger";
-                                login.message = prefix + ",system error." + ajaxmodel.value + " ---->Used:" + difftime + " ms.";
-                                break;
-                            default:
-                                login.messagecss = "danger";
-                                login.message = prefix + ",Error: system error." + ajaxmodel.value + " ---->Used:" + difftime + " ms.";
-                        }
-
-                    }
-                }
-                currbtn.disabled = false;
-                currbtn.value = "Change";
-                //end
-            });
-
-            //end
         }
+
     }, function (vm) {
         avalon.log("加载vm3.");
         avalon.scan();
