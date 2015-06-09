@@ -2,9 +2,8 @@
     'use strict';
     //init 
     rooturl = $("#baseBody").attr('rooturl');
-    var redirectUrl = GetQueryString('redirectUrl');
-
     loginApi.rooturl = rooturl;
+
     avalon.log("avalon:8");
     avalon.log(loginApi);
 
@@ -13,11 +12,13 @@
         $id: "loginController",
         message: "login",
         messagecss: "info",
+        messageErr: top.users.rd_msg,
+        messageErrcss: 'hidden',
         rooturl: rooturl,
         iloginApi: loginApi,
         //duplex      
-        domain: users.domain,
-        userid: users.userid,
+        domain: top.users.domain,
+        userid: top.users.userid,
         password: '',
         confirmPassword: '',
         //check validate
@@ -133,9 +134,9 @@
                 this.currbtn.disabled = false;
                 this.currbtn.className = 'btn btn-success';
 
-                if (redirectUrl) {
-                    login.message = prefix + ": Success.正在转向：" + decodeURI(redirectUrl);
-                    top.location.href = decodeURI(redirectUrl) + "?tokenkey=" + data.access_token; 
+                if (loginApi.redirectUrl) {
+                    login.message = prefix + ": Success.正在转向：" + decodeURI(loginApi.redirectUrl);
+                    top.location.href = encodeURI(loginApi.redirectUrl + "?domain=" + login.domain + "&userid=" + login.userid) + "&tokenkey=" + data.access_token;
                 }
 
             }).fail(showerr);
@@ -176,7 +177,11 @@
     login.message = "登  陆";
     login.messagecss = "hidden";
     //avalon.log(avalon.vmodels);
-    //end                
+    //end           
+    if (login.messageErr) {
+        login.messageErrcss = 'show alert-danger';
+    }
+
     avalon.scan();
 
     //avalon.log(login.baseUrl)
@@ -202,7 +207,7 @@ function showerr(err) {
     avalon.log(this);
     avalon.log(err);
 
-    $('#password').focus();
+    $('#userid').focus();
 
     avalon.vmodels.loginController.messagecss = "show alert-danger";
     this.currbtn.disabled = false;

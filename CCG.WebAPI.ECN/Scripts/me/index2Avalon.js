@@ -1,5 +1,4 @@
-﻿//avalon
-var tmpdomain = users.domain;
+﻿//avalon     
 var indexvm = avalon.define({
     $id: "indexvm",
     message: '',
@@ -21,37 +20,14 @@ var indexvm = avalon.define({
             avalon.log("avalonLog:ajaxInitLi.");
 
             avalon.log(data);
+
+            //top.users.userid = data.Email;
             indexvm.user.userid = data.Email;
 
             //start other code   
-            avalon.log(indexvm.user.domain);
+            avalon.log(top.users);
 
-            if (indexvm.user.domain) {
-                var searchajax = ECNweb.index.getindexmenu(indexvm.user.domain);
-
-                //avalon.log(searchajax);
-
-                if (searchajax.error) {
-                    indexvm.message = searchajax.error;
-                    //avalon.log(searchajax.error);
-                } else {
-                    if (searchajax.value.length) {
-
-                        indexvm.jsonlidata = searchajax.value;
-                        //avalon.log("dgv:render ok.");
-                        //avalon.log(indexvm.jsonlidata);
-                    } else {
-                        indexvm.jsonlidata = [];
-                        indexvm.message = messages.n1;  //from initMessage
-                    }
-                }
-
-            }
-
-        }).fail(function (err) {
-            //showError
-            avalon.log(err);
-        });
+        }).fail(showerrIndex);
         //end     
 
     },
@@ -73,4 +49,47 @@ avalon.scan();
 avalon.log("avalon: role:" + indexvm.user.userrole);
 if (indexvm.user.userrole === 'ECN_ADMIN') {
     indexvm.is_ADMIN = true;
+}
+
+function showerrIndex(err) {
+
+    //avalon.log(this);
+    avalon.log(err);
+
+    switch (err.status) {
+        case 404:
+            avalon.log("this URL:" + this.url + " was not found.Please check that.");
+            return;
+            break;
+        default:
+
+    }
+    //{Message:'',responseText:[],responseJSON}
+    var vdata = err.responseJSON//JSON.parse(err.responseText);
+
+    //avalon.log(vdata);
+
+    //{error:'',error_description:''}
+    if (vdata.error) {
+        avalon.log(vdata.error + "<br/>" + vdata.error_description);
+    }
+    //{Message:'',ModelState:[]}
+    if (vdata.Message) {
+        //ModelState              
+        var errarr = [];
+        var icount = 1;
+
+        if (vdata.ModelState) {
+            for (var i in vdata.ModelState) {
+                errarr.push(icount + "." + vdata.ModelState[i][0]);
+                icount++;
+            }
+            avalon.log(vdata.Message + "<br/>" + errarr.join("<br/><br/>"));
+        } else {
+            avalon.log(vdata.Message)
+        }
+
+    }
+
+
 }
