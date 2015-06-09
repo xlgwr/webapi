@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace CCG.WebAPI.ECN
+namespace CCG.WebAPI.Core
 {
     public class BundleConfig
     {

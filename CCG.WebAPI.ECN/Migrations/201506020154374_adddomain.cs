@@ -1,4 +1,4 @@
-namespace CCG.WebAPI.ECN.Migrations
+namespace CCG.WebAPI.Core.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;

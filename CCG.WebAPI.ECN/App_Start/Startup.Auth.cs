@@ -8,10 +8,10 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
-using CCG.WebAPI.ECN.Providers;
-using CCG.WebAPI.ECN.Models;
+using CCG.WebAPI.Core.Providers;
+using CCG.WebAPI.Core.Models;
 
-namespace CCG.WebAPI.ECN
+namespace CCG.WebAPI.Core
 {
     public partial class Startup
     {

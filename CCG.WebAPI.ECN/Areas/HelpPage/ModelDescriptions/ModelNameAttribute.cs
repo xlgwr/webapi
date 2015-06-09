@@ -1,6 +1,6 @@
 using System;
 
-namespace CCG.WebAPI.ECN.Areas.HelpPage.ModelDescriptions
+namespace CCG.WebAPI.Core.Areas.HelpPage.ModelDescriptions
 {
     /// <summary>
     /// Use this attribute to change the name of the <see cref="ModelDescription"/> generated for a type.

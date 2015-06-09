@@ -13,55 +13,55 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/01/2015 08:56:06</publishTime>
     </File>
     <File Include="Areas/HelpPage/Views/Help/Api.cshtml">
-      <publishTime>06/01/2015 08:55:47</publishTime>
+      <publishTime>06/09/2015 15:34:43</publishTime>
     </File>
     <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/ApiGroup.cshtml">
-      <publishTime>06/01/2015 08:55:47</publishTime>
+      <publishTime>06/09/2015 15:34:43</publishTime>
     </File>
     <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/CollectionModelDescription.cshtml">
-      <publishTime>06/01/2015 08:55:47</publishTime>
+      <publishTime>06/09/2015 15:34:43</publishTime>
     </File>
     <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/ComplexTypeModelDescription.cshtml">
-      <publishTime>06/01/2015 08:55:47</publishTime>
+      <publishTime>06/09/2015 15:34:43</publishTime>
     </File>
     <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/DictionaryModelDescription.cshtml">
-      <publishTime>06/01/2015 08:55:47</publishTime>
+      <publishTime>06/09/2015 15:34:43</publishTime>
     </File>
     <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/EnumTypeModelDescription.cshtml">
-      <publishTime>06/01/2015 08:55:47</publishTime>
+      <publishTime>06/09/2015 15:34:43</publishTime>
     </File>
     <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/HelpPageApiModel.cshtml">
-      <publishTime>06/01/2015 08:55:47</publishTime>
+      <publishTime>06/09/2015 15:34:43</publishTime>
     </File>
     <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/ImageSample.cshtml">
-      <publishTime>06/01/2015 08:55:47</publishTime>
+      <publishTime>06/09/2015 15:34:43</publishTime>
     </File>
     <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/InvalidSample.cshtml">
-      <publishTime>06/01/2015 08:55:47</publishTime>
+      <publishTime>06/09/2015 15:34:43</publishTime>
     </File>
     <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/KeyValuePairModelDescription.cshtml">
-      <publishTime>06/01/2015 08:55:47</publishTime>
+      <publishTime>06/09/2015 15:34:43</publishTime>
     </File>
     <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/ModelDescriptionLink.cshtml">
-      <publishTime>06/01/2015 08:55:47</publishTime>
+      <publishTime>06/09/2015 15:34:43</publishTime>
     </File>
     <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/Parameters.cshtml">
-      <publishTime>06/01/2015 08:55:47</publishTime>
+      <publishTime>06/09/2015 15:34:43</publishTime>
     </File>
     <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/Samples.cshtml">
       <publishTime>06/01/2015 08:55:47</publishTime>
     </File>
     <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/SimpleTypeModelDescription.cshtml">
-      <publishTime>06/01/2015 08:55:47</publishTime>
+      <publishTime>06/09/2015 15:34:43</publishTime>
     </File>
     <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/TextSample.cshtml">
-      <publishTime>06/01/2015 08:55:47</publishTime>
+      <publishTime>06/09/2015 15:34:43</publishTime>
     </File>
     <File Include="Areas/HelpPage/Views/Help/Index.cshtml">
-      <publishTime>06/01/2015 08:55:46</publishTime>
+      <publishTime>06/09/2015 15:34:43</publishTime>
     </File>
     <File Include="Areas/HelpPage/Views/Help/ResourceModel.cshtml">
-      <publishTime>06/01/2015 08:55:46</publishTime>
+      <publishTime>06/09/2015 15:34:43</publishTime>
     </File>
     <File Include="Areas/HelpPage/Views/Shared/_Layout.cshtml">
       <publishTime>06/01/2015 08:55:46</publishTime>
@@ -77,6 +77,9 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="bin/CCG.dbEntity.ECN.dll">
       <publishTime>06/08/2015 14:29:50</publishTime>
+    </File>
+    <File Include="bin/CCG.WebAPI.Core.dll">
+      <publishTime>06/09/2015 15:35:41</publishTime>
     </File>
     <File Include="bin/CCG.WebAPI.ECN.dll">
       <publishTime>06/09/2015 09:23:24</publishTime>
@@ -3181,7 +3184,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/01/2015 08:58:24</publishTime>
     </File>
     <File Include="Global.asax">
-      <publishTime>06/01/2015 08:51:51</publishTime>
+      <publishTime>06/09/2015 15:33:18</publishTime>
     </File>
     <File Include="Icon.png">
       <publishTime>06/01/2015 08:58:24</publishTime>

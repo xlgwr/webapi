@@ -4,9 +4,9 @@ using System.Linq;
 using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartup(typeof(CCG.WebAPI.ECN.Startup))]
+[assembly: OwinStartup(typeof(CCG.WebAPI.Core.Startup))]
 
-namespace CCG.WebAPI.ECN
+namespace CCG.WebAPI.Core
 {
     public partial class Startup
     {

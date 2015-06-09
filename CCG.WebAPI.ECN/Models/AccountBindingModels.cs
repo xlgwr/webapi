@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using Newtonsoft.Json;
 
-namespace CCG.WebAPI.ECN.Models
+namespace CCG.WebAPI.Core.Models
 {
     // Models used as parameters to AccountController actions.
 

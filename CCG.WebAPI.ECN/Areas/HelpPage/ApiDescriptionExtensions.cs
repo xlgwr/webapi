@@ -3,7 +3,7 @@ using System.Text;
 using System.Web;
 using System.Web.Http.Description;
 
-namespace CCG.WebAPI.ECN.Areas.HelpPage
+namespace CCG.WebAPI.Core.Areas.HelpPage
 {
     public static class ApiDescriptionExtensions
     {

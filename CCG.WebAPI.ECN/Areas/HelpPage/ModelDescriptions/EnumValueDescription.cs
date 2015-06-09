@@ -1,4 +1,4 @@
-namespace CCG.WebAPI.ECN.Areas.HelpPage.ModelDescriptions
+namespace CCG.WebAPI.Core.Areas.HelpPage.ModelDescriptions
 {
     public class EnumValueDescription
     {

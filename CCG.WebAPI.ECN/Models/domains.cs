@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
-namespace CCG.WebAPI.ECN.Models
+namespace CCG.WebAPI.Core.Models
 {
     public partial class domains
     {

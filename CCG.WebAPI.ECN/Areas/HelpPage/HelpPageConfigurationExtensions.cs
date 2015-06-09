@@ -11,10 +11,10 @@ using System.Net.Http.Headers;
 using System.Web.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.Description;
-using CCG.WebAPI.ECN.Areas.HelpPage.ModelDescriptions;
-using CCG.WebAPI.ECN.Areas.HelpPage.Models;
+using CCG.WebAPI.Core.Areas.HelpPage.ModelDescriptions;
+using CCG.WebAPI.Core.Areas.HelpPage.Models;
 
-namespace CCG.WebAPI.ECN.Areas.HelpPage
+namespace CCG.WebAPI.Core.Areas.HelpPage
 {
     public static class HelpPageConfigurationExtensions
     {

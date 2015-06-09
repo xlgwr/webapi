@@ -1,6 +1,6 @@
 using System.Collections.ObjectModel;
 
-namespace CCG.WebAPI.ECN.Areas.HelpPage.ModelDescriptions
+namespace CCG.WebAPI.Core.Areas.HelpPage.ModelDescriptions
 {
     public class ComplexTypeModelDescription : ModelDescription
     {

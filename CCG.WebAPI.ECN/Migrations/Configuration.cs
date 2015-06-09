@@ -1,19 +1,19 @@
-namespace CCG.WebAPI.ECN.Migrations
+namespace CCG.WebAPI.Core.Migrations
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
-    using CCG.WebAPI.ECN.Models;
+    using CCG.WebAPI.Core.Models;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<CCG.WebAPI.ECN.Models.ApplicationDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<CCG.WebAPI.Core.Models.ApplicationDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(CCG.WebAPI.ECN.Models.ApplicationDbContext context)
+        protected override void Seed(CCG.WebAPI.Core.Models.ApplicationDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 

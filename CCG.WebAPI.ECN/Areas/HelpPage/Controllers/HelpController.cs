@@ -1,10 +1,10 @@
 using System;
 using System.Web.Http;
 using System.Web.Mvc;
-using CCG.WebAPI.ECN.Areas.HelpPage.ModelDescriptions;
-using CCG.WebAPI.ECN.Areas.HelpPage.Models;
+using CCG.WebAPI.Core.Areas.HelpPage.ModelDescriptions;
+using CCG.WebAPI.Core.Areas.HelpPage.Models;
 
-namespace CCG.WebAPI.ECN.Areas.HelpPage.Controllers
+namespace CCG.WebAPI.Core.Areas.HelpPage.Controllers
 {
     /// <summary>
     /// The controller that will handle requests for the help page.

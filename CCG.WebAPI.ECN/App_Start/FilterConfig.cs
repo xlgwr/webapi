@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace CCG.WebAPI.ECN
+namespace CCG.WebAPI.Core
 {
     public class FilterConfig
     {

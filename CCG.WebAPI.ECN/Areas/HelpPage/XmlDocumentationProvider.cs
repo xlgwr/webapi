@@ -5,9 +5,9 @@ using System.Reflection;
 using System.Web.Http.Controllers;
 using System.Web.Http.Description;
 using System.Xml.XPath;
-using CCG.WebAPI.ECN.Areas.HelpPage.ModelDescriptions;
+using CCG.WebAPI.Core.Areas.HelpPage.ModelDescriptions;
 
-namespace CCG.WebAPI.ECN.Areas.HelpPage
+namespace CCG.WebAPI.Core.Areas.HelpPage
 {
     /// <summary>
     /// A custom <see cref="IDocumentationProvider"/> that reads the API documentation from an XML documentation file.

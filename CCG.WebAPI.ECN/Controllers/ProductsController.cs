@@ -5,9 +5,9 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-using CCG.WebAPI.ECN.Models;
+using CCG.WebAPI.Core.Models;
 
-namespace CCG.WebAPI.ECN.Controllers
+namespace CCG.WebAPI.Core.Controllers
 {
     public class ProductsController : ApiController
     {

@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Linq;
 using System.Reflection;
 
-namespace CCG.WebAPI.ECN.Areas.HelpPage.ModelDescriptions
+namespace CCG.WebAPI.Core.Areas.HelpPage.ModelDescriptions
 {
     internal static class ModelNameHelper
     {

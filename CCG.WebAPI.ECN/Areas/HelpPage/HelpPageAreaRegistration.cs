@@ -1,7 +1,7 @@
 using System.Web.Http;
 using System.Web.Mvc;
 
-namespace CCG.WebAPI.ECN.Areas.HelpPage
+namespace CCG.WebAPI.Core.Areas.HelpPage
 {
     public class HelpPageAreaRegistration : AreaRegistration
     {

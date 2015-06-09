@@ -5,7 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace CCG.WebAPI.ECN.Controllers
+namespace CCG.WebAPI.Core.Controllers
 {
     [Authorize]
     public class ValuesController : ApiController

@@ -7,7 +7,7 @@ using System.Web.Http.Cors;
 using Microsoft.Owin.Security.OAuth;
 using Newtonsoft.Json.Serialization;
 
-namespace CCG.WebAPI.ECN
+namespace CCG.WebAPI.Core
 {
     public static class WebApiConfig
     {

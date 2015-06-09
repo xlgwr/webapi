@@ -5,7 +5,7 @@ using System.Web;
 
 using System.DirectoryServices;
 
-namespace CCG.WebAPI.ECN.Models
+namespace CCG.WebAPI.Core.Models
 {
     #region demo test
     //    string username = "jason";

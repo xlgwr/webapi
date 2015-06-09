@@ -1,7 +1,7 @@
 using System;
 using System.Reflection;
 
-namespace CCG.WebAPI.ECN.Areas.HelpPage.ModelDescriptions
+namespace CCG.WebAPI.Core.Areas.HelpPage.ModelDescriptions
 {
     public interface IModelDocumentationProvider
     {

@@ -1,4 +1,4 @@
-namespace CCG.WebAPI.ECN.Areas.HelpPage
+namespace CCG.WebAPI.Core.Areas.HelpPage
 {
     /// <summary>
     /// Indicates whether the sample is used for request or response

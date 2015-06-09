@@ -11,12 +11,12 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
-using CCG.WebAPI.ECN.Models;
-using CCG.WebAPI.ECN.Providers;
-using CCG.WebAPI.ECN.Results;
+using CCG.WebAPI.Core.Models;
+using CCG.WebAPI.Core.Providers;
+using CCG.WebAPI.Core.Results;
 using System.Threading.Tasks;
 
-namespace CCG.WebAPI.ECN.Controllers
+namespace CCG.WebAPI.Core.Controllers
 {
     [RoutePrefix("api/domains")]
     public class DomainController : ApiController

@@ -10,7 +10,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Web.Http.Results;
 
-namespace CCG.WebAPI.ECN.helper
+namespace CCG.WebAPI.Core.helper
 {
     public class Auth : FilterAttribute,  IAuthenticationFilter, IActionFilter
     {

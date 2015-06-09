@@ -7,7 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Http;
 
-namespace CCG.WebAPI.ECN.Results
+namespace CCG.WebAPI.Core.Results
 {
     public class ChallengeResult : IHttpActionResult
     {

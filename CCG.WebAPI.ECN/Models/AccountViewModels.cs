@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace CCG.WebAPI.ECN.Models
+namespace CCG.WebAPI.Core.Models
 {
     // Models returned by AccountController actions.
 

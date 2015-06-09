@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace CCG.WebAPI.ECN.Models
+namespace CCG.WebAPI.Core.Models
 {
     public class Product
     {

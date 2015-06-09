@@ -9,9 +9,9 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
-using CCG.WebAPI.ECN.Models;
+using CCG.WebAPI.Core.Models;
 
-namespace CCG.WebAPI.ECN.Providers
+namespace CCG.WebAPI.Core.Providers
 {
     public class ApplicationOAuthProvider : OAuthAuthorizationServerProvider
     {
