@@ -3247,7 +3247,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/08/2015 16:05:09</publishTime>
     </File>
     <File Include="Scripts/me/init.js">
-      <publishTime>06/09/2015 15:04:08</publishTime>
+      <publishTime>06/09/2015 15:08:28</publishTime>
     </File>
     <File Include="Scripts/me/initMessage.js">
       <publishTime>06/09/2015 14:11:52</publishTime>

@@ -1,4 +1,11 @@
 ﻿/* File Created: May 5, 2015 */
+//remote host set
+//gobal define                                          
+var rooturl = '';   
+//var remoteHost = 'http://127.0.0.1:8081/';     //for develop test
+var remoteHost = 'http://127.0.0.1/webapiECNDev/';
+
+//define users all site page
 var users = {
     domain: '',
     dept: '',
@@ -7,13 +14,7 @@ var users = {
     userrole: '',
     rd_msg: ''
 };
-//remote host set
-//gobal define                                          
-var rooturl = '';
-
-//var remoteHost = 'http://127.0.0.1:8081/';     //for develop test
-var remoteHost = 'http://127.0.0.1/webapiECNDev/';
-
+//defin auth.js
 var auth = {
     apiGetUserInfoUrl: remoteHost + 'api/Account/UserInfo',
     headers: {},
