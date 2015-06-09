@@ -3238,7 +3238,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/08/2015 17:28:45</publishTime>
     </File>
     <File Include="Scripts/me/index2Avalon.js">
-      <publishTime>06/09/2015 08:42:31</publishTime>
+      <publishTime>06/09/2015 10:44:02</publishTime>
     </File>
     <File Include="Scripts/me/indexAvalon.js">
       <publishTime>06/08/2015 16:05:38</publishTime>
@@ -3247,7 +3247,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/08/2015 16:05:09</publishTime>
     </File>
     <File Include="Scripts/me/init.js">
-      <publishTime>06/09/2015 10:00:49</publishTime>
+      <publishTime>06/09/2015 10:06:20</publishTime>
     </File>
     <File Include="Scripts/me/initMessage.js">
       <publishTime>06/09/2015 09:01:37</publishTime>
@@ -3298,7 +3298,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/08/2015 17:01:58</publishTime>
     </File>
     <File Include="Views/Home/Login.cshtml">
-      <publishTime>06/09/2015 10:02:40</publishTime>
+      <publishTime>06/09/2015 10:49:51</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>06/01/2015 08:51:51</publishTime>
