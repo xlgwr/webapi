@@ -28,7 +28,7 @@
         $(this).keydown(function (e) {
 
            
-            avalon.log($(this).hasClass('hide'));
+            //avalon.log($(this).hasClass('hide'));
 
             avalon.vmodels.loginController.messagecss = "hidden";
             avalon.vmodels.loginController.message = " ";

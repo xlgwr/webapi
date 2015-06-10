@@ -1,9 +1,10 @@
 ﻿/* File Created: May 5, 2015 */
 //remote host set
 //gobal define                                          
-var rooturl = '/';
-var remoteHost = 'http://127.0.0.1:8081/';     //for develop test
-//var remoteHost = 'http://127.0.0.1/webapiECNDev/';
+var rooturl = '/';                       
+//var remoteHost = 'http://127.0.0.1:8081/';     //for develop test
+//var remoteHost = 'http://127.0.0.1/webapicore/'; 
+var remoteHost = 'http://172.16.122.61/webapicore/';
 
 //define users all site page
 var users = {
