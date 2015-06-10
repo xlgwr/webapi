@@ -1,35 +1,35 @@
 ﻿//init tokenkey
 var gettokenKey = GetQueryString('tokenkey');
 if (gettokenKey) {
-    sessionStorage.setItem(auth.tokenKey, gettokenKey);
+    sessionStorage.setItem(top.auth.tokenKey, gettokenKey);
 }
 
 $(function () {
     //init top basegody define
-    auth.rooturl = $("#baseBody").attr('rooturl');
+    top.auth.rooturl = $("#baseBody").attr('rooturl');
     //url to loginin url add curr url
-    auth.setLoginhref = auth.remoteLoginUrl + "?redirectUrl=" + auth.topcurrUrl + "&domain=" + top.users.domain + "&userid=" + top.users.userid;
+    top.auth.setLoginhref = top.auth.remoteLoginUrl + "?redirectUrl=" + top.auth.topcurrUrl + "&domain=" + top.users.domain + "&userid=" + top.users.userid;
 
     //get tokenkey
-    var token = sessionStorage.getItem(auth.tokenKey);
+    var token = sessionStorage.getItem(top.auth.tokenKey);
 
     avalon.log(token);
 
     if (token) {
-        auth.headers.Authorization = 'Bearer ' + token;
+        top.auth.headers.Authorization = 'Bearer ' + token;
     } else {
         // avalon.log(sethref);
-        top.location.href = encodeURI(auth.setLoginhref);
+        top.location.href = encodeURI(top.auth.setLoginhref);
 
     }
     avalon.log("auth:");
-    avalon.log(auth);
+    avalon.log(top.auth);
     avalon.log(top.users);
 
     $.ajax({
         type: 'GET',
-        url: encodeURI(auth.apiGetUserInfoUrl),
-        headers: auth.headers
+        url: encodeURI(top.auth.apiGetUserInfoUrl),
+        headers: top.auth.headers
     }).done(function (data) {
         avalon.log("auth:token is success.");
     }).error(showerrAuth);
@@ -41,10 +41,15 @@ function showerrAuth(err) {
     //avalon.log(this);
     avalon.log(err);
 
+    //alert(err.status);
+
     switch (err.status) {
+        case 0:
+            return;
+            break;
         case 401:
             avalon.log(messages.n5);
-            top.location.href = encodeURI(auth.setLoginhref + "&msg=" + messages.n5);
+            top.location.href = encodeURI(top.auth.setLoginhref + "&msg=" + messages.n5);
             break;
         case 404:
             avalon.log("this URL:" + this.url + " was not found.Please check that.");
@@ -54,7 +59,8 @@ function showerrAuth(err) {
 
     }
     //{Message:'',responseText:[],responseJSON}
-    var vdata = err.responseJSON//JSON.parse(err.responseText);
+
+    var vdata = err.responseJSON;//JSON.parse(err.responseText);//   
 
     //avalon.log(vdata);
 

@@ -44,6 +44,7 @@ namespace CCG.WebAPI.Core
                         "~/Content/ligerUI/skins/Gray2014/css/all.css",
                         "~/Content/ligerUIme.css"));
             //add other
+            
             //1.11.X   
             //base js
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
@@ -54,6 +55,7 @@ namespace CCG.WebAPI.Core
 
             bundles.Add(new ScriptBundle("~/bundles/ligerUI").Include(
                         "~/Content/ligerUI/js/ligerui.min.js"));
+
 
             //use define
 

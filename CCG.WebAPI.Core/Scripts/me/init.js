@@ -1,7 +1,7 @@
 ﻿/* File Created: May 5, 2015 */
 //remote host set
 //gobal define                                          
-var rooturl = '/';                       
+var rooturl = '/';
 //var remoteHost = 'http://127.0.0.1:8081/';     //for develop test
 //var remoteHost = 'http://127.0.0.1/webapicore/'; 
 var remoteHost = 'http://172.16.122.61/webapicore/';
@@ -18,7 +18,7 @@ var users = {
 //defin auth.js
 var auth = {
     apiGetUserInfoUrl: remoteHost + 'api/Account/UserInfo',
-    headers: {},
+    headers: { Authorization: '' },
     remoteLoginUrl: remoteHost + 'Home/Login/',
     setLoginhref: '',
     tokenKey: 'accessToken',

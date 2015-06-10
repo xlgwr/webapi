@@ -113,6 +113,7 @@
                 } else {
                     if (login.arrDomains[0]) {
                         login.domain = login.arrDomains[0].displayname;
+                        $('#domain').focus();
                     } 
                 }
                 //self.result(data);

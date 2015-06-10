@@ -4,7 +4,9 @@
   "dependencies": {
     "avalon": "~1.4.3",
     "jquery": "1.11.x",
-    "normalize.css": "~3.0.3"
+    "normalize.css": "~3.0.3",
+    "json2": "*",
+    "html5shiv": "~3.7.2"
   },
   "authors": [
     "'xlgwr' <xlgwr@163.com>"
