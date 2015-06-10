@@ -16,11 +16,16 @@
         messageErrcss: 'hidden',
         rooturl: rooturl,
         iloginApi: loginApi,
-        //duplex      
+        //ms-duplex      
         domain: top.users.domain,
         userid: top.users.userid,
         password: '',
         confirmPassword: '',
+        //watch      
+        mailDomain: '',
+        //ms-repeat
+        //domains{Id: 5,displayname: "CCG",domain: "CCG.NET",isused: 0,mailDomain: "cclmotors.com",remark: "CCG.NET"}
+        arrDomains: {},
         //check validate
         checkbase: function (prefix) {
             login.messagecss = "show alert-info";
@@ -55,6 +60,38 @@
             }).fail(showerr);
 
         },
+        initDomain: function (prefix) {
+
+            var tmpurl = rooturl + login.iloginApi.apiUriDomain;
+            $.ajax({
+                type: 'GET',
+                url: tmpurl,
+                headers: headers
+            }).done(function (data) {
+                //avalon.log(data);
+                login.arrDomains = data;
+
+                //init domain maildomain
+                if (login.domain) {
+                    for (var i = 0; i < login.arrDomains.length; i++) {
+                        var item = login.arrDomains[i];
+                        //avalon.log(item);
+                        //avalon.log(item.displayname); 
+                        if (item.displayname === login.domain) {
+
+                            login.mailDomain = item.mailDomain;
+                            //avalon.log("true:"+login.mailDomain)
+                            $('#userid').focus();
+                            break;
+                        } else {
+                            login.mailDomain = '';
+                            $('#domain').focus();
+                        }
+                    }
+                }
+                //self.result(data);
+            }).fail(showerr);
+        },
         onRegister: function (prefix, currbtn) {
 
             if (!login.checkbase(prefix)) { return; }
@@ -62,8 +99,17 @@
             var oldtime = new Date();
             currbtn.disabled = true;
 
+            //check userid is't email
+            var tmpEmail = login.userid;
+            if (!top.validateMe.email(login.userid)) {
+                tmpEmail = login.userid + '@' + mailApi.mailDomain;
+                if (login.mailDomain) {
+                    tmpEmail = login.userid + '@' + login.mailDomain;
+                }
+            }
+
             var data = {
-                Email: login.userid,
+                Email: tmpEmail,
                 Password: login.password,
                 ConfirmPassword: login.confirmPassword
             };
@@ -102,9 +148,16 @@
             var oldtime = new Date();
             currbtn.disabled = true;
 
+            var tmpEmail = login.userid;
+            if (!top.validateMe.email(login.userid)) {
+                tmpEmail = login.userid + '@' + mailApi.mailDomain;
+                if (login.mailDomain) {
+                    tmpEmail = login.userid + '@' + login.mailDomain;
+                }
+            }
             var data = {
                 grant_type: 'password',
-                username: login.userid,
+                username: tmpEmail,
                 password: login.password
             };
 
@@ -162,12 +215,23 @@
         avalon.log("加载vm3.");
         avalon.scan();
     });
-    //login.$watch('password', function (a, b) {
-    //    avalon.log(a + "," + b);
-    //    if (a) {
-    //        $('#password').focus();
-    //    }
-    //});
+    login.$watch('domain', function (value, oldValue) {
+        //avalon.log(value);   
+        if (value) {
+            for (var i = 0; i < login.arrDomains.length; i++) {
+                var item = login.arrDomains[i];
+                //avalon.log(item);
+                //avalon.log(item.displayname); 
+                if (item.displayname === value) {
+                    login.mailDomain = item.mailDomain;
+                    //avalon.log("true:"+login.mailDomain)
+                    break;
+                } else {
+                    login.mailDomain = '';
+                }
+            }
+        }
+    });
     //login.$watch('confirmPassword', function (a, b) {
     //    avalon.log(a + "," + b);
     //    if (a) {
@@ -188,6 +252,8 @@
     //$('#password').focus();
     //start code    
     //avalon.log(avalon.vmodels);
+    login.initDomain("Init domain");
+
 
 });
 

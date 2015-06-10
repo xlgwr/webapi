@@ -1,8 +1,8 @@
 ﻿$(function () {
     //$('#checkPasswd').focus();
 
-    $('input[type="text"],input[type="password"]').each(function () {
-        var $input = $('input[type="text"],input[type="password"]');
+    $('input[type="text"],input[type="password"],select').each(function () {
+        var $input = $('input[type="text"],input[type="password"],select');
 
         var dindex = $input.index(this);
 

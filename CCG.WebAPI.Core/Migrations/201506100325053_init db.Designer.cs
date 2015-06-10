@@ -7,13 +7,13 @@ namespace CCG.WebAPI.Core.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class adddomain : IMigrationMetadata
+    public sealed partial class initdb : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(adddomain));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(initdb));
         
         string IMigrationMetadata.Id
         {
-            get { return "201506020154374_adddomain"; }
+            get { return "201506100325053_init db"; }
         }
         
         string IMigrationMetadata.Source

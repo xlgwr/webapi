@@ -42,12 +42,25 @@ namespace CCG.WebAPI.Core.Controllers
                 _domainManager = value;
             }
         }
-        
+        [AllowAnonymous]
         [Route("getDomains")]
-        public IQueryable<domains> getDomains()
+        public async Task<ICollection<domains>> getDomains()
         {
-            return domainManager.domains;
+            var models = Task<ICollection<domains>>.Run(() =>
+            {
+                return domainManager.domains.ToList();
+            });
+            return await models;
 
+        }
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && _domainManager != null)
+            {
+                _domainManager.Dispose();
+                _domainManager = null;
+            }
+            base.Dispose(disposing);
         }
     }
 }

@@ -236,13 +236,17 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="helper\Auth.cs" />
-    <Compile Include="Migrations\201506010311517_initAccount.cs" />
-    <Compile Include="Migrations\201506010311517_initAccount.Designer.cs">
-      <DependentUpon>201506010311517_initAccount.cs</DependentUpon>
+    <Compile Include="Migrations\201506100325053_init db.cs" />
+    <Compile Include="Migrations\201506100325053_init db.Designer.cs">
+      <DependentUpon>201506100325053_init db.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201506020154374_adddomain.cs" />
-    <Compile Include="Migrations\201506020154374_adddomain.Designer.cs">
-      <DependentUpon>201506020154374_adddomain.cs</DependentUpon>
+    <Compile Include="Migrations\201506100330487_add maildomain for domain.cs" />
+    <Compile Include="Migrations\201506100330487_add maildomain for domain.Designer.cs">
+      <DependentUpon>201506100330487_add maildomain for domain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201506100530166_addindexfordomains.cs" />
+    <Compile Include="Migrations\201506100530166_addindexfordomains.Designer.cs">
+      <DependentUpon>201506100530166_addindexfordomains.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
@@ -250,7 +254,8 @@
     <Compile Include="Models\AD.cs" />
     <Compile Include="Models\domains.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\mailBindingModels.cs" />
+    <Compile Include="Models\mailItem.cs" />
+    <Compile Include="Models\mails.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
@@ -907,18 +912,21 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201506010311517_initAccount.resx">
-      <DependentUpon>201506010311517_initAccount.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506020154374_adddomain.resx">
-      <DependentUpon>201506020154374_adddomain.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\CCG.dbEntity.ECN\CCG.dbEntity.ECN.csproj">
       <Project>{f31a0f48-039d-4fb5-a625-ed3da39b2787}</Project>
       <Name>CCG.dbEntity.ECN</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201506100325053_init db.resx">
+      <DependentUpon>201506100325053_init db.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506100330487_add maildomain for domain.resx">
+      <DependentUpon>201506100330487_add maildomain for domain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506100530166_addindexfordomains.resx">
+      <DependentUpon>201506100530166_addindexfordomains.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

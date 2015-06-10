@@ -27,10 +27,18 @@ namespace CCG.WebAPI.Core.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+            context.Database.ExecuteSqlCommand("delete from [domains]");
 
             context.domains.AddOrUpdate(
-                new domains { Id = 1, domain = "CCG.NET", displayname = "CCG", isused = 0, remark = "CCG.NET" }
-                );
+                new domains { domain = "CCAL.NET", displayname = "CCAL", isused = 0, remark = "CCAL.NET", mailDomain = "cclmotors.com" },
+                new domains { domain = "CCG.NET", displayname = "CCG", isused = 0, remark = "CCG.NET", mailDomain = "cclmotors.com" },
+                new domains { domain = "CML.NET", displayname = "CML", isused = 0, remark = "CML.NET", mailDomain = "cclmotors.com" },
+                new domains { domain = "CCL.NET", displayname = "CCL", isused = 0, remark = "CCL.NET", mailDomain = "cclmotors.com" },
+                new domains { domain = "CCM.NET", displayname = "CCM", isused = 0, remark = "CCM.NET", mailDomain = "cclmotors.com" },
+                new domains { domain = "CIM.NET", displayname = "CIM", isused = 0, remark = "CIM.NET", mailDomain = "cclmotors.com" },
+                new domains { domain = "CCSZ.NET", displayname = "CCSZ", isused = 0, remark = "CCSZ.NET", mailDomain = "cclmotors.com" },
+                new domains { domain = "CCJX.NET", displayname = "CCJX", isused = 0, remark = "CCJX.NET", mailDomain = "cclmotors.com" }
+            );
         }
     }
 }

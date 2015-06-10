@@ -3,10 +3,54 @@ namespace CCG.WebAPI.Core.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class initAccount : DbMigration
+    public partial class initdb : DbMigration
     {
         public override void Up()
         {
+            CreateTable(
+                "dbo.domains",
+                c => new
+                    {
+                        Id = c.Long(nullable: false, identity: true),
+                        domain = c.String(nullable: false, maxLength: 128),
+                        displayname = c.String(maxLength: 128),
+                        remark = c.String(unicode: false, storeType: "text"),
+                        isused = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => new { t.Id, t.domain });
+            
+            CreateTable(
+                "dbo.mailItems",
+                c => new
+                    {
+                        Id = c.Long(nullable: false, identity: true),
+                        smtpServer = c.String(),
+                        portNumber = c.Int(nullable: false),
+                        mailname = c.String(),
+                        mailpasswd = c.String(),
+                        mailFrom = c.String(nullable: false),
+                        mailSubject = c.String(nullable: false),
+                        mailContent = c.String(),
+                        mailpriority = c.Int(nullable: false),
+                        isAnonymous = c.Boolean(nullable: false),
+                        mails_Id = c.Long(),
+                        mails_domain = c.String(maxLength: 128),
+                        mails_UserName = c.String(maxLength: 128),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.mails", t => new { t.mails_Id, t.mails_domain, t.mails_UserName })
+                .Index(t => new { t.mails_Id, t.mails_domain, t.mails_UserName });
+            
+            CreateTable(
+                "dbo.mails",
+                c => new
+                    {
+                        Id = c.Long(nullable: false, identity: true),
+                        domain = c.String(nullable: false, maxLength: 128),
+                        UserName = c.String(nullable: false, maxLength: 128),
+                    })
+                .PrimaryKey(t => new { t.Id, t.domain, t.UserName });
+            
             CreateTable(
                 "dbo.AspNetRoles",
                 c => new
@@ -83,17 +127,22 @@ namespace CCG.WebAPI.Core.Migrations
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
+            DropForeignKey("dbo.mailItems", new[] { "mails_Id", "mails_domain", "mails_UserName" }, "dbo.mails");
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
+            DropIndex("dbo.mailItems", new[] { "mails_Id", "mails_domain", "mails_UserName" });
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
             DropTable("dbo.AspNetUsers");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetRoles");
+            DropTable("dbo.mails");
+            DropTable("dbo.mailItems");
+            DropTable("dbo.domains");
         }
     }
 }

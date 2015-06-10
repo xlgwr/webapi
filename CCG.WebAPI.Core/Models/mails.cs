@@ -5,9 +5,10 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
+
 namespace CCG.WebAPI.Core.Models
 {
-    public partial class domains
+    public class mails
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column(Order = 0)]
@@ -15,20 +16,15 @@ namespace CCG.WebAPI.Core.Models
 
         [Key]
         [Column(Order = 1)]
-        [Index(IsUnique = true)] 
         [StringLength(128)]
         public string domain { get; set; }
 
-
+        [Key]
+        [Column(Order = 2)]
         [StringLength(128)]
-        public string displayname { get; set; }
-        public string mailDomain { get; set; }
+        public string UserName { get; set; }
 
-        [Column(TypeName = "text")]
-        public string remark { get; set; }
-
-        public int isused { get; set; }
-
+        public virtual ICollection<mailItem> mailItems { get; set; }
 
     }
 }

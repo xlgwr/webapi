@@ -33,7 +33,7 @@ namespace CCG.WebAPI.Core.Controllers
         // POST api/Mail/SendEMail
         [AllowAnonymous]
         [Route("SendEMail")]
-        public async Task<IHttpActionResult> SendEMail(mailBindingModels model)
+        public async Task<IHttpActionResult> SendEMail(mailItem model)
         {
             if (!ModelState.IsValid)
             {
@@ -53,7 +53,7 @@ namespace CCG.WebAPI.Core.Controllers
         /// <param name="mailContent">邮箱内容</param>
         /// Normal = 0,Low = 1,High = 2, MailPriority
         /// <returns>返回发送邮箱的结果</returns>
-        public async Task<string> SendEmailHelpers(mailBindingModels model)
+        public async Task<string> SendEmailHelpers(mailItem model)
         {
             // 设置发送方的邮件信息,例如使用
             string smtpServer = _smtpClientHost; //SMTP服务器

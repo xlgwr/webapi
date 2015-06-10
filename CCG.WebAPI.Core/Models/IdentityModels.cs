@@ -30,6 +30,8 @@ namespace CCG.WebAPI.Core.Models
         /// update-database
         /// </summary>
         public virtual DbSet<domains> domains { get; set; }
+        public virtual DbSet<mailItem> mailItem { get; set; }
+        public virtual DbSet<mails> mails { get; set; }
 
         public static ApplicationDbContext Create()
         {

@@ -14,7 +14,9 @@
             <div class="form-group">
                 <label for="domain" class="col-sm-4 control-label text-right">Domain:</label>
                 <div class="col-sm-8">
-                    <input ms-duplex="domain" type="text" class="form-control" id="domain" placeholder="Domain" />
+                    <select ms-duplex="domain" class="form-control" id="domain" placeholder="Domain">
+                        <option ms-repeat="arrDomains" ms-attr-value="el.displayname">{{el.displayname}}</option>
+                    </select>
                 </div>
             </div>
             <div class="form-group">
@@ -36,13 +38,14 @@
                 </div>
             </div>
             <div class="row">
-
-                <div class="text-center">
+                <div class="col-xs-6 text-center">
+                    <button ms-click="onRegister('Register',this)" id="Register" type="button" class="btn btn-default">Register</button>
+                </div>
+                <div class="col-xs-6 text-center">
                     <button ms-click="onLogin('Login',this)" id="Login" type="button" class="btn btn-primary">Login</button>
                 </div>
-                @* <div class="col-xs-1">
-                        <button ms-click="onRegister('Register',this)" id="Register" type="button" class="btn btn-default">Register</button>
-                    </div>
+
+                @*
                     <div class="col-xs-4">
                         <button ms-click="onLogout('Logout',this)" id="Logout" type="button" class="btn btn-danger">Logout</button>
                     </div>*@
@@ -88,6 +91,7 @@
         ////test api post
         //var mailSet =
         // {
+        //     id:0,
         //     smtpServer: "172.16.10.25",
         //     portNumber: 25,
         //     mailname: "",

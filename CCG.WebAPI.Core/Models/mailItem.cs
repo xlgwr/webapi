@@ -1,14 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 using System.Web.Mail;
 
 namespace CCG.WebAPI.Core.Models
 {
-    public class mailBindingModels
+    public class mailItem
     {
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Column(Order = 0)]
+        public long Id { get; set; }
         public string smtpServer { get; set; }
         public int portNumber { get; set; }
 
@@ -16,6 +20,7 @@ namespace CCG.WebAPI.Core.Models
         public string mailpasswd { get; set; }
 
         [Required]
+        [DataType(DataType.EmailAddress)]
         public string mailFrom { get; set; }
         [Required]
         public string[] mailTo { get; set; }

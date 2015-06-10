@@ -7,13 +7,13 @@ namespace CCG.WebAPI.Core.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class initAccount : IMigrationMetadata
+    public sealed partial class addmaildomainfordomain : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(initAccount));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(addmaildomainfordomain));
         
         string IMigrationMetadata.Id
         {
-            get { return "201506010311517_initAccount"; }
+            get { return "201506100330487_add maildomain for domain"; }
         }
         
         string IMigrationMetadata.Source
