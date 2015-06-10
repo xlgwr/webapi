@@ -3262,13 +3262,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/10/2015 15:42:06</publishTime>
     </File>
     <File Include="Scripts/me/initMessage.js">
-      <publishTime>06/10/2015 15:50:49</publishTime>
+      <publishTime>06/10/2015 16:24:03</publishTime>
     </File>
     <File Include="Scripts/me/login1Jquery.js">
-      <publishTime>06/10/2015 16:14:12</publishTime>
+      <publishTime>06/10/2015 16:16:36</publishTime>
     </File>
     <File Include="Scripts/me/login2Avalon.js">
-      <publishTime>06/10/2015 16:07:25</publishTime>
+      <publishTime>06/10/2015 16:25:51</publishTime>
     </File>
     <File Include="Scripts/me/loginAvalon.js">
       <publishTime>06/05/2015 08:21:48</publishTime>

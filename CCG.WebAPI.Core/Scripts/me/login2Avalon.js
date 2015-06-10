@@ -109,6 +109,12 @@
                             $('#domain').focus();
                         }
                     }
+
+                } else {
+                    if (login.arrDomains[0]) {
+                        login.domain = login.arrDomains[0].displayname;
+                    }
+                    
                 }
                 //self.result(data);
             }).fail(showerr);
