@@ -12,8 +12,8 @@
         $(this).focusin(function (e) {
 
             var ival = $(this).val();
-            var placeholder = $(this).attr('placeholder');   
-           // avalon.log(ival);  
+            var placeholder = $(this).attr('placeholder');
+            // avalon.log(ival);  
             if (!ival) {
 
                 avalon.vmodels.loginController.messagecss = "show alert-warning";
@@ -21,16 +21,19 @@
 
             } else {
                 avalon.log("has contents.")
-               // avalon.vmodels.loginController.messagecss = "hidden";
-               // avalon.vmodels.loginController.message = " ";
-            }                                                                          
+                // avalon.vmodels.loginController.messagecss = "hidden";
+                // avalon.vmodels.loginController.message = " ";
+            }
         });
         $(this).keydown(function (e) {
+
+           
+            avalon.log($(this).hasClass('hide'));
 
             avalon.vmodels.loginController.messagecss = "hidden";
             avalon.vmodels.loginController.message = " ";
 
-            if (e.keyCode === 13) {
+            if (e.keyCode === 13) {                
 
                 var ival = $(this).val();
                 var placeholder = $(this).attr('placeholder');
@@ -46,11 +49,16 @@
                     //$('#checkPasswd').focus();
                     //$input.eq(0).focus();
                     $('#Login').focus();
-                } else {
+                } else {                   
 
-                    avalon.vmodels.loginController.messagecss = "show alert-warning";
-                    avalon.vmodels.loginController.message = (dindex + 1) + messages.n2 + placeholder;
-                    $input.eq(dindex + 1).focus();
+                    if (!$input.eq(dindex + 1).hasClass('hide')) {
+                        avalon.vmodels.loginController.messagecss = "show alert-warning";
+                        avalon.vmodels.loginController.message = (dindex + 1) + messages.n2 + placeholder;
+                        $input.eq(dindex + 1).focus();
+                    } else {
+                        $('#Login').focus();
+                    }
+
                 }
             }
         });

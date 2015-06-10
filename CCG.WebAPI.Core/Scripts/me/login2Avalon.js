@@ -16,6 +16,9 @@
         messageErrcss: 'hidden',
         rooturl: rooturl,
         iloginApi: loginApi,
+        //is register
+        cssRegister: 'hide',
+        cssRegisterxs: 'col-xs-12',
         //ms-duplex      
         domain: top.users.domain,
         userid: top.users.userid,
@@ -27,18 +30,31 @@
         //domains{Id: 5,displayname: "CCG",domain: "CCG.NET",isused: 0,mailDomain: "cclmotors.com",remark: "CCG.NET"}
         arrDomains: {},
         //check validate
-        checkbase: function (prefix) {
+        checkbase: function (prefix, flagRegister) {
             login.messagecss = "show alert-info";
             login.message = prefix + messages.n4;
 
-            if (!(login.domain && login.userid && login.password && login.confirmPassword)) {
+            var tmpflag = true;
+
+            if (!(login.domain && login.userid && login.password)) {
+
+                tmpflag = false;
+            }
+            if (flagRegister) {
+                if (!login.confirmPassword) {
+                    tmpflag = false;
+                }
+            }
+
+            if (!tmpflag) {
                 avalon.log(login.domain + ',' + login.userid + ',' + login.password + ',' + login.confirmPassword)
                 $('#password').focus();
                 login.messagecss = "show alert-danger";
                 login.message = prefix + messages.n3;
-                return false;
+                return tmpflag;
             }
-            return true;
+
+            return tmpflag;
         },
         init: function (prefix, currbtn) {
             var data = {
@@ -62,12 +78,17 @@
         },
         initDomain: function (prefix) {
 
+            login.messagecss = "show alert-info";
+            login.message = prefix + messages.n4;
             var tmpurl = rooturl + login.iloginApi.apiUriDomain;
             $.ajax({
                 type: 'GET',
                 url: tmpurl,
                 headers: headers
             }).done(function (data) {
+
+                login.messagecss = "show alert-success";
+                login.message = prefix + messages.n7;
                 //avalon.log(data);
                 login.arrDomains = data;
 
@@ -94,7 +115,7 @@
         },
         onRegister: function (prefix, currbtn) {
 
-            if (!login.checkbase(prefix)) { return; }
+            if (!login.checkbase(prefix, true)) { return; }
 
             var oldtime = new Date();
             currbtn.disabled = true;
@@ -143,7 +164,7 @@
         },
         onLogin: function (prefix, currbtn) {
 
-            if (!login.checkbase(prefix)) { return; }
+            if (!login.checkbase(prefix, false)) { return; }
 
             var oldtime = new Date();
             currbtn.disabled = true;
@@ -295,7 +316,10 @@ function showerr(err) {
 
     //{error:'',error_description:''}
     if (vdata.error) {
-        avalon.vmodels.loginController.message = vdata.error + "<br/>"+top.messages.n6+ "<br/>"+ vdata.error_description;
+        avalon.vmodels.loginController.cssRegister = 'show';
+        avalon.vmodels.loginController.cssRegisterxs = 'col-xs-6';
+        avalon.vmodels.loginController.message = vdata.error + "<br/>" + "1. " + vdata.error_description + "<br/>" + "2. " + top.messages.n6;
+        $('#password').focus();
     }
     //{Message:'',ModelState:[]}
     if (vdata.Message) {

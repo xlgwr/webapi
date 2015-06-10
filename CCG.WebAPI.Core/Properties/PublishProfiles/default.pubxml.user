@@ -3262,13 +3262,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/10/2015 15:42:06</publishTime>
     </File>
     <File Include="Scripts/me/initMessage.js">
-      <publishTime>06/09/2015 14:11:52</publishTime>
+      <publishTime>06/10/2015 15:50:49</publishTime>
     </File>
     <File Include="Scripts/me/login1Jquery.js">
-      <publishTime>06/10/2015 15:09:06</publishTime>
+      <publishTime>06/10/2015 16:14:12</publishTime>
     </File>
     <File Include="Scripts/me/login2Avalon.js">
-      <publishTime>06/10/2015 15:41:43</publishTime>
+      <publishTime>06/10/2015 16:07:25</publishTime>
     </File>
     <File Include="Scripts/me/loginAvalon.js">
       <publishTime>06/05/2015 08:21:48</publishTime>
@@ -3310,7 +3310,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/09/2015 14:31:47</publishTime>
     </File>
     <File Include="Views/Home/Login.cshtml">
-      <publishTime>06/10/2015 14:27:56</publishTime>
+      <publishTime>06/10/2015 16:09:27</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>06/01/2015 08:51:51</publishTime>
