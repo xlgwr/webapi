@@ -295,7 +295,7 @@ function showerr(err) {
 
     //{error:'',error_description:''}
     if (vdata.error) {
-        avalon.vmodels.loginController.message = vdata.error + "<br/>" + vdata.error_description;
+        avalon.vmodels.loginController.message = vdata.error + "<br/>"+top.messages.n6+ "<br/>"+ vdata.error_description;
     }
     //{Message:'',ModelState:[]}
     if (vdata.Message) {
