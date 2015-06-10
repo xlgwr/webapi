@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using System.Web.Mail;
@@ -14,10 +15,13 @@ namespace CCG.WebAPI.Core.Models
         public string mailname { get; set; }
         public string mailpasswd { get; set; }
 
+        [Required]
         public string mailFrom { get; set; }
-        public string mailTo { get; set; }
-        public string mailCC { get; set; }
-
+        [Required]
+        public string[] mailTo { get; set; }
+        public string[] mailCC { get; set; }
+        public string[] mailBCC { get; set; }
+        [Required]
         public string mailSubject { get; set; }
         public string mailContent { get; set; }
 

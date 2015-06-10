@@ -68,9 +68,10 @@
         }
         avalon.log("Login:html.62");
         avalon.log(headers);
-
         //test api
-        @*var tmpurl ="@baseUrl" +"api/values/1";
+
+        /*****
+        var tmpurl ="baseUrl" +"api/values/1";
         $.ajax({
             type: 'GET',
             url: tmpurl,
@@ -81,6 +82,22 @@
         }).fail(function (err) {
             //showError
             avalon.log(err);
-        });*@
+        });
+        *****/
+
+        //test api post
+        $.ajax({
+            type: 'POST',
+            url: top.mailApi.rooturl + top.mailApi.apiUrl,
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify(top.mailSet)
+        }).done(function (data) {
+            avalon.log("Mail Done!");
+            avalon.log(data);
+        }).fail(function (err) {
+            //showError
+            avalon.log(err);
+        });
+
     </script>
 }

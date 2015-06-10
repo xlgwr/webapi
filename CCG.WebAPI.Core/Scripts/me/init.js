@@ -1,7 +1,7 @@
 ﻿/* File Created: May 5, 2015 */
 //remote host set
 //gobal define                                          
-var rooturl = '';   
+var rooturl = '/';
 //var remoteHost = 'http://127.0.0.1:8081/';     //for develop test
 var remoteHost = 'http://127.0.0.1/webapiECNDev/';
 
@@ -33,7 +33,26 @@ var loginApi = {
     rooturl: rooturl,
     redirectUrl: ''
 }
-
+var mailApi = {
+    apiUrl: 'api/Mail',
+    rooturl: rooturl
+}
+//mail set
+var mailSet =
+ {
+     smtpServer: "172.16.10.25",
+     portNumber: 25,
+     mailname: "",
+     mailpasswd: "",
+     mailFrom: "notification@ccg.net",  //;notification@ccg.net
+     mailTo: ["xielg@cclmotors.com", "test@cclmotors.com"],
+     mailCC: ["xielg@cclmotors.com", "test@cclmotors.com"],
+     mailBCC: ["xielg@cclmotors.com"],
+     mailSubject: "test mail",
+     mailContent: "test mail",
+     mailpriority: 0,
+     isAnonymous: true
+ };
 //init users                        
 users.domain = GetQueryString('domain') || '';
 users.userid = GetQueryString('userid') || '';
