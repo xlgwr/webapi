@@ -44,7 +44,7 @@ var mailSet =
      portNumber: 25,
      mailname: "",
      mailpasswd: "",
-     mailFrom: "notification@ccg.net",  //;notification@ccg.net
+     mailFrom: "notification@ccg.net", 
      mailTo: ["xielg@cclmotors.com", "test@cclmotors.com"],
      mailCC: ["xielg@cclmotors.com", "test@cclmotors.com"],
      mailBCC: ["xielg@cclmotors.com"],

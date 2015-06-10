@@ -39,8 +39,9 @@ namespace CCG.WebAPI.Core.Controllers
             {
                 return BadRequest(ModelState);
             }
-            var sendflag = await SendEmailHelpers(model);
-            return Ok(model);
+            var sendflag = SendEmailHelpers(model);
+
+            return Ok(await sendflag);
         }
         #region Helpers
         /// <summary>
@@ -158,7 +159,7 @@ namespace CCG.WebAPI.Core.Controllers
             disposition.ReadDate = System.IO.File.GetLastAccessTime(file);
             // Add the file attachment to this e-mail message.
             mailMessage.Attachments.Add(data);
-        }       
+        }
         #endregion
     }
 }

@@ -85,19 +85,35 @@
         });
         *****/
 
-        //test api post
-        $.ajax({
-            type: 'POST',
-            url: top.mailApi.rooturl + top.mailApi.apiUrl,
-            contentType: 'application/json; charset=utf-8',
-            data: JSON.stringify(top.mailSet)
-        }).done(function (data) {
-            avalon.log("Mail Done!");
-            avalon.log(data);
-        }).fail(function (err) {
-            //showError
-            avalon.log(err);
-        });
+        ////test api post
+        //var mailSet =
+        // {
+        //     smtpServer: "172.16.10.25",
+        //     portNumber: 25,
+        //     mailname: "",
+        //     mailpasswd: "",
+        //     mailFrom: "notification@ccg.net",
+        //     mailTo: ["xielg@cclmotors.com", "test@cclmotors.com"],
+        //     mailCC: ["xielg@cclmotors.com", "test@cclmotors.com"],
+        //     mailBCC: ["xielg@cclmotors.com"],
+        //     mailSubject: "test mail",
+        //     mailContent: "test mail",
+        //     mailpriority: 0,
+        //     isAnonymous: true
+        // };
+        //var tmpmailapiurl = top.mailApi.rooturl + top.mailApi.apiUrl;
+        //$.ajax({
+        //    type: 'POST',
+        //    url: tmpmailapiurl,
+        //    contentType: 'application/json; charset=utf-8',
+        //    data: JSON.stringify(top.mailSet)
+        //}).done(function (data) {
+        //    avalon.log("Mail Done!");
+        //    avalon.log(data);
+        //}).fail(function (err) {
+        //    //showError
+        //    avalon.log(err);
+        //});
 
     </script>
 }
