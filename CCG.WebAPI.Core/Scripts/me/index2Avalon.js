@@ -34,7 +34,7 @@ var indexvm = avalon.define({
     onLogout: function (prefix, currbtn) {
 
         // Cache the access token in session storage.
-        sessionStorage.removeItem(tokenKey);
+        sessionStorage.removeItem(top.auth.tokenKey);
 
         avalon.log("onLogout Done!");
 
