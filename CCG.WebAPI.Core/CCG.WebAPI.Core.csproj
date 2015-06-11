@@ -373,6 +373,8 @@
     <Content Include="bower_components\json2\json2.js" />
     <Content Include="bower_components\json2\json_parse.js" />
     <Content Include="bower_components\json2\json_parse_state.js" />
+    <Content Include="Content\images\close.png" />
+    <Content Include="Content\images\ie.png" />
     <Content Include="Content\images\loading.gif" />
     <Content Include="Content\images\logo-chi.png" />
     <Content Include="Content\images\top.jpg" />
@@ -873,6 +875,7 @@
     <Content Include="index.html" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\fix\iefix.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />
     <Content Include="Scripts\jquery-2.1.4.min.js" />
     <Content Include="Scripts\jquery-2.1.4.min.map" />

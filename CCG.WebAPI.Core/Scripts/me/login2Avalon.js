@@ -84,7 +84,7 @@
             $.ajax({
                 type: 'GET',
                 url: tmpurl,
-                headers: headers
+                headers: top.auth.headers
             }).done(function (data) {
 
                 login.messagecss = "show alert-success";
@@ -202,7 +202,7 @@
             }).done(function (data) {
 
                 // Cache the access token in session storage.
-                //sessionStorage.setItem(tokenKey, data.access_token);
+                //sessionStorage.setItem(top.auth.tokenKey, data.access_token);
 
 
                 avalon.log("Done!");
@@ -227,7 +227,7 @@
             currbtn.disabled = true;
 
             // Cache the access token in session storage.
-            sessionStorage.removeItem(tokenKey);
+            sessionStorage.removeItem(top.auth.tokenKey);
 
             avalon.log("Done!");
 

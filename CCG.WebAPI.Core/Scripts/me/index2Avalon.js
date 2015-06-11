@@ -14,8 +14,8 @@ var indexvm = avalon.define({
         //init userinfo
         $.ajax({
             type: 'GET',
-            url: auth.apiGetUserInfoUrl,
-            headers: auth.headers
+            url: top.auth.apiGetUserInfoUrl,
+            headers: top.auth.headers
         }).done(function (data) {
             avalon.log("avalonLog:ajaxInitLi.");
 
@@ -38,7 +38,7 @@ var indexvm = avalon.define({
 
         avalon.log("onLogout Done!");
 
-        top.location.href = auth.setLoginhref;
+        top.location.href = top.auth.setLoginhref;
     }
 }, function (vm) {
     avalon.log("vmindex.")

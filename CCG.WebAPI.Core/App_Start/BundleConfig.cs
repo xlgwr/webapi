@@ -44,11 +44,15 @@ namespace CCG.WebAPI.Core
                         "~/Content/ligerUI/skins/Gray2014/css/all.css",
                         "~/Content/ligerUIme.css"));
             //add other
-            
+
             //1.11.X   
             //base js
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/bower_components/jquery/dist/jquery.min.js"));
+                        "~/bower_components/jquery/dist/jquery.min.js"
+                        ));
+
+            bundles.Add(new ScriptBundle("~/bundles/iefix").Include(
+                        "~/Scripts/fix/iefix.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/avalon").Include(
                         "~/bower_components/avalon/min/avalon.min.js"));

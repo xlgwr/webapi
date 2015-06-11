@@ -8,21 +8,40 @@
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     <script src="~/Scripts/json2.js"></script>
-    <!--[if lt IE 9]>
-        <script src="~/bower_components/html5shiv/dist/html5shiv.min.js"></script>
-    <![endif]-->
-    @Styles.Render("~/Content/commMe")
     @Scripts.Render("~/bundles/jquery")
+    <script type="text/javascript">
+        $(function () {
+            $('#browserupdator').hide();
+        });
+    </script>
+    @Styles.Render("~/Content/commMe")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/avalon")
     @Scripts.Render("~/bundles/me")
-    <script type="text/javascript">
-        var tokenKey = 'accessToken';
-    </script>
+
+    <!--[if lt IE 9]>
+        <script src="~/bower_components/html5shiv/dist/html5shiv.min.js"></script>
+        @Scripts.Render("~/bundles/iefix")
+    <![endif]-->
+
 </head>
 <body id="baseBody" class="container-fluid" rooturl="@rootUrl">
 
     @RenderBody()
+
+    <div id="browserupdator" class="browser-updator" style="HEIGHT: 45px">
+        <div class="browser-updator-wrapper">
+            <p>
+                <span>亲，您的浏览器版本过低导致数据(图片)打开速度过慢，提升打开速度您可以：</span>
+                <span>点击下载</span>
+                <a class="browser-updator-browser browser-updator-taobao" href="http://www.firefox.com.cn/download/#more" target=_blank>火狐浏览器</a>
+                <span>或</span>
+                <a class="browser-updator-browser browser-updator-ie" href="http://www.microsoft.com/zh-cn/download/details.aspx?id=43" target=_blank>升级IE浏览器</a>
+                <span>或点击下载</span>
+                <a class="browser-updator-browser browser-updator-chrome" href="http://www.google.cn/intl/zh-CN/chrome/browser/" target=_blank>chrome浏览器</a>
+            </p><a id="aclose" class="browser-updator-close" href="#">关闭</a>
+        </div>
+    </div>
 
     @RenderSection("scripts", required: false)
 </body>

@@ -33,3 +33,58 @@ body.tabbody {
     font-weight:bolder;
     width:100%;
 }
+.browser-updator {
+    position: fixed;
+    width: 100%;
+    height: 0px;
+    left: 0px;
+    bottom: 0px;
+    overflow: hidden;
+    z-index: 1000000000 !important;
+    _position: absolute;
+    _bottom: auto;
+}
+.browser-updator-wrapper {
+    position: relative;
+    zoom: 1;
+    width: 950px;
+    margin: 0 auto;
+    height: 45px;
+    background: #8e8e8e;
+    zoom: 1;
+}
+.browser-updator P {
+    margin: 0;
+    padding: 0;
+    line-height: 45px;
+    color: #fff;
+    font-size: 12px;
+    text-indent: 16px;
+}
+.browser-updator P A:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+.browser-updator-chrome:hover {
+    text-decoration: none !important;
+}
+
+.browser-updator P A {
+    color: #fff;
+    text-decoration: none;
+    margin-top: 1px;
+    _margin-top: 6px;
+    font-weight:bolder;
+}
+
+.browser-updator-close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    width: 17px;
+    height: 16px;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAQAQMAAADK/wYcAAAABlBMVEX///////9VfPVsAAAAAXRSTlMAQObYZgAAADVJREFUeF4li8EJADAIxFIKvm4Ax7iRHMXRHK1gX8eRhLlQARZkggxRcAdO7+6XP7fW365PP+DHB3cGVuK7AAAAAElFTkSuQmCC') /*images/close.png*/ no-repeat;
+    text-indent: -999em;
+    overflow: hidden;
+}
+

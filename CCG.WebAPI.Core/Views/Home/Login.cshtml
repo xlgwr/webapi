@@ -2,17 +2,17 @@
     ViewBag.Title = "Login";
     Layout = "~/Views/Shared/_Base.cshtml";
 }
-<div class="ms-controller login panel panel-success" ms-controller="loginController">
+<div id="loginbody" class="ms-controller login panel panel-success" ms-controller="loginController">
     <div class="panel-heading">
         <div class="relative">
             <span class="glyphicon glyphicon-lock loginIcon" aria-hidden="true"></span>
             <p class="fonth3 clearMargin text-center">登  陆</p>
         </div>
     </div>
-    <div class="panel-body">
+    <div class="panel-body text-left">
         <div class="form-horizontal">
             <div class="form-group">
-                <label for="domain" class="col-sm-4 control-label text-right">Domain:</label>
+                <label for="domain" class="col-sm-4 control-label clearMargin">Domain:</label>
                 <div class="col-sm-8">
                     <select ms-duplex="domain" class="form-control" id="domain" placeholder="Domain">
                         <option ms-repeat="arrDomains" ms-attr-value="el.displayname">{{el.displayname}}</option>
@@ -20,36 +20,41 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="UserName" class="col-sm-4 control-label text-right">用户名称:</label>
+                <label for="UserName" class="col-sm-4 control-label clearMargin">用户名称:</label>
                 <div class="col-sm-8">
                     <input ms-duplex="userid" type="text" class="form-control" id="userid" placeholder="用户名称" autofocus />
                 </div>
             </div>
             <div class="form-group">
-                <label for="password" class="col-sm-4 control-label text-right">登陆密码:</label>
+                <label for="password" class="col-sm-4 control-label clearMargin">登陆密码:</label>
                 <div class="col-sm-8">
                     <input ms-duplex="password" type="password" class="form-control" id="password" placeholder="登陆密码" />
                 </div>
             </div>
             <div class="form-group" ms-class="{{cssRegister}}">
-                <label for="confirmPassword" class="col-sm-4 control-label text-right">确认密码:</label>
+                <label for="confirmPassword" class="col-sm-4 control-label clearMargin">确认密码:</label>
                 <div class="col-sm-8">
-                    <input ms-duplex="confirmPassword" type="password" class="form-control" ms-class="{{cssRegister}} id=" confirmpassword" placeholder="确认密码" />
+                    <input ms-duplex="confirmPassword" type="password" class="form-control" ms-class="{{cssRegister}}" id="confirmpassword" placeholder="确认密码" />
                 </div>
             </div>
-            <div class="row">
-                <div class="text-center" ms-class="{{cssRegister}}" ms-class-2="{{cssRegisterxs}}">
-                    <button ms-click="onRegister('Register',this)" id="Register" type="button" class="btn btn-default">Register</button>
-                </div>
-                <div class="text-center" ms-class="{{cssRegisterxs}}">
-                    <button ms-click="onLogin('Login',this)" id="Login" type="button" class="btn btn-primary">Login</button>
-                </div>
-
-                @*
-                    <div class="col-xs-4">
-                        <button ms-click="onLogout('Logout',this)" id="Logout" type="button" class="btn btn-danger">Logout</button>
-                    </div>*@
-            </div>
+            <table class="table clearMargin">
+                <tr>
+                    <td class="text-center" ms-class="{{cssRegister}}">
+                        <div>
+                            <button ms-click="onRegister('Register',this)" id="Register" type="button" class="btn btn-default">Register</button>
+                        </div>
+                    </td>
+                    <td class="text-center">
+                        <div>
+                            <button ms-click="onLogin('Login',this)" id="Login" type="button" class="btn btn-primary">Login</button>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            @*
+                <div class="col-xs-4">
+                    <button ms-click="onLogout('Logout',this)" id="Logout" type="button" class="btn btn-danger">Logout</button>
+                </div>*@
         </div>
     </div>
     <div id="message" class="panel-footer text-center" ms-class="{{messagecss}}">
@@ -59,18 +64,19 @@
         <span>{{messageErr | html}}</span>
     </div>
 </div>
+
+
 @Scripts.Render("~/bundles/init")
 @Scripts.Render("~/bundles/login")
 
 @section scripts{
     <script type="text/javascript">
-        var token = sessionStorage.getItem(tokenKey);
-        var headers = {};
+        var token = sessionStorage.getItem(top.auth.tokenKey);
         if (token) {
-            headers.Authorization = 'Bearer ' + token;
+            top.auth.headers.Authorization = 'Bearer ' + token;
         }
         avalon.log("Login:html.62");
-        avalon.log(headers);
+        avalon.log(top.auth.headers);
         //test api
 
         /*****
@@ -78,7 +84,7 @@
         $.ajax({
             type: 'GET',
             url: tmpurl,
-            headers: headers
+            top.auth.headers: top.auth.headers
         }).done(function (data) {
             avalon.log(data);
             //self.result(data);
