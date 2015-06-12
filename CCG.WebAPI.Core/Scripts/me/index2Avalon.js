@@ -2,6 +2,7 @@
 var indexvm = avalon.define({
     $id: "indexvm",
     message: '',
+    showbody: 'hidden',
     is_ADMIN: false,
     jsonlidata: [],
     //ms-duplex
@@ -16,6 +17,8 @@ var indexvm = avalon.define({
             type: 'GET',
             url: top.auth.apiGetUserInfoUrl,
             headers: top.auth.headers
+        }).complete(function () {
+            $("#"+indexvm.$id).removeClass('hidden');
         }).done(function (data) {
             avalon.log("avalonLog:ajaxInitLi.");
 

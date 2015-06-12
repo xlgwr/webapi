@@ -17,8 +17,8 @@
         rooturl: rooturl,
         iloginApi: loginApi,
         //is register
-        cssRegister: 'hide',
-        cssRegisterxs: 'col-xs-12',
+        cssRegister: 'hidden',
+        cssonLogout: 'hidden',
         //ms-duplex      
         domain: top.users.domain,
         userid: top.users.userid,
@@ -85,6 +85,8 @@
                 type: 'GET',
                 url: tmpurl,
                 headers: top.auth.headers
+            }).complete(function () {
+                $("#"+login.$id).removeClass('hidden');
             }).done(function (data) {
 
                 login.messagecss = "show alert-success";
@@ -114,9 +116,10 @@
                     if (login.arrDomains[0]) {
                         login.domain = login.arrDomains[0].displayname;
                         $('#domain').focus();
-                    } 
+                    }
                 }
-                //self.result(data);
+                //self.result(data);              
+
             }).fail(showerr);
         },
         onRegister: function (prefix, currbtn) {
@@ -217,6 +220,8 @@
                 if (loginApi.redirectUrl) {
                     login.message = prefix + ": Success.正在转向：" + decodeURI(loginApi.redirectUrl);
                     top.location.href = encodeURI(loginApi.redirectUrl + "?domain=" + login.domain + "&userid=" + login.userid) + "&tokenkey=" + data.access_token;
+                } else {
+                    login.cssonLogout = 'show';
                 }
 
             }).fail(showerr);
@@ -235,7 +240,11 @@
             login.message = prefix + ": Success.";
 
             currbtn.disabled = false;
-            currbtn.className = 'btn btn-success';
+            // currbtn.className = 'btn btn-success';
+            login.password = '';
+            $('#userid').focus();
+            login.cssonLogout = 'hidden';
+
         }
 
     }, function (vm) {
@@ -315,6 +324,11 @@ function showerr(err) {
 
     }
 
+    if (!err.responseJSON) {
+        avalon.vmodels.loginController.cssRegister = 'show';
+        avalon.log(err);
+        return;
+    }
     //{Message:'',responseText:[],responseJSON}
     var vdata = err.responseJSON//JSON.parse(err.responseText);
 
@@ -323,9 +337,9 @@ function showerr(err) {
     //{error:'',error_description:''}
     if (vdata.error) {
         avalon.vmodels.loginController.cssRegister = 'show';
-        avalon.vmodels.loginController.cssRegisterxs = 'col-xs-6';
         avalon.vmodels.loginController.message = vdata.error + "<br/>" + "1. " + vdata.error_description + "<br/>" + "2. " + top.messages.n6;
         $('#password').focus();
+        return;
     }
     //{Message:'',ModelState:[]}
     if (vdata.Message) {

@@ -28,7 +28,7 @@
         $(this).keydown(function (e) {
 
            
-            //avalon.log($(this).hasClass('hide'));
+            //avalon.log($(this).hasClass('hidden'));
 
             avalon.vmodels.loginController.messagecss = "hidden";
             avalon.vmodels.loginController.message = " ";
@@ -51,7 +51,7 @@
                     $('#Login').focus();
                 } else {                   
 
-                    if (!$input.eq(dindex + 1).hasClass('hide')) {
+                    if (!$input.eq(dindex + 1).hasClass('hidden')) {
                         avalon.vmodels.loginController.messagecss = "show alert-warning";
                         avalon.vmodels.loginController.message = (dindex + 1) + messages.n2 + placeholder;
                         $input.eq(dindex + 1).focus();

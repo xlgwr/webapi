@@ -85,7 +85,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/10/2015 14:09:43</publishTime>
     </File>
     <File Include="bin/CCG.WebAPI.Core.dll">
-      <publishTime>06/11/2015 11:34:26</publishTime>
+      <publishTime>06/12/2015 13:47:50</publishTime>
     </File>
     <File Include="bin/CCG.WebAPI.ECN.dll">
       <publishTime>06/09/2015 09:23:24</publishTime>
@@ -3217,7 +3217,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/01/2015 12:10:33</publishTime>
     </File>
     <File Include="Content/ligerUIme.css">
-      <publishTime>06/05/2015 14:30:36</publishTime>
+      <publishTime>06/12/2015 15:11:53</publishTime>
     </File>
     <File Include="Content/Site.css">
       <publishTime>06/01/2015 08:51:51</publishTime>
@@ -3307,7 +3307,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/09/2015 13:38:51</publishTime>
     </File>
     <File Include="Scripts/me/index2Avalon.js">
-      <publishTime>06/11/2015 12:01:34</publishTime>
+      <publishTime>06/12/2015 15:03:49</publishTime>
     </File>
     <File Include="Scripts/me/indexAvalon.js">
       <publishTime>06/08/2015 16:05:38</publishTime>
@@ -3322,10 +3322,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/11/2015 12:05:30</publishTime>
     </File>
     <File Include="Scripts/me/login1Jquery.js">
-      <publishTime>06/10/2015 16:36:18</publishTime>
+      <publishTime>06/12/2015 15:04:11</publishTime>
     </File>
     <File Include="Scripts/me/login2Avalon.js">
-      <publishTime>06/11/2015 11:48:34</publishTime>
+      <publishTime>06/12/2015 15:03:33</publishTime>
     </File>
     <File Include="Scripts/me/loginAvalon.js">
       <publishTime>06/05/2015 08:21:48</publishTime>
@@ -3364,16 +3364,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/04/2015 12:52:42</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>06/09/2015 14:31:47</publishTime>
+      <publishTime>06/12/2015 15:12:09</publishTime>
     </File>
     <File Include="Views/Home/Login.cshtml">
-      <publishTime>06/11/2015 12:07:13</publishTime>
+      <publishTime>06/12/2015 15:12:13</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>06/01/2015 08:51:51</publishTime>
     </File>
     <File Include="Views/Shared/_Base.cshtml">
-      <publishTime>06/11/2015 11:57:59</publishTime>
+      <publishTime>06/12/2015 14:49:22</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
       <publishTime>06/01/2015 11:58:38</publishTime>
