@@ -33,6 +33,8 @@ namespace CCG.WebAPI.Core.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+            context.Database.ExecuteSqlCommand("delete from [logs]");
+
             context.Database.ExecuteSqlCommand("delete from [AspNetUserLogins]");
             context.Database.ExecuteSqlCommand("delete from [AspNetUserClaims]");
             context.Database.ExecuteSqlCommand("delete from [AspNetUserRoles]");
