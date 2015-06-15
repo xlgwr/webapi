@@ -8,6 +8,7 @@ using System.Web.Http;
 using System.Net.Mail;
 
 using CCG.WebAPI.Core.Models;
+using CCG.WebAPI.Core.Models.user;
 using System.Text;
 using System.Configuration;
 using System.Threading.Tasks;

@@ -9,6 +9,7 @@ namespace CCG.WebAPI.Core.Migrations
 
     using CCG.WebAPI.Core;
     using CCG.WebAPI.Core.Models;
+    using CCG.WebAPI.Core.Models.user;
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
     internal sealed class Configuration : DbMigrationsConfiguration<CCG.WebAPI.Core.Models.ApplicationDbContext>

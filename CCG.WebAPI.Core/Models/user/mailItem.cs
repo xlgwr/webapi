@@ -6,7 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mail;
 
-namespace CCG.WebAPI.Core.Models
+namespace CCG.WebAPI.Core.Models.user
 {
     public class mailItem
     {

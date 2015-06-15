@@ -237,18 +237,20 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="helper\Auth.cs" />
-    <Compile Include="Migrations\201506150647452_initdb.cs" />
-    <Compile Include="Migrations\201506150647452_initdb.Designer.cs">
-      <DependentUpon>201506150647452_initdb.cs</DependentUpon>
+    <Compile Include="helper\getClientInfo.cs" />
+    <Compile Include="Migrations\201506151012564_initdb.cs" />
+    <Compile Include="Migrations\201506151012564_initdb.Designer.cs">
+      <DependentUpon>201506151012564_initdb.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AD.cs" />
-    <Compile Include="Models\domains.cs" />
+    <Compile Include="Models\user\domains.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\mailItem.cs" />
-    <Compile Include="Models\mails.cs" />
+    <Compile Include="Models\user\logs.cs" />
+    <Compile Include="Models\user\mailItem.cs" />
+    <Compile Include="Models\user\mails.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
@@ -924,6 +926,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\viewModels\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -936,8 +939,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201506150647452_initdb.resx">
-      <DependentUpon>201506150647452_initdb.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201506151012564_initdb.resx">
+      <DependentUpon>201506151012564_initdb.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

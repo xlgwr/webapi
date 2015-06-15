@@ -4,12 +4,15 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
+using CCG.WebAPI.Core.Models.user;
+using System.Collections.Generic;
 
 namespace CCG.WebAPI.Core.Models
 {
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
+        public virtual ICollection<logs> logsItems { get; set; }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager, string authenticationType)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
@@ -37,6 +40,7 @@ namespace CCG.WebAPI.Core.Models
         public virtual DbSet<domains> domains { get; set; }
         public virtual DbSet<mailItem> mailItem { get; set; }
         public virtual DbSet<mails> mails { get; set; }
+        public virtual DbSet<logs> logs { get; set; }
 
         public static ApplicationDbContext Create()
         {

@@ -13,7 +13,7 @@ namespace CCG.WebAPI.Core.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201506150647452_initdb"; }
+            get { return "201506151012564_initdb"; }
         }
         
         string IMigrationMetadata.Source

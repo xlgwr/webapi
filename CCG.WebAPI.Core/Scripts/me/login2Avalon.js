@@ -21,7 +21,7 @@
         cssRegisterbtn: 'hidden',
         cssonLogout: 'hidden',
         //title
-        tlogin:top.tlogin,
+        tlogin: top.tlogin,
         //ms-duplex      
         domain: top.users.domain,
         userid: top.users.userid,
@@ -89,7 +89,7 @@
                 url: tmpurl,
                 headers: top.auth.headers
             }).complete(function () {
-                $("#"+login.$id).removeClass('hidden');
+                $("#" + login.$id).removeClass('hidden');
             }).done(function (data) {
 
                 login.messagecss = "show alert-success";
@@ -188,11 +188,18 @@
                     tmpEmail = login.userid + '@' + login.mailDomain;
                 }
             }
+
             var data = {
                 grant_type: 'password',
                 username: tmpEmail,
                 password: login.password
             };
+            var savelogdata = {
+                domain: login.domain,
+                UserName: tmpEmail,
+                types: login.tlogin.title,
+                clienturl: location.href
+            }
 
             avalon.log(data);
 
@@ -214,18 +221,34 @@
                 avalon.log("Done!");
                 avalon.log(data);
 
-                login.messagecss = "show alert-success";
-                login.message = prefix + ": Success.";
 
-                this.currbtn.disabled = false;
-                this.currbtn.className = 'btn btn-success';
+                $.ajax({
+                    //usedifine
+                    sdata: data,
+                    currbtn: currbtn,
+                    //ajax option
+                    type: 'POST',
+                    url: rooturl + login.iloginApi.apiUrionLogs,
+                    data: savelogdata
+                }).done(function (sdata) {
+                    avalon.log(sdata);
+                    avalon.log("save log ok.");
 
-                if (loginApi.redirectUrl) {
-                    login.message = prefix + ": Success.正在转向：" + decodeURI(loginApi.redirectUrl);
-                    top.location.href = encodeURI(loginApi.redirectUrl + "?domain=" + login.domain + "&userid=" + login.userid) + "&tokenkey=" + data.access_token;
-                } else {
-                    login.cssonLogout = 'show';
-                }
+                    login.messagecss = "show alert-success";
+                    login.message = prefix + ": Success.";
+
+                    this.currbtn.disabled = false;
+                    this.currbtn.className = 'btn btn-success';
+
+                    if (loginApi.redirectUrl) {
+                        login.message = prefix + ": Success.正在转向：" + decodeURI(loginApi.redirectUrl);
+                        top.location.href = encodeURI(loginApi.redirectUrl + "?domain=" + login.domain + "&userid=" + login.userid) + "&tokenkey=" + this.sdata.access_token;
+                    } else {
+                        login.cssonLogout = 'show';
+                    }
+                }).fail(showerr);
+
+
 
             }).fail(showerr);
 
@@ -340,7 +363,7 @@ function showerr(err) {
 
     //{error:'',error_description:''}
     if (vdata.error) {
-        avalon.vmodels.loginController.cssRegister = 'show';  
+        avalon.vmodels.loginController.cssRegister = 'show';
         avalon.vmodels.loginController.cssRegisterbtn = 'show';
         avalon.vmodels.loginController.message = vdata.error + "<br/>" + "1. " + vdata.error_description + "<br/>" + "2. " + top.messages.n6;
         $('#password').focus();

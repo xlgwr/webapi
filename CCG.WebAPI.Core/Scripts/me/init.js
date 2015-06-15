@@ -30,7 +30,8 @@ var loginApi = {
     apiUriDomain: 'api/domains/getDomains',
     apiUrionRegister: 'api/Account/Register', 
     apiUrionChangePassword: 'api/Account/ChangePassword',
-    apiUrionLogout: 'api/Account/Logout',
+    apiUrionLogout: 'api/Account/Logout',  
+    apiUrionLogs: 'api/domains/saveLogs',
     apiUrionLogin: 'Token',
     rooturl: rooturl,
     redirectUrl: ''
