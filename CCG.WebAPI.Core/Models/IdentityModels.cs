@@ -18,6 +18,11 @@ namespace CCG.WebAPI.Core.Models
             return userIdentity;
         }
     }
+    public class ApplicationRole : IdentityRole { }
+    public class ApplicationUserRole : IdentityUserRole { }
+
+    public class ApplicationUserLogin : IdentityUserLogin { }
+    public class ApplicationUserClaim : IdentityUserClaim { }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
@@ -37,5 +42,6 @@ namespace CCG.WebAPI.Core.Models
         {
             return new ApplicationDbContext();
         }
+
     }
 }

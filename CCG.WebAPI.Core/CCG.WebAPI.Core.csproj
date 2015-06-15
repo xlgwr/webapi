@@ -237,17 +237,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="helper\Auth.cs" />
-    <Compile Include="Migrations\201506100325053_init db.cs" />
-    <Compile Include="Migrations\201506100325053_init db.Designer.cs">
-      <DependentUpon>201506100325053_init db.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201506100330487_add maildomain for domain.cs" />
-    <Compile Include="Migrations\201506100330487_add maildomain for domain.Designer.cs">
-      <DependentUpon>201506100330487_add maildomain for domain.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201506100530166_addindexfordomains.cs" />
-    <Compile Include="Migrations\201506100530166_addindexfordomains.Designer.cs">
-      <DependentUpon>201506100530166_addindexfordomains.cs</DependentUpon>
+    <Compile Include="Migrations\201506150647452_initdb.cs" />
+    <Compile Include="Migrations\201506150647452_initdb.Designer.cs">
+      <DependentUpon>201506150647452_initdb.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
@@ -944,14 +936,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201506100325053_init db.resx">
-      <DependentUpon>201506100325053_init db.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506100330487_add maildomain for domain.resx">
-      <DependentUpon>201506100330487_add maildomain for domain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506100530166_addindexfordomains.resx">
-      <DependentUpon>201506100530166_addindexfordomains.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201506150647452_initdb.resx">
+      <DependentUpon>201506150647452_initdb.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

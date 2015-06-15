@@ -18,11 +18,11 @@
         rooturl: rooturl,
         iloginApi: loginApi,
         //is register
-        cssRegister: 'show', 
+        cssRegister: 'show',
         cssRegisterbtn: 'hidden',
         cssonLogout: 'hidden',
         //title
-        tlogin:top.tclogin,
+        tlogin: top.tclogin,
         //ms-duplex      
         domain: top.users.domain,
         userid: top.users.userid,
@@ -70,7 +70,7 @@
                 url: tmpurl,
                 headers: top.auth.headers
             }).complete(function () {
-                $("#"+ChangePassword.$id).removeClass('hidden');
+                $("#" + ChangePassword.$id).removeClass('hidden');
             }).done(function (data) {
 
                 ChangePassword.messagecss = "show alert-success";
@@ -179,7 +179,7 @@
 
             $.ajax({
                 //usedifine
-                currbtn: currbtn, 
+                currbtn: currbtn,
                 //ajax option
                 type: 'POST',
                 url: rooturl + ChangePassword.iloginApi.apiUrionChangePassword,
@@ -203,12 +203,12 @@
 
                 this.currbtn.disabled = false;
                 this.currbtn.className = 'btn btn-success';
-
+                $('#password').focus();
                 avalon.log(loginApi);
 
                 if (loginApi.redirectUrl) {
-                   // ChangePassword.message = prefix + ": Success.正在转向：" + decodeURI(loginApi.redirectUrl);
-                   // top.location.href = encodeURI(loginApi.redirectUrl + "?domain=" + ChangePassword.domain + "&userid=" + ChangePassword.userid) + "&tokenkey=" + data.access_token;
+                    // ChangePassword.message = prefix + ": Success.正在转向：" + decodeURI(loginApi.redirectUrl);
+                    // top.location.href = encodeURI(loginApi.redirectUrl + "?domain=" + ChangePassword.domain + "&userid=" + ChangePassword.userid) + "&tokenkey=" + data.access_token;
                 } else {
                     //ChangePassword.cssonLogout = 'show';
                 }
@@ -314,7 +314,7 @@ function showerr(err) {
     }
 
     if (!err.responseJSON) {
-        avalon.vmodels.ChangePassword.cssRegister = 'show'; 
+        avalon.vmodels.ChangePassword.cssRegister = 'show';
         avalon.vmodels.ChangePassword.cssRegisterbtn = 'show';
         avalon.log(err);
         return;
@@ -326,7 +326,7 @@ function showerr(err) {
 
     //{error:'',error_description:''}
     if (vdata.error) {
-        avalon.vmodels.ChangePassword.cssRegister = 'show'; 
+        avalon.vmodels.ChangePassword.cssRegister = 'show';
         avalon.vmodels.ChangePassword.cssRegisterbtn = 'show';
         avalon.vmodels.ChangePassword.message = vdata.error + "<br/>" + "1. " + vdata.error_description + "<br/>" + "2. " + top.messages.n6;
         $('#password').focus();

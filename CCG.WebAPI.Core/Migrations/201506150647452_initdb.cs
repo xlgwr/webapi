@@ -14,10 +14,12 @@ namespace CCG.WebAPI.Core.Migrations
                         Id = c.Long(nullable: false, identity: true),
                         domain = c.String(nullable: false, maxLength: 128),
                         displayname = c.String(maxLength: 128),
+                        mailDomain = c.String(),
                         remark = c.String(unicode: false, storeType: "text"),
                         isused = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => new { t.Id, t.domain });
+                .PrimaryKey(t => new { t.Id, t.domain })
+                .Index(t => t.domain, unique: true);
             
             CreateTable(
                 "dbo.mailItems",
@@ -57,6 +59,7 @@ namespace CCG.WebAPI.Core.Migrations
                     {
                         Id = c.String(nullable: false, maxLength: 128),
                         Name = c.String(nullable: false, maxLength: 256),
+                        Discriminator = c.String(nullable: false, maxLength: 128),
                     })
                 .PrimaryKey(t => t.Id)
                 .Index(t => t.Name, unique: true, name: "RoleNameIndex");
@@ -67,6 +70,7 @@ namespace CCG.WebAPI.Core.Migrations
                     {
                         UserId = c.String(nullable: false, maxLength: 128),
                         RoleId = c.String(nullable: false, maxLength: 128),
+                        Discriminator = c.String(nullable: false, maxLength: 128),
                     })
                 .PrimaryKey(t => new { t.UserId, t.RoleId })
                 .ForeignKey("dbo.AspNetRoles", t => t.RoleId, cascadeDelete: true)
@@ -102,6 +106,7 @@ namespace CCG.WebAPI.Core.Migrations
                         UserId = c.String(nullable: false, maxLength: 128),
                         ClaimType = c.String(),
                         ClaimValue = c.String(),
+                        Discriminator = c.String(nullable: false, maxLength: 128),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.AspNetUsers", t => t.UserId, cascadeDelete: true)
@@ -114,6 +119,7 @@ namespace CCG.WebAPI.Core.Migrations
                         LoginProvider = c.String(nullable: false, maxLength: 128),
                         ProviderKey = c.String(nullable: false, maxLength: 128),
                         UserId = c.String(nullable: false, maxLength: 128),
+                        Discriminator = c.String(nullable: false, maxLength: 128),
                     })
                 .PrimaryKey(t => new { t.LoginProvider, t.ProviderKey, t.UserId })
                 .ForeignKey("dbo.AspNetUsers", t => t.UserId, cascadeDelete: true)
@@ -135,6 +141,7 @@ namespace CCG.WebAPI.Core.Migrations
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
             DropIndex("dbo.mailItems", new[] { "mails_Id", "mails_domain", "mails_UserName" });
+            DropIndex("dbo.domains", new[] { "domain" });
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
             DropTable("dbo.AspNetUsers");
