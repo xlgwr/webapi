@@ -28,5 +28,6 @@ namespace CCG.WebAPI.Core.Controllers
             return View();
 
         }
+        
     }
 }

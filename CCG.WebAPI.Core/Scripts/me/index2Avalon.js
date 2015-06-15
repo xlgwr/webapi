@@ -5,6 +5,9 @@ var indexvm = avalon.define({
     showbody: 'hidden',
     is_ADMIN: false,
     jsonlidata: [],
+    //language
+    language: { tlogin: tlogin, tclogin: tclogin },
+    title: top.linksTitleIndex,
     //ms-duplex
     user: top.users,
     //method
@@ -18,7 +21,7 @@ var indexvm = avalon.define({
             url: top.auth.apiGetUserInfoUrl,
             headers: top.auth.headers
         }).complete(function () {
-            $("#"+indexvm.$id).removeClass('hidden');
+            $("#" + indexvm.$id).removeClass('hidden');
         }).done(function (data) {
             avalon.log("avalonLog:ajaxInitLi.");
 

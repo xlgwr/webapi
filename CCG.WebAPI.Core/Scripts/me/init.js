@@ -28,7 +28,8 @@ var auth = {
 var loginApi = {
     apiUri: 'api/domains/getDomains',
     apiUriDomain: 'api/domains/getDomains',
-    apiUrionRegister: 'api/Account/Register',
+    apiUrionRegister: 'api/Account/Register', 
+    apiUrionChangePassword: 'api/Account/ChangePassword',
     apiUrionLogout: 'api/Account/Logout',
     apiUrionLogin: 'Token',
     rooturl: rooturl,

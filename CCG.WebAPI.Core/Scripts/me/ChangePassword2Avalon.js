@@ -6,22 +6,23 @@
 
     avalon.log("avalon:8");
     avalon.log(loginApi);
+    avalon.log(top.auth);
 
     //start define
-    var login = avalon.define({
-        $id: "loginController",
-        message: "login",
+    var ChangePassword = avalon.define({
+        $id: "ChangePassword",
+        message: "ChangePassword",
         messagecss: "info",
         messageErr: top.users.rd_msg,
         messageErrcss: 'hidden',
         rooturl: rooturl,
         iloginApi: loginApi,
         //is register
-        cssRegister: 'hidden',
+        cssRegister: 'show', 
         cssRegisterbtn: 'hidden',
         cssonLogout: 'hidden',
         //title
-        tlogin:top.tlogin,
+        tlogin:top.tclogin,
         //ms-duplex      
         domain: top.users.domain,
         userid: top.users.userid,
@@ -34,90 +35,70 @@
         arrDomains: {},
         //check validate
         checkbase: function (prefix, flagRegister) {
-            login.messagecss = "show alert-info";
-            login.message = prefix + messages.n4;
+            ChangePassword.messagecss = "show alert-info";
+            ChangePassword.message = prefix + messages.n4;
 
             var tmpflag = true;
 
-            if (!(login.domain && login.userid && login.password)) {
+            if (!(ChangePassword.domain && ChangePassword.userid && ChangePassword.password)) {
 
                 tmpflag = false;
             }
             if (flagRegister) {
-                if (!login.confirmPassword) {
+                if (!ChangePassword.confirmPassword) {
                     tmpflag = false;
                 }
             }
 
             if (!tmpflag) {
-                avalon.log(login.domain + ',' + login.userid + ',' + login.password + ',' + login.confirmPassword)
+                avalon.log(ChangePassword.domain + ',' + ChangePassword.userid + ',' + ChangePassword.password + ',' + ChangePassword.confirmPassword)
                 $('#password').focus();
-                login.messagecss = "show alert-danger";
-                login.message = prefix + messages.n3;
+                ChangePassword.messagecss = "show alert-danger";
+                ChangePassword.message = prefix + messages.n3;
                 return tmpflag;
             }
 
             return tmpflag;
         },
-        init: function (prefix, currbtn) {
-            var data = {
-                Email: login.userid,
-                Password: login.password,
-                ConfirmPassword: login.confirmPassword
-            };
-            avalon.log(data);
-            $.ajax({
-                type: 'POST',
-                url: rooturl + login.iloginApi.apiUrionRegister,//'/webapiECNDev/api/Account/Register',
-                contentType: 'application/json; charset=utf-8',
-                data: JSON.stringify(data)
-            }).done(function (data) {
-                avalon.log("Done!" + data);
-                login.messagecss = "show alert-success";
-                login.message = prefix + ": Success.";
-
-            }).fail(showerr);
-
-        },
         initDomain: function (prefix) {
 
-            login.messagecss = "show alert-info";
-            login.message = prefix + messages.n4;
-            var tmpurl = rooturl + login.iloginApi.apiUriDomain;
+            ChangePassword.messagecss = "show alert-info";
+            ChangePassword.message = prefix + messages.n4;
+            var tmpurl = rooturl + ChangePassword.iloginApi.apiUriDomain;
             $.ajax({
                 type: 'GET',
                 url: tmpurl,
                 headers: top.auth.headers
             }).complete(function () {
-                $("#"+login.$id).removeClass('hidden');
+                $("#"+ChangePassword.$id).removeClass('hidden');
             }).done(function (data) {
 
-                login.messagecss = "show alert-success";
-                login.message = prefix + messages.n7;
+                ChangePassword.messagecss = "show alert-success";
+                ChangePassword.message = prefix + messages.n7;
                 //avalon.log(data);
-                login.arrDomains = data;
+                ChangePassword.arrDomains = data;
 
                 //init domain maildomain
-                if (login.domain) {
-                    for (var i = 0; i < login.arrDomains.length; i++) {
-                        var item = login.arrDomains[i];
+                if (ChangePassword.domain) {
+                    for (var i = 0; i < ChangePassword.arrDomains.length; i++) {
+                        var item = ChangePassword.arrDomains[i];
                         //avalon.log(item);
                         //avalon.log(item.displayname); 
-                        if (item.displayname === login.domain) {
+                        if (item.displayname === ChangePassword.domain) {
 
-                            login.mailDomain = item.mailDomain;
-                            //avalon.log("true:"+login.mailDomain)
-                            $('#userid').focus();
+                            ChangePassword.mailDomain = item.mailDomain;
+                            //avalon.log("true:"+ChangePassword.mailDomain)
+                            $('#password').focus();
                             break;
                         } else {
-                            login.mailDomain = '';
+                            ChangePassword.mailDomain = '';
                             $('#domain').focus();
                         }
                     }
 
                 } else {
-                    if (login.arrDomains[0]) {
-                        login.domain = login.arrDomains[0].displayname;
+                    if (ChangePassword.arrDomains[0]) {
+                        ChangePassword.domain = ChangePassword.arrDomains[0].displayname;
                         $('#domain').focus();
                     }
                 }
@@ -127,24 +108,24 @@
         },
         onRegister: function (prefix, currbtn) {
 
-            if (!login.checkbase(prefix, true)) { return; }
+            if (!ChangePassword.checkbase(prefix, true)) { return; }
 
             var oldtime = new Date();
             currbtn.disabled = true;
 
             //check userid is't email
-            var tmpEmail = login.userid;
-            if (!top.validateMe.email(login.userid)) {
-                tmpEmail = login.userid + '@' + mailApi.mailDomain;
-                if (login.mailDomain) {
-                    tmpEmail = login.userid + '@' + login.mailDomain;
+            var tmpEmail = ChangePassword.userid;
+            if (!top.validateMe.email(ChangePassword.userid)) {
+                tmpEmail = ChangePassword.userid + '@' + mailApi.mailDomain;
+                if (ChangePassword.mailDomain) {
+                    tmpEmail = ChangePassword.userid + '@' + ChangePassword.mailDomain;
                 }
             }
 
             var data = {
                 Email: tmpEmail,
-                Password: login.password,
-                ConfirmPassword: login.confirmPassword
+                Password: ChangePassword.password,
+                ConfirmPassword: ChangePassword.confirmPassword
             };
 
             avalon.log(data);
@@ -155,7 +136,7 @@
 
                 //ajax option
                 type: 'POST',
-                url: rooturl + login.iloginApi.apiUrionRegister,
+                url: rooturl + ChangePassword.iloginApi.apiUrionRegister,
                 contentType: 'application/json; charset=utf-8',
                 data: JSON.stringify(data)
 
@@ -165,8 +146,8 @@
                 avalon.log(data);
 
                 currbtn.disabled = false;
-                login.messagecss = "show alert-success";
-                login.message = prefix + ": Success.";
+                ChangePassword.messagecss = "show alert-success";
+                ChangePassword.message = prefix + ": Success.";
 
                 this.currbtn.disabled = false;
                 this.currbtn.className = 'btn btn-success';
@@ -176,34 +157,34 @@
         },
         onLogin: function (prefix, currbtn) {
 
-            if (!login.checkbase(prefix, false)) { return; }
+            if (!ChangePassword.checkbase(prefix, true)) { return; }
 
             var oldtime = new Date();
             currbtn.disabled = true;
 
-            var tmpEmail = login.userid;
-            if (!top.validateMe.email(login.userid)) {
-                tmpEmail = login.userid + '@' + mailApi.mailDomain;
-                if (login.mailDomain) {
-                    tmpEmail = login.userid + '@' + login.mailDomain;
+            var tmpEmail = ChangePassword.userid;
+            if (!top.validateMe.email(ChangePassword.userid)) {
+                tmpEmail = ChangePassword.userid + '@' + mailApi.mailDomain;
+                if (ChangePassword.mailDomain) {
+                    tmpEmail = ChangePassword.userid + '@' + ChangePassword.mailDomain;
                 }
             }
             var data = {
-                grant_type: 'password',
-                username: tmpEmail,
-                password: login.password
+                OldPassword: ChangePassword.password,
+                NewPassword: ChangePassword.confirmPassword,
+                ConfirmPassword: ChangePassword.confirmPassword
             };
 
             avalon.log(data);
 
             $.ajax({
                 //usedifine
-                currbtn: currbtn,
-
+                currbtn: currbtn, 
                 //ajax option
                 type: 'POST',
-                url: rooturl + login.iloginApi.apiUrionLogin,
-                data: data
+                url: rooturl + ChangePassword.iloginApi.apiUrionChangePassword,
+                data: data,
+                headers: top.auth.headers
 
             }).done(function (data) {
 
@@ -214,17 +195,22 @@
                 avalon.log("Done!");
                 avalon.log(data);
 
-                login.messagecss = "show alert-success";
-                login.message = prefix + ": Success.";
+                ChangePassword.messagecss = "show alert-success";
+                ChangePassword.message = prefix + ": Success." + ",New Password:" + ChangePassword.confirmPassword
+
+                ChangePassword.password = '';
+                ChangePassword.confirmPassword = '';
 
                 this.currbtn.disabled = false;
                 this.currbtn.className = 'btn btn-success';
 
+                avalon.log(loginApi);
+
                 if (loginApi.redirectUrl) {
-                    login.message = prefix + ": Success.正在转向：" + decodeURI(loginApi.redirectUrl);
-                    top.location.href = encodeURI(loginApi.redirectUrl + "?domain=" + login.domain + "&userid=" + login.userid) + "&tokenkey=" + data.access_token;
+                   // ChangePassword.message = prefix + ": Success.正在转向：" + decodeURI(loginApi.redirectUrl);
+                   // top.location.href = encodeURI(loginApi.redirectUrl + "?domain=" + ChangePassword.domain + "&userid=" + ChangePassword.userid) + "&tokenkey=" + data.access_token;
                 } else {
-                    login.cssonLogout = 'show';
+                    //ChangePassword.cssonLogout = 'show';
                 }
 
             }).fail(showerr);
@@ -239,14 +225,14 @@
 
             avalon.log("Done!");
 
-            login.messagecss = "show alert-success";
-            login.message = prefix + ": Success.";
+            ChangePassword.messagecss = "show alert-success";
+            ChangePassword.message = prefix + ": Success.";
 
             currbtn.disabled = false;
             // currbtn.className = 'btn btn-success';
-            login.password = '';
-            $('#userid').focus();
-            login.cssonLogout = 'hidden';
+            ChangePassword.password = '';
+            $('#password').focus();
+            ChangePassword.cssonLogout = 'hidden';
 
         }
 
@@ -254,44 +240,44 @@
         avalon.log("加载vm3.");
         avalon.scan();
     });
-    login.$watch('domain', function (value, oldValue) {
+    ChangePassword.$watch('domain', function (value, oldValue) {
         //avalon.log(value);   
         if (value) {
-            for (var i = 0; i < login.arrDomains.length; i++) {
-                var item = login.arrDomains[i];
+            for (var i = 0; i < ChangePassword.arrDomains.length; i++) {
+                var item = ChangePassword.arrDomains[i];
                 //avalon.log(item);
                 //avalon.log(item.displayname); 
                 if (item.displayname === value) {
-                    login.mailDomain = item.mailDomain;
-                    //avalon.log("true:"+login.mailDomain)
+                    ChangePassword.mailDomain = item.mailDomain;
+                    //avalon.log("true:"+ChangePassword.mailDomain)
                     break;
                 } else {
-                    login.mailDomain = '';
+                    ChangePassword.mailDomain = '';
                 }
             }
         }
     });
-    //login.$watch('confirmPassword', function (a, b) {
+    //ChangePassword.$watch('confirmPassword', function (a, b) {
     //    avalon.log(a + "," + b);
     //    if (a) {
     //        $('#confirmPassword').focus();
     //    }
     //});
-    login.message = login.tlogin.title;
-    login.messagecss = "hidden";
+    ChangePassword.message = ChangePassword.tlogin.title;
+    ChangePassword.messagecss = "hidden";
     //avalon.log(avalon.vmodels);
     //end           
-    if (login.messageErr) {
-        login.messageErrcss = 'show alert-danger';
+    if (ChangePassword.messageErr) {
+        ChangePassword.messageErrcss = 'show alert-danger';
     }
 
     avalon.scan();
 
-    //avalon.log(login.baseUrl)
+    //avalon.log(ChangePassword.baseUrl)
     //$('#password').focus();
     //start code    
     //avalon.log(avalon.vmodels);
-    login.initDomain("Init domain");
+    ChangePassword.initDomain("Init domain");
 
 
 });
@@ -312,15 +298,15 @@ function showerr(err) {
     avalon.log(this);
     avalon.log(err);
 
-    $('#userid').focus();
+    $('#password').focus();
 
-    avalon.vmodels.loginController.messagecss = "show alert-danger";
+    avalon.vmodels.ChangePassword.messagecss = "show alert-danger";
     this.currbtn.disabled = false;
     this.currbtn.className = 'btn btn-danger';
 
     switch (err.status) {
         case 404:
-            avalon.vmodels.loginController.message = "this URL:" + this.url + " was not found.Please check that.";
+            avalon.vmodels.ChangePassword.message = "this URL:" + this.url + " was not found.Please check that.";
             return;
             break;
         default:
@@ -328,8 +314,8 @@ function showerr(err) {
     }
 
     if (!err.responseJSON) {
-        avalon.vmodels.loginController.cssRegister = 'show';
-        avalon.vmodels.loginController.cssRegisterbtn = 'show';
+        avalon.vmodels.ChangePassword.cssRegister = 'show'; 
+        avalon.vmodels.ChangePassword.cssRegisterbtn = 'show';
         avalon.log(err);
         return;
     }
@@ -340,9 +326,9 @@ function showerr(err) {
 
     //{error:'',error_description:''}
     if (vdata.error) {
-        avalon.vmodels.loginController.cssRegister = 'show';  
-        avalon.vmodels.loginController.cssRegisterbtn = 'show';
-        avalon.vmodels.loginController.message = vdata.error + "<br/>" + "1. " + vdata.error_description + "<br/>" + "2. " + top.messages.n6;
+        avalon.vmodels.ChangePassword.cssRegister = 'show'; 
+        avalon.vmodels.ChangePassword.cssRegisterbtn = 'show';
+        avalon.vmodels.ChangePassword.message = vdata.error + "<br/>" + "1. " + vdata.error_description + "<br/>" + "2. " + top.messages.n6;
         $('#password').focus();
         return;
     }
@@ -355,7 +341,7 @@ function showerr(err) {
             errarr.push(icount + "." + vdata.ModelState[i][0]);
             icount++;
         }
-        avalon.vmodels.loginController.message = vdata.Message + "<br/>" + errarr.join("<br/><br/>");
+        avalon.vmodels.ChangePassword.message = vdata.Message + "<br/>" + errarr.join("<br/><br/>");
     }
 
 

@@ -230,6 +230,7 @@
     <Compile Include="Controllers\DomainController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MailController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -872,7 +873,7 @@
     <None Include="Properties\PublishProfiles\default.pubxml" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Icon.png" />
-    <Content Include="index.html" />
+    <Content Include="demo.html" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\fix\iefix.js" />
@@ -888,6 +889,8 @@
     <Content Include="Scripts\me\index2Avalon.js" />
     <Content Include="Scripts\me\auth.js" />
     <Content Include="Scripts\me\initMessage.js" />
+    <Content Include="Scripts\me\ChangePassword2Avalon.js" />
+    <Content Include="Scripts\me\ChangePassword1Jquery.js" />
     <Content Include="Scripts\me\me.js" />
     <Content Include="Scripts\me\login1Jquery.js" />
     <Content Include="Scripts\me\login2Avalon.js" />
@@ -904,6 +907,7 @@
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\res\ch.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -922,13 +926,16 @@
     <Content Include="Views\Shared\_Base.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Shared\_Login.cshtml" />
+    <Content Include="Views\Manage\index.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <None Include="Project_Readme.html" />
+    <Content Include="home.html" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CCG.dbEntity.ECN\CCG.dbEntity.ECN.csproj">

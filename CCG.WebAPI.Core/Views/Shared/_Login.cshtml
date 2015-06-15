@@ -1,0 +1,62 @@
+﻿<div class="login panel panel-success">
+    <div class="panel-heading">
+        <div class="relative">
+            <span class="glyphicon glyphicon-lock loginIcon" aria-hidden="true"></span>
+            <p class="fonth3 clearMargin text-center">{{tlogin.title}}</p>
+        </div>
+    </div>
+    <div class="panel-body text-left">
+        <div class="form-horizontal">
+            <div class="form-group">
+                <label for="domain" class="col-sm-4 control-label">{{tlogin.domain}}:</label>
+                <div class="col-sm-8">
+                    <select ms-duplex="domain" class="form-control" id="domain" ms-attr-placeholder="{{tlogin.domain}}">
+                        <option ms-repeat="arrDomains" ms-attr-value="el.displayname">{{el.displayname}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="UserName" class="col-sm-4 control-label">{{tlogin.UserName}}:</label>
+                <div class="col-sm-8">
+                    <input ms-duplex="userid" type="text" class="form-control" id="userid" ms-attr-placeholder="{{tlogin.UserName}}" autofocus />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="password" class="col-sm-4 control-label">{{tlogin.password}}:</label>
+                <div class="col-sm-8">
+                    <input ms-duplex="password" type="password" class="form-control" id="password" ms-attr-placeholder="{{tlogin.password}}" />
+                </div>
+            </div>
+            <div class="form-group" ms-class="{{cssRegister}}">
+                <label for="confirmPassword" class="col-sm-4 control-label">{{tlogin.confirmPassword}}:</label>
+                <div class="col-sm-8">
+                    <input ms-duplex="confirmPassword" type="password" class="form-control" ms-class="{{cssRegister}}" id="confirmpassword" ms-attr-placeholder="{{tlogin.confirmPassword}}" />
+                </div>
+            </div>
+            <table class="table clearMargin">
+                <tr>
+                    <td class="text-center" ms-class="{{cssRegisterbtn}}">
+                        <div>
+                            <button ms-click="onRegister(tlogin.Register,this)" id="Register" type="button" class="btn btn-default">{{tlogin.Register}}</button>
+                        </div>
+                    </td>
+                    <td class="text-center">
+                        <div>
+                            <button ms-click="onLogin(tlogin.title,this)" id="Login" type="button" class="btn btn-primary">{{tlogin.Login}}</button>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            @*
+    <div class="col-xs-4">
+        <button ms-click="onLogout('Logout',this)" id="Logout" type="button" class="btn btn-danger">{{tlogin.Logout}}</button>
+    </div>*@
+        </div>
+    </div>
+    <div id="message" class="panel-footer text-center" ms-class="{{messagecss}}">
+        <span>{{message | html}}</span>
+    </div>
+    <div class="panel-footer text-center " ms-class="{{messageErrcss}}">
+        <span>{{messageErr | html}}</span>
+    </div>
+</div>

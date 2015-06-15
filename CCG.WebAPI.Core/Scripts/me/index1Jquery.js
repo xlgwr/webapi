@@ -8,7 +8,7 @@ var jsonmenu = [];
 $(function () {
     avalon.log('JqueryLog:');
     //
-    $("#home").attr("src", "home.htm");
+    //$("#home").attr("src", "home.html");
     //布局
     $("#layout1").ligerLayout({ leftWidth: 190, height: '100%', heightDiff: -34, space: 4, onHeightChanged: f_heightChanged });
 
