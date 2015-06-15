@@ -3382,7 +3382,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/15/2015 11:10:55</publishTime>
     </File>
     <File Include="Views/Home/Login.cshtml">
-      <publishTime>06/15/2015 10:22:27</publishTime>
+      <publishTime>06/15/2015 13:29:27</publishTime>
     </File>
     <File Include="Views/Home/Manage.cshtml">
       <publishTime>06/15/2015 09:09:46</publishTime>
@@ -3394,7 +3394,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/15/2015 10:17:17</publishTime>
     </File>
     <File Include="Views/Manage/ChangePassword.cshtml">
-      <publishTime>06/15/2015 10:33:12</publishTime>
+      <publishTime>06/15/2015 13:34:51</publishTime>
     </File>
     <File Include="Views/Manage/index.cshtml">
       <publishTime>06/15/2015 10:28:16</publishTime>
@@ -3409,7 +3409,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/01/2015 11:58:38</publishTime>
     </File>
     <File Include="Views/Shared/_Login.cshtml">
-      <publishTime>06/15/2015 11:15:28</publishTime>
+      <publishTime>06/15/2015 13:35:27</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>06/09/2015 15:47:02</publishTime>
