@@ -83,6 +83,9 @@ namespace CCG.WebAPI.Core
 
             bundles.Add(new ScriptBundle("~/bundles/ChangePassword").Include(
                         "~/Scripts/me/ChangePassword*"));
+
+            bundles.Add(new ScriptBundle("~/bundles/SetPassword").Include(
+                        "~/Scripts/me/SetPassword*"));
             //use lanuage
             bundles.Add(new ScriptBundle("~/bundles/ch").Include(
                         "~/Scripts/res/ch*"));

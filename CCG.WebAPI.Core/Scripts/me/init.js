@@ -5,23 +5,30 @@ var rooturl = '/';
 var remoteHost = 'http://localhost:9539/';     //for develop test
 //var remoteHost = 'http://172.16.122.61/webapicore/';
 
+
 //define users all site page
 var users = {
     domain: '',
     dept: '',
     userid: '',
     username: '',
-    userrole: '',
+    userrole: [],
     rd_msg: ''
 };
 //defin auth.js
 var auth = {
-    apiGetUserInfoUrl: remoteHost + 'api/Account/UserInfo',
+    apiGetUserInfoUrl: remoteHost + 'api/Account/UserInfo', 
+    apiGetvUserInfoRoles: remoteHost + 'api/Account/vUserInfoRoles',
     headers: { Authorization: '' },
     remoteLoginUrl: remoteHost + 'Home/Login/',
     setLoginhref: '',
     tokenKey: 'accessToken',
     topcurrUrl: top.location.protocol + '//' + top.location.host + location.pathname//top.location.href;
+}
+//menu of api
+var menusApi = {
+    apiUri: 'api/domains/getmenus',
+    rooturl: rooturl
 }
 //login of api
 var loginApi = {
@@ -29,6 +36,7 @@ var loginApi = {
     apiUriDomain: 'api/domains/getDomains',
     apiUrionRegister: 'api/Account/Register', 
     apiUrionChangePassword: 'api/Account/ChangePassword',
+    apiUrionChangePassword: 'api/Account/SetPassword',
     apiUrionLogout: 'api/Account/Logout',  
     apiUrionLogs: 'api/domains/saveLogs',
     apiUrionLogin: 'Token',

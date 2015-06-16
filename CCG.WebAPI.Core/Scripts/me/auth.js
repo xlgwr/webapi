@@ -28,7 +28,7 @@ $(function () {
 
     $.ajax({
         type: 'GET',
-        url: encodeURI(top.auth.apiGetUserInfoUrl),
+        url: encodeURI(top.auth.apiGetvUserInfoRoles),
         headers: top.auth.headers
     }).done(function (data) {
         avalon.log("auth:token is success.");

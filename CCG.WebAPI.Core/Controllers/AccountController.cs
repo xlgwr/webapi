@@ -16,6 +16,7 @@ using Microsoft.Owin.Security.OAuth;
 using CCG.WebAPI.Core.Models;
 using CCG.WebAPI.Core.Providers;
 using CCG.WebAPI.Core.Results;
+using CCG.WebAPI.Core.Models.viewModels;
 
 namespace CCG.WebAPI.Core.Controllers
 {
@@ -57,10 +58,31 @@ namespace CCG.WebAPI.Core.Controllers
         public UserInfoViewModel GetUserInfo()
         {
             ExternalLoginData externalLogin = ExternalLoginData.FromIdentity(User.Identity as ClaimsIdentity);
-            
+
             return new UserInfoViewModel
             {
                 Email = User.Identity.GetUserName(),
+                HasRegistered = externalLogin == null,
+                LoginProvider = externalLogin != null ? externalLogin.LoginProvider : null
+            };
+        }
+        // GET api/Account/vUserInfoRoles
+        [HttpGet]
+        [HostAuthentication(DefaultAuthenticationTypes.ExternalBearer)]
+        [Route("vUserInfoRoles")]
+        public async Task<vUserInfoRoles> vUserInfoRoles()
+        {
+            ExternalLoginData externalLogin = ExternalLoginData.FromIdentity(User.Identity as ClaimsIdentity);
+
+            var tmpuser = await UserManager.FindByIdAsync(User.Identity.GetUserId());
+
+            var tmproles = UserManager.GetRoles(tmpuser.Id);
+
+            return new vUserInfoRoles
+            {
+                Email = tmpuser.Email,
+                UserName = tmpuser.UserName,
+                RoleNames = tmproles,
                 HasRegistered = externalLogin == null,
                 LoginProvider = externalLogin != null ? externalLogin.LoginProvider : null
             };
@@ -125,7 +147,7 @@ namespace CCG.WebAPI.Core.Controllers
 
             IdentityResult result = await UserManager.ChangePasswordAsync(User.Identity.GetUserId(), model.OldPassword,
                 model.NewPassword);
-            
+
             if (!result.Succeeded)
             {
                 return GetErrorResult(result);
@@ -258,9 +280,9 @@ namespace CCG.WebAPI.Core.Controllers
             if (hasRegistered)
             {
                 Authentication.SignOut(DefaultAuthenticationTypes.ExternalCookie);
-                
-                 ClaimsIdentity oAuthIdentity = await user.GenerateUserIdentityAsync(UserManager,
-                    OAuthDefaults.AuthenticationType);
+
+                ClaimsIdentity oAuthIdentity = await user.GenerateUserIdentityAsync(UserManager,
+                   OAuthDefaults.AuthenticationType);
                 ClaimsIdentity cookieIdentity = await user.GenerateUserIdentityAsync(UserManager,
                     CookieAuthenticationDefaults.AuthenticationType);
 
@@ -368,7 +390,7 @@ namespace CCG.WebAPI.Core.Controllers
             result = await UserManager.AddLoginAsync(user.Id, info.Login);
             if (!result.Succeeded)
             {
-                return GetErrorResult(result); 
+                return GetErrorResult(result);
             }
             return Ok();
         }

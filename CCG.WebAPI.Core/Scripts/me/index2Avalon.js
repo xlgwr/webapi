@@ -1,101 +1,116 @@
-﻿//avalon     
-var indexvm = avalon.define({
-    $id: "indexvm",
-    message: '',
-    showbody: 'hidden',
-    is_ADMIN: false,
-    jsonlidata: [],
-    //language
-    language: { tlogin: tlogin, tclogin: tclogin },
-    title: top.linksTitleIndex,
-    //ms-duplex
-    user: top.users,
-    //method
-    addtab: function (tabid, text, url) {
-        f_addTab(tabid, text, url);
-    },
-    initli: function () {
-        //init userinfo
-        $.ajax({
-            type: 'GET',
-            url: top.auth.apiGetUserInfoUrl,
-            headers: top.auth.headers
-        }).complete(function () {
-            $("#" + indexvm.$id).removeClass('hidden');
-        }).done(function (data) {
-            avalon.log("avalonLog:ajaxInitLi.");
+﻿require(["avalon", 'domReady!'], function (avalon) {
+    rooturl = $("#baseBody").attr('rooturl');
+    loginApi.rooturl = rooturl;
+    //avalon     
+    var indexvm = avalon.define({
+        $id: "indexvm",
+        message: '',
+        showbody: 'hidden',
+        is_ADMIN: false,
+        jsonlidata: [],
+        //language
+        language: { tlogin: tlogin, tclogin: tclogin },
+        title: top.linksTitleIndex,
+        //ms-duplex
+        user: top.users,
+        //method
+        addtab: function (tabid, text, url) {
+            f_addTab(tabid, text, url);
+        },
+        initli: function () {
+            //init userinfo
+            $.ajax({
+                type: 'GET',
+                url: top.auth.apiGetvUserInfoRoles,
+                headers: top.auth.headers
+            }).complete(function () {
+                $("#" + indexvm.$id).removeClass('hidden');
+            }).done(function (data) {
+                avalon.log("avalonLog:ajaxInitLi.");
+                //apiGetvUserInfoRoles
+                //Dept:null,Email:"admin@cclmotors.com",HasRegistered:true,LoginProvider:null,RoleNames:["admin"],UserName:"admin@cclmotors.com"
+                avalon.log(data);
 
-            avalon.log(data);
+                //top.users.userid = data.Email;
+                indexvm.user.userid = data.Email; 
+                indexvm.user.username = data.UserName;
+                indexvm.user.dept = data.Dept;
+                indexvm.user.userrole = data.RoleNames;
 
-            //top.users.userid = data.Email;
-            indexvm.user.userid = data.Email;
+                //start other code   
+                avalon.log(top.users);
 
-            //start other code   
-            avalon.log(top.users);
+            }).fail(showerrIndex);
+            //end     
 
-        }).fail(showerrIndex);
-        //end     
+        },
+        onLogout: function (prefix, currbtn) {
 
-    },
-    onLogout: function (prefix, currbtn) {
+            // Cache the access token in session storage.
+            sessionStorage.removeItem(top.auth.tokenKey);
 
-        // Cache the access token in session storage.
-        sessionStorage.removeItem(top.auth.tokenKey);
+            avalon.log("onLogout Done!");
 
-        avalon.log("onLogout Done!");
+            top.location.href = top.auth.setLoginhref;
+        }
+    }, function (vm) {
+        avalon.log("vmindex.")
+    });
 
-        top.location.href = top.auth.setLoginhref;
+    avalon.scan();
+
+    //init from avalon ******************************************************
+    avalon.vmodels.indexvm.initli();
+    avalon.log(avalon.vmodels.indexvm.user)
+    //end *******************************************************************
+
+    avalon.log("avalon: role:" + indexvm.user.userrole);
+    if (indexvm.user.userrole === 'admin') {
+        indexvm.is_ADMIN = true;
     }
-}, function (vm) {
-    avalon.log("vmindex.")
-});
+    function showerrIndex(err) {
 
-avalon.scan();
+        //avalon.log(this);
+        avalon.log(err);
 
-avalon.log("avalon: role:" + indexvm.user.userrole);
-if (indexvm.user.userrole === 'ECN_ADMIN') {
-    indexvm.is_ADMIN = true;
-}
+        switch (err.status) {
+            case 404:
+                avalon.log("this URL:" + this.url + " was not found.Please check that.");
+                return;
+                break;
+            default:
 
-function showerrIndex(err) {
-
-    //avalon.log(this);
-    avalon.log(err);
-
-    switch (err.status) {
-        case 404:
-            avalon.log("this URL:" + this.url + " was not found.Please check that.");
+        }
+        if (!err.responseJSON) {
             return;
-            break;
-        default:
+        }
+        //{Message:'',responseText:[],responseJSON}
+        var vdata = err.responseJSON//JSON.parse(err.responseText);
 
-    }
-    //{Message:'',responseText:[],responseJSON}
-    var vdata = err.responseJSON//JSON.parse(err.responseText);
+        //avalon.log(vdata);
 
-    //avalon.log(vdata);
+        //{error:'',error_description:''}
+        if (vdata.error) {
+            avalon.log(vdata.error + "<br/>" + vdata.error_description);
+        }
+        //{Message:'',ModelState:[]}
+        if (vdata.Message) {
+            //ModelState              
+            var errarr = [];
+            var icount = 1;
 
-    //{error:'',error_description:''}
-    if (vdata.error) {
-        avalon.log(vdata.error + "<br/>" + vdata.error_description);
-    }
-    //{Message:'',ModelState:[]}
-    if (vdata.Message) {
-        //ModelState              
-        var errarr = [];
-        var icount = 1;
-
-        if (vdata.ModelState) {
-            for (var i in vdata.ModelState) {
-                errarr.push(icount + "." + vdata.ModelState[i][0]);
-                icount++;
+            if (vdata.ModelState) {
+                for (var i in vdata.ModelState) {
+                    errarr.push(icount + "." + vdata.ModelState[i][0]);
+                    icount++;
+                }
+                avalon.log(vdata.Message + "<br/>" + errarr.join("<br/><br/>"));
+            } else {
+                avalon.log(vdata.Message)
             }
-            avalon.log(vdata.Message + "<br/>" + errarr.join("<br/><br/>"));
-        } else {
-            avalon.log(vdata.Message)
+
         }
 
+
     }
-
-
-}
+});

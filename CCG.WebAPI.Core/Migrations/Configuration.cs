@@ -34,12 +34,13 @@ namespace CCG.WebAPI.Core.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
-            
-            var tmpadminexit = context.Users.Where(u => u.UserName.StartsWith("admin")).FirstOrDefault();        
+
+            var tmpadminexit = context.Users.Where(u => u.UserName.StartsWith("admin")).FirstOrDefault();
 
             if (tmpadminexit == null)
             {
                 context.Database.ExecuteSqlCommand("delete from [logs]");
+                context.Database.ExecuteSqlCommand("delete from [menus]");
                 context.Database.ExecuteSqlCommand("delete from [AspNetUserLogins]");
                 context.Database.ExecuteSqlCommand("delete from [AspNetUserClaims]");
                 context.Database.ExecuteSqlCommand("delete from [AspNetUserRoles]");
@@ -84,7 +85,12 @@ namespace CCG.WebAPI.Core.Migrations
                     new domains { domain = "CCSZ.NET", displayname = "CCSZ", isused = 0, remark = "CCSZ.NET", mailDomain = "cclmotors.com" },
                     new domains { domain = "CCJX.NET", displayname = "CCJX", isused = 0, remark = "CCJX.NET", mailDomain = "cclmotors.com" }
                 );
+                context.menus.AddOrUpdate(
+                    new menus { menutype = "public", orderId = 10, funcType = "Manage", mainUrl = "Manage/index", secondUrl = "", displayname = "index", isused = 1 },
+                    new menus { menutype = "public", orderId = 20, funcType = "Manage", mainUrl = "Manage/ChangePassword", secondUrl = "", displayname = "ChangePassword", isused = 1 },
+                    new menus { menutype = "admin", orderId = 30, funcType = "Manage", mainUrl = "Manage/SetPassword", secondUrl = "", displayname = "SetPassword", isused = 1 }
 
+                );
                 context.SaveChanges();
             }
 

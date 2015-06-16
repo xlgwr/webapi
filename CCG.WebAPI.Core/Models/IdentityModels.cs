@@ -38,6 +38,8 @@ namespace CCG.WebAPI.Core.Models
         public virtual DbSet<mailItem> mailItem { get; set; }
         public virtual DbSet<mails> mails { get; set; }
         public virtual DbSet<logs> logs { get; set; }
+        public virtual DbSet<menus> menus { get; set; }
+
 
         public static ApplicationDbContext Create()
         {

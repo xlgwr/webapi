@@ -10,11 +10,9 @@
 <link href="~/Content/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" />
 <link href="~/Content/ligerUI/skins/Gray2014/css/all.css" rel="stylesheet" />
 <link href="~/Content/ligerUIme.css?t=20150608001" rel="stylesheet" />
-
 @Scripts.Render("~/bundles/init")
 @Scripts.Render("~/bundles/ch")
 @Scripts.Render("~/bundles/auth")
-
 <div class="ms-controller" ms-controller="indexvm">
     <div id="pageloading">
     </div>
@@ -23,21 +21,29 @@
             <span><strong>{{title.t1}}</strong> </span>
         </div>
         <div class="l-topmenu-welcome">
-            <span>
+            <p>
                 <strong>
                     Domain :
-                    <span id="domain">{{user.domain}}</span>
+                    <span id="domain" class="text-info">{{user.domain}}</span>
+                </strong>
+                <strong>
                     User ID :
-                    <span  id="UserID" class="text-success">{{user.userid}}</span>
+                    <span id="UserID" class="text-success">{{user.userid}}</span>
+                </strong>
+                <strong>
                     Name :
-                    <span id="Name">{{user.username}}</span>
+                    <span id="Name" class="text-success">{{user.username}}</span>
+                </strong>
+                <strong ms-class="{{user.dept==null?'hidden':''}}">
                     Dept :
-                    <span id="Dept">{{user.dept}}</span>
+                    <span id="Dept" class="text-info">{{user.dept}}</span>
+                </strong>
+                <strong>
                     Group :
-                    <span id="Group"></span>
+                    <span id="Group" class="text-info">{{user.userrole.length>0?user.userrole[0]:''}}</span>
                     <a href="#" ms-click="onLogout('Logout',this)" class="btn btn-warning btn-xs text-danger" role="button">Log Out</a>
                 </strong>
-            </span>
+            </p>
         </div>
     </div>
     <div id="layout1" style="width: 99.6%; margin: 0 auto; margin-top: 4px;">
@@ -57,7 +63,6 @@
         <div position="center" id="framecenter">
             <div tabid="home" ms-attr-title="{{title.t5}}" style="height: 300px">
                 <iframe frameborder="0" name="home" id="home" src="~/home.html"></iframe>
-
             </div>
         </div>
     </div>
@@ -67,7 +72,5 @@
     <div style="display: none">
     </div>
 </div>
-
 @Scripts.Render("~/bundles/ligerUI")
 @Scripts.Render("~/bundles/index")
-

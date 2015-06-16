@@ -246,16 +246,22 @@
     <Compile Include="Migrations\201506151012564_initdb.Designer.cs">
       <DependentUpon>201506151012564_initdb.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201506160242285_addmenus.cs" />
+    <Compile Include="Migrations\201506160242285_addmenus.Designer.cs">
+      <DependentUpon>201506160242285_addmenus.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AD.cs" />
+    <Compile Include="Models\user\menus.cs" />
     <Compile Include="Models\user\domains.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\user\logs.cs" />
     <Compile Include="Models\user\mailItem.cs" />
     <Compile Include="Models\user\mails.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\viewModels\vUserInfoRoles.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
     <Compile Include="Results\ChallengeResult.cs" />
@@ -884,6 +890,8 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\json2.js" />
+    <Content Include="Scripts\me\SetPassword1Jquery.js" />
+    <Content Include="Scripts\me\SetPassword2Avalon1.js" />
     <Content Include="Scripts\me\index2Avalon.js" />
     <Content Include="Scripts\me\auth.js" />
     <Content Include="Scripts\me\initMessage.js" />
@@ -927,10 +935,10 @@
     <Content Include="Views\Shared\_Login.cshtml" />
     <Content Include="Views\Manage\index.cshtml" />
     <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\viewModels\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -945,6 +953,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201506151012564_initdb.resx">
       <DependentUpon>201506151012564_initdb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506160242285_addmenus.resx">
+      <DependentUpon>201506160242285_addmenus.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

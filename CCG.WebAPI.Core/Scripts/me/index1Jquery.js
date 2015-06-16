@@ -37,11 +37,6 @@ $(function () {
     //tree = $("#tree1").ligerGetTreeManager();
     $("#pageloading").hide();
 
-    //init from avalon ******************************************************
-    indexvm.initli();   
-    avalon.log(indexvm.user)
-    //end *******************************************************************
-
 });
 function f_heightChanged(options) {
     if (tab)
