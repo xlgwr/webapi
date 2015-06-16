@@ -18,6 +18,7 @@ using CCG.WebAPI.Core.Providers;
 using CCG.WebAPI.Core.Results;
 using System.Threading.Tasks;
 using CCG.WebAPI.Core.helper;
+using System.Diagnostics;
 
 namespace CCG.WebAPI.Core.Controllers
 {
@@ -38,10 +39,12 @@ namespace CCG.WebAPI.Core.Controllers
         {
             get
             {
-                return _domainManager ?? Request.GetOwinContext().Get<ApplicationDbContext>();
+                var dd= _domainManager ?? Request.GetOwinContext().Get<ApplicationDbContext>();
+                dd.Database.Log = message => Trace.Write(message);
+                return dd;
             }
             private set
-            {
+            {               
                 _domainManager = value;
             }
         }
@@ -49,6 +52,7 @@ namespace CCG.WebAPI.Core.Controllers
         [Route("getDomains")]
         public async Task<ICollection<domains>> getDomains()
         {
+
             var models = Task<ICollection<domains>>.Run(() =>
             {
                 return domainManager.domains.ToList();

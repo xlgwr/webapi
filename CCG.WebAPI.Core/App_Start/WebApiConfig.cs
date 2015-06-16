@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Cors;
+using System.Web.Http.Tracing;
 using Microsoft.Owin.Security.OAuth;
 using Newtonsoft.Json.Serialization;
 
@@ -13,6 +14,11 @@ namespace CCG.WebAPI.Core
     {
         public static void Register(HttpConfiguration config)
         {
+            //tracing
+            SystemDiagnosticsTraceWriter traceWriter = config.EnableSystemDiagnosticsTracing();
+            traceWriter.IsVerbose = true;
+            traceWriter.MinimumLevel = TraceLevel.Debug;
+
             //http://127.0.0.1:8081
             var cors = new EnableCorsAttribute(@"*", "*", "*");
             config.EnableCors(cors);

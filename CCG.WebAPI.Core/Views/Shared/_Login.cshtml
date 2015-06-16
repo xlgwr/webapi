@@ -45,12 +45,13 @@
                             <button ms-click="onLogin(tlogin.title,this)" id="Login" type="button" class="btn btn-primary">{{tlogin.Login}}</button>
                         </div>
                     </td>
+                    <td class="text-center" ms-class="{{cssonLogout}}">
+                        <div>
+                            <button ms-click="onLogout(tlogin.title,this)" id="Logout" type="button" class="btn btn-danger">{{tlogin.Logout}}</button>
+                        </div>
+                    </td>
                 </tr>
             </table>
-            @*
-                <div class="col-xs-4">
-                    <button ms-click="onLogout('Logout',this)" id="Logout" type="button" class="btn btn-danger">{{tlogin.Logout}}</button>
-                </div>*@
         </div>
     </div>
     <div id="message" class="panel-footer text-center" ms-class="{{messagecss}}">

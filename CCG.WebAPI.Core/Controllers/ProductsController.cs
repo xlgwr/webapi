@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Web.Http;
 
 using CCG.WebAPI.Core.Models;
+using System.Web.Http.Tracing;
 
 namespace CCG.WebAPI.Core.Controllers
 {
@@ -18,6 +19,10 @@ namespace CCG.WebAPI.Core.Controllers
         };
         public IEnumerable<Product> GetAllProducts()
         {
+            Configuration.Services.GetTraceWriter()
+                .Info(Request, "productscontroller","Get the list of products."
+                );
+
             return products;
         }
         public IHttpActionResult GetProduct(int id)

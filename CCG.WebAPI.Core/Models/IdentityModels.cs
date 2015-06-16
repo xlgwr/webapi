@@ -6,6 +6,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using CCG.WebAPI.Core.Models.user;
 using System.Collections.Generic;
+using System;
 
 namespace CCG.WebAPI.Core.Models
 {
@@ -21,12 +22,6 @@ namespace CCG.WebAPI.Core.Models
             return userIdentity;
         }
     }
-    public class ApplicationRole : IdentityRole { }
-    public class ApplicationUserRole : IdentityUserRole { }
-
-    public class ApplicationUserLogin : IdentityUserLogin { }
-    public class ApplicationUserClaim : IdentityUserClaim { }
-
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
@@ -44,7 +39,8 @@ namespace CCG.WebAPI.Core.Models
 
         public static ApplicationDbContext Create()
         {
-            return new ApplicationDbContext();
+            var context = new ApplicationDbContext();
+            return context;
         }
 
     }
