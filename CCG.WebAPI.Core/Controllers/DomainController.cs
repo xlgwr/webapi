@@ -40,7 +40,6 @@ namespace CCG.WebAPI.Core.Controllers
             get
             {
                 var dd= _domainManager ?? Request.GetOwinContext().Get<ApplicationDbContext>();
-                dd.Database.Log = message => Trace.Write(message);
                 return dd;
             }
             private set

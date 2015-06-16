@@ -7,6 +7,7 @@ using Microsoft.AspNet.Identity.Owin;
 using CCG.WebAPI.Core.Models.user;
 using System.Collections.Generic;
 using System;
+using System.Diagnostics;
 
 namespace CCG.WebAPI.Core.Models
 {
@@ -27,6 +28,7 @@ namespace CCG.WebAPI.Core.Models
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
+            this.Database.Log = message => Trace.Write(message);
         }
         /// <summary>
         /// add-migration adddomain
@@ -39,8 +41,7 @@ namespace CCG.WebAPI.Core.Models
 
         public static ApplicationDbContext Create()
         {
-            var context = new ApplicationDbContext();
-            return context;
+            return new ApplicationDbContext();
         }
 
     }
