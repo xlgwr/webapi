@@ -170,7 +170,8 @@
                 }
             }
             var data = {
-                OldPassword: SetPassword.password,
+                //OldPassword: SetPassword.password,
+                Email: tmpEmail,
                 NewPassword: SetPassword.confirmPassword,
                 ConfirmPassword: SetPassword.confirmPassword
             };
@@ -195,15 +196,17 @@
                 avalon.log("Done!");
                 avalon.log(data);
 
+                $('#password').focus();
+
                 SetPassword.messagecss = "show alert-success";
-                SetPassword.message = prefix + ": Success." + ",New Password:" + SetPassword.confirmPassword
+                SetPassword.message = prefix + SetPassword.tlogin.notice + SetPassword.confirmPassword
 
                 SetPassword.password = '';
                 SetPassword.confirmPassword = '';
 
                 this.currbtn.disabled = false;
                 this.currbtn.className = 'btn btn-success';
-                $('#password').focus();
+             
                 avalon.log(loginApi);
 
                 if (loginApi.redirectUrl) {

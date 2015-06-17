@@ -195,15 +195,17 @@
                 avalon.log("Done!");
                 avalon.log(data);
 
+                $('#password').focus();
+
                 ChangePassword.messagecss = "show alert-success";
-                ChangePassword.message = prefix + ": Success." + ",New Password:" + ChangePassword.confirmPassword
+                ChangePassword.message = prefix + ChangePassword.tlogin.notice + ChangePassword.confirmPassword
 
                 ChangePassword.password = '';
                 ChangePassword.confirmPassword = '';
 
                 this.currbtn.disabled = false;
                 this.currbtn.className = 'btn btn-success';
-                $('#password').focus();
+               
                 avalon.log(loginApi);
 
                 if (loginApi.redirectUrl) {

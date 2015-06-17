@@ -175,6 +175,7 @@ namespace CCG.WebAPI.Core.Controllers
             return Ok();
         }
 
+
         // POST api/Account/AddExternalLogin
         [Route("AddExternalLogin")]
         public async Task<IHttpActionResult> AddExternalLogin(AddExternalLoginBindingModel model)
@@ -405,6 +406,32 @@ namespace CCG.WebAPI.Core.Controllers
 
             base.Dispose(disposing);
         }
+        #region add xlgwr
+
+        // POST api/Account/reSetPassword
+        [Authorize(Roles = "admin")]
+        [Route("reSetPassword")]
+        public async Task<IHttpActionResult> reSetPassword(reSetPasswordBindingModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var user = await UserManager.FindByEmailAsync(model.Email);
+
+            user.PasswordHash = new PasswordHasher().HashPassword(model.ConfirmPassword);
+
+            IdentityResult result = await UserManager.UpdateAsync(user);
+
+            if (!result.Succeeded)
+            {
+                return GetErrorResult(result);
+            }
+
+            return Ok();
+        }
+        #endregion
 
         #region Helpers
 

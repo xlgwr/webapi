@@ -9,7 +9,8 @@ var tlogin = {
     confirmPassword: '确认密码',
     Register: '注册',
     Login: '登陆',
-    Logout: '退出'
+    Logout: '退出',
+    notice: ": 成功.新密码:"
 }
 //修改密码 ChangePassword
 var tclogin = {
@@ -22,7 +23,8 @@ var tclogin = {
     confirmPassword: '新密码',
     Register: tlogin.Register,
     Login: '修改',
-    Logout: tlogin.Logout
+    Logout: tlogin.Logout,
+    notice: ": 成功.新密码:"
 }
 //设置密码 SetPassword
 var tsplogin = {
@@ -35,7 +37,8 @@ var tsplogin = {
     confirmPassword: '确认密码',
     Register: tlogin.Register,
     Login: '修改',
-    Logout: tlogin.Logout
+    Logout: tlogin.Logout,
+    notice: ": 成功.新密码:"
 }
 //title
 var linksTitleIndex = {
