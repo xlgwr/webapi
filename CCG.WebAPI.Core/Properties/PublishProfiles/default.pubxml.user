@@ -3424,7 +3424,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/17/2015 18:39:39</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>06/17/2015 23:19:34</publishTime>
+      <publishTime>06/18/2015 00:13:43</publishTime>
     </File>
     <File Include="Views/Home/Login.cshtml">
       <publishTime>06/17/2015 21:50:47</publishTime>
