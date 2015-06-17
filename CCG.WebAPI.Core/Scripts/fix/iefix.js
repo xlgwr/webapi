@@ -4,12 +4,54 @@
     $('#aclose').click(function () {
         $('#browserupdator').fadeOut(800);
     })
+   
     //login
     var tmpwidth = $('#loginbody').width();
-    $('#domain,#userid,#password,#confirmpassword')
-        .width(tmpwidth * 0.85, 0)
+
+    var browser = getBrowserInfo(); //浏览器名字+版本字符串
+   
+    var verinfo = (browser + "").replace(/[^0-9.]/ig, "");//版本号
+   
+    avalon.log(verinfo);
+
+    if (verinfo >= 8) {
+        $('#domain,#userid,#password,#confirmpassword')
+               .width(tmpwidth * 0.5, 0)
+    } else {
+        $('#domain,#userid,#password,#confirmpassword')
+              .width(tmpwidth * 0.85, 0)
+    }
+
     $('#domain')
-        .height(20, 20);
+        .height(20, 25);
     $('#userid,#password,#confirmpassword')
-        .height(0, 30);
+        .height(15, 25);
 })
+function getBrowserInfo() {
+    var agent = navigator.userAgent.toLowerCase();
+
+    var regStr_ie = /msie [\d.]+;/gi;
+    var regStr_ff = /firefox\/[\d.]+/gi
+    var regStr_chrome = /chrome\/[\d.]+/gi;
+    var regStr_saf = /safari\/[\d.]+/gi;
+    //IE
+    if (agent.indexOf("msie") > 0) {
+        return agent.match(regStr_ie);
+    }
+
+    //firefox
+    if (agent.indexOf("firefox") > 0) {
+        return agent.match(regStr_ff);
+    }
+
+    //Chrome
+    if (agent.indexOf("chrome") > 0) {
+        return agent.match(regStr_chrome);
+    }
+
+    //Safari
+    if (agent.indexOf("safari") > 0 && agent.indexOf("chrome") < 0) {
+        return agent.match(regStr_saf);
+    }
+
+}

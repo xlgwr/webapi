@@ -3301,7 +3301,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/17/2015 18:39:39</publishTime>
     </File>
     <File Include="Scripts/fix/iefix.js">
-      <publishTime>06/17/2015 18:39:39</publishTime>
+      <publishTime>06/18/2015 00:00:55</publishTime>
     </File>
     <File Include="Scripts/jquery-2.1.4.js">
       <publishTime>06/17/2015 18:39:39</publishTime>
