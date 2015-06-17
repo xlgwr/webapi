@@ -942,12 +942,6 @@
     <Content Include="home.html" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CCG.dbEntity.ECN\CCG.dbEntity.ECN.csproj">
-      <Project>{f31a0f48-039d-4fb5-a625-ed3da39b2787}</Project>
-      <Name>CCG.dbEntity.ECN</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Migrations\201506151012564_initdb.resx">
       <DependentUpon>201506151012564_initdb.cs</DependentUpon>
     </EmbeddedResource>

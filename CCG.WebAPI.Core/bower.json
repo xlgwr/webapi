@@ -2,7 +2,7 @@
   "name": "webApi",
   "version": "0.0.0",
   "dependencies": {
-    "avalon": "~1.4.3",
+    "avalon": "~1.4.4",
     "jquery": "1.11.x",
     "normalize.css": "~3.0.3",
     "json2": "*",
