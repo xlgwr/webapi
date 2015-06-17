@@ -14,7 +14,7 @@ require(["avalon", 'domReady!'], function (avalon) {
         user: top.users,
         //repeat
         //Id: 8,displayname: "index",funcType: "Manage",isused: 1,mainUrl: "Manage/index",menutype: "public",orderId: 10,remark: null,secondUrl: ""
-        arrmenus: [],
+        arrmenus: {},
         //method
         addtab: function (tabid, text, url) {
             f_addTab(tabid, text, url);

@@ -47,22 +47,11 @@
         </div>
     </div>
     <div id="layout1" style="width: 99.6%; margin: 0 auto; margin-top: 4px;">
-        <div position="left" id="accordion1" ms-attr-title="{{lang.title.t2}}">
-            <div ms-attr-title="{{lang.title.t3}}">
+        <div position="left" id="accordion1" ms-attr-title="{{lang.title.t2}}">            
+            <div ms-repeat="arrmenus" ms-attr-title="{{lang.title[$val[0].funcTypeTitle]}}">
                 <div style="height: 7px;">
                 </div>
-                <a class="l-link" href="#" ms-click="addtab('auditMain', top.tclogin.title, '@manageUrlChangePassword?tfuserid='+top.users.userid)">{{lang.tclogin.title}}</a>
-                <a class="l-link" href="#" ms-click="addtab('about', 'about', '@baseUrl?tfuserid='+top.users.userid)">about</a>
-            </div>
-            <div ms-attr-title="{{lang.title.t4}}">
-                <div style="height: 7px;">
-                </div>
-                <a class="l-link" ms-visible="is_ADMIN" href="#" ms-click="addtab('adminMain', '管理中心', 'ConfigPages/adminMant.aspx?tfuserid='+top.users.userid)">管理中心</a>
-            </div>
-            <div ms-repeat="arrmenus" ms-attr-title="{{el.funcType}}">
-                <div style="height: 7px;">
-                </div>
-                <a class="l-link" href="#" ms-hover="l-link-over" ms-click="addtab(el.Id,el.displayname,el.mainUrl)">{{el.displayname}}</a>
+                <a ms-repeat="$val" class="l-link" href="#" ms-hover="l-link-over" ms-click="addtab(el.Id,lang.title[el.displayTitle],el.mainUrl)">{{lang.title[el.displayTitle]}}</a>
             </div>
         </div>
         <div position="center" id="framecenter">

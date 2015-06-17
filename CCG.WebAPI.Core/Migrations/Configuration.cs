@@ -86,9 +86,11 @@ namespace CCG.WebAPI.Core.Migrations
                     new domains { domain = "CCJX.NET", displayname = "CCJX", isused = 0, remark = "CCJX.NET", mailDomain = "cclmotors.com" }
                 );
                 context.menus.AddOrUpdate(
-                    new menus { menutype = "public", orderId = 10, funcType = "Manage", mainUrl = "Manage/index", secondUrl = "", displayname = "index", isused = 1 },
-                    new menus { menutype = "public", orderId = 20, funcType = "Manage", mainUrl = "Manage/ChangePassword", secondUrl = "", displayname = "ChangePassword", isused = 1 },
-                    new menus { menutype = "admin", orderId = 30, funcType = "Manage", mainUrl = "Manage/SetPassword", secondUrl = "", displayname = "SetPassword", isused = 1 }
+                    new menus { menutype = "public", orderId = 10, displayTitle = "tm10", funcTypeTitle="tm1", funcType = "Manage", mainUrl = "Manage/index", secondUrl = "", displayname = "index", isused = 1 },
+                    new menus { menutype = "public", orderId = 20, displayTitle = "tm20", funcTypeTitle = "tm1", funcType = "Manage", mainUrl = "Manage/ChangePassword", secondUrl = "", displayname = "ChangePassword", isused = 1 },
+                    new menus { menutype = "admin", orderId = 30, displayTitle = "tm30", funcTypeTitle = "tm1", funcType = "Manage", mainUrl = "Manage/SetPassword", secondUrl = "", displayname = "SetPassword", isused = 1 },
+                      new menus { menutype = "public", orderId = 40, displayTitle = "tm40", funcTypeTitle = "tm2", funcType = "Other", mainUrl = "Home/about", secondUrl = "", displayname = "About", isused = 1 }
+                   
 
                 );
                 context.SaveChanges();

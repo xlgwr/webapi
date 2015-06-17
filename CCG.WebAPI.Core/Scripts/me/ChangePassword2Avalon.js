@@ -32,7 +32,7 @@
         mailDomain: '',
         //ms-repeat
         //domains{Id: 5,displayname: "CCG",domain: "CCG.NET",isused: 0,mailDomain: "cclmotors.com",remark: "CCG.NET"}
-        arrDomains: {},
+        arrDomains: [],
         //check validate
         checkbase: function (prefix, flagRegister) {
             ChangePassword.messagecss = "show alert-info";

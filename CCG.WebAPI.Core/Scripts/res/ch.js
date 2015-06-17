@@ -1,14 +1,4 @@
-﻿var linksTitleIndex = {
-    t1: 'ECN系统-捷和電機集團',
-    t2: '主要菜单',
-    t3: '系统管理',
-    t4: '其它',
-    t5: '我的主页',
-    t6: 'Copyright © 2015 捷和电机集团有限公司 版权所有',
-    tm01: '系统管理',
-    tm02:''
-}
-//登  陆     login
+﻿//登  陆     login
 var tlogin = {
     title: '登  陆',
     domain: 'Domain',
@@ -46,4 +36,19 @@ var tsplogin = {
     Register: tlogin.Register,
     Login: '修改',
     Logout: tlogin.Logout
+}
+//title
+var linksTitleIndex = {
+    t1: 'ECN系统-捷和電機集團',
+    t2: '主要菜单',
+    t3: '系统管理',
+    t4: '其它...',
+    t5: '我的主页',
+    t6: 'Copyright © 2015 捷和电机集团有限公司 版权所有',
+    tm1: '系统管理',
+    tm2: '其它',
+    tm10: '管理中心',
+    tm20: tclogin.title,
+    tm30: tsplogin.title,
+    tm40: '关于'
 }

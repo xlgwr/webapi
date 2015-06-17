@@ -29,7 +29,15 @@ namespace CCG.WebAPI.Core.Models.user
         [Required]
         [StringLength(128)]
         public string displayname { get; set; }
+
+        [Required]
+        [StringLength(128)]
+        public string displayTitle { get; set; }
         
+        [Required]
+        [StringLength(128)]
+        public string funcTypeTitle { get; set; }
+
         [Required]
         public string mainUrl { get; set; }
         public string secondUrl { get; set; }

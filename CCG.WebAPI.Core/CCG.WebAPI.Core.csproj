@@ -250,6 +250,10 @@
     <Compile Include="Migrations\201506160242285_addmenus.Designer.cs">
       <DependentUpon>201506160242285_addmenus.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201506171317522_addMenusDisplayTitle.cs" />
+    <Compile Include="Migrations\201506171317522_addMenusDisplayTitle.Designer.cs">
+      <DependentUpon>201506171317522_addMenusDisplayTitle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -947,6 +951,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201506160242285_addmenus.resx">
       <DependentUpon>201506160242285_addmenus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506171317522_addMenusDisplayTitle.resx">
+      <DependentUpon>201506171317522_addMenusDisplayTitle.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
