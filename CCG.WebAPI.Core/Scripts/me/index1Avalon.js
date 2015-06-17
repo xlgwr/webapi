@@ -1,5 +1,6 @@
 ﻿rooturl = $("#baseBody").attr('rooturl');
 loginApi.rooturl = rooturl;
+
 require(["avalon", 'domReady!'], function (avalon) {
     //avalon     
     var indexvm = avalon.define({
@@ -48,7 +49,7 @@ require(["avalon", 'domReady!'], function (avalon) {
                 avalon.log(arrdata);
                 $.ajax({
                     type: 'POST',
-                    url: top.menusApi.rooturl + top.menusApi.apiUri,
+                    url: rooturl + top.menusApi.apiUri,
                     data: arrdata,
                     headers: top.auth.headers
                 }).done(function (data) {

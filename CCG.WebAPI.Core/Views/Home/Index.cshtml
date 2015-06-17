@@ -51,7 +51,7 @@
             <div ms-repeat="arrmenus" ms-attr-title="{{lang.title[$val[0].funcTypeTitle]}}">
                 <div style="height: 7px;">
                 </div>
-                <a ms-repeat="$val" class="l-link" href="#" ms-hover="l-link-over" ms-click="addtab(el.Id,lang.title[el.displayTitle],el.mainUrl)">{{lang.title[el.displayTitle]}}</a>
+                <a ms-repeat="$val" class="l-link" href="#" ms-hover="l-link-over" ms-click="addtab(el.Id,lang.title[el.displayTitle],rooturl+el.mainUrl)">{{lang.title[el.displayTitle]}}</a>
             </div>
         </div>
         <div position="center" id="framecenter">

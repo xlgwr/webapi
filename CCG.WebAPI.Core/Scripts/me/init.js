@@ -2,8 +2,8 @@
 //remote host set
 //gobal define                                          
 var rooturl = '/';
-var remoteHost = 'http://localhost:9539/';     //for develop test
-//var remoteHost = 'http://localhost/webapicore/';
+//var remoteHost = 'http://localhost:9539/';     //for develop test
+var remoteHost = 'http://localhost/webapicore/';
 //tab
 var height = 0;
 
@@ -43,12 +43,12 @@ var loginApi = {
 //menu of api
 var menusApi = {
     apiUri: 'api/domains/getmenus',
-    rooturl: loginApi.rooturl
+    rooturl: rooturl
 }
 var mailApi = {
     apiUrl: 'api/Mail',
     mailDomain: 'cclmotors.com',
-    rooturl: loginApi.rooturl
+    rooturl: rooturl
 }
 //mail set
 var mailSet =
