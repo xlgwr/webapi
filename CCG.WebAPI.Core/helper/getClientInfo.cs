@@ -13,12 +13,23 @@ namespace CCG.WebAPI.Core.helper
         {
             string osVersion = null;
 
-            if (userAgent.Contains("NT 6.1"))
+            if (userAgent.Contains("NT 10"))
+            {
+                osVersion = "Windows 10";
+            }
+            else if (userAgent.Contains("NT 6.1"))
             {
                 osVersion = "Windows 7/Server 2008 r2";
             }
-
-            if (userAgent.Contains("NT 6.0"))
+            else if (userAgent.Contains("NT 6.2"))
+            {
+                osVersion = "Windows 8";
+            }
+            else if (userAgent.Contains("NT 6.3"))
+            {
+                osVersion = "Windows 8.1";
+            }
+            else if (userAgent.Contains("NT 6.0"))
             {
                 osVersion = "Windows Vista/Server 2008";
             }
@@ -37,6 +48,10 @@ namespace CCG.WebAPI.Core.helper
             else if (userAgent.Contains("NT 4"))
             {
                 osVersion = "Windows NT4";
+            }
+            else if (userAgent.Contains("Windows NT"))
+            {
+                osVersion = "Windows NT other";
             }
             else if (userAgent.Contains("Me"))
             {

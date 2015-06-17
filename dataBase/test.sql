@@ -7,3 +7,4 @@ select * from [dbo].[domains]
 select * from [dbo].[menus]
 
 select * from [dbo].[logs]
+--delete [dbo].[logs]
