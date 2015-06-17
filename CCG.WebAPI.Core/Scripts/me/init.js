@@ -25,11 +25,7 @@ var auth = {
     tokenKey: 'accessToken',
     topcurrUrl: top.location.protocol + '//' + top.location.host + location.pathname//top.location.href;
 }
-//menu of api
-var menusApi = {
-    apiUri: 'api/domains/getmenus',
-    rooturl: rooturl
-}
+
 //login of api
 var loginApi = {
     apiUri: 'api/domains/getDomains',
@@ -43,10 +39,15 @@ var loginApi = {
     rooturl: rooturl,
     redirectUrl: ''
 }
+//menu of api
+var menusApi = {
+    apiUri: 'api/domains/getmenus',
+    rooturl: loginApi.rooturl
+}
 var mailApi = {
     apiUrl: 'api/Mail',
     mailDomain: 'cclmotors.com',
-    rooturl: rooturl
+    rooturl: loginApi.rooturl
 }
 //mail set
 var mailSet =

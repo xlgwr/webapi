@@ -21,10 +21,8 @@ var indexvm = avalon.define({
             type: 'GET',
             url: top.auth.apiGetvUserInfoRoles,
             headers: top.auth.headers
-        }).complete(function () {
-            $("#" + indexvm.$id).removeClass('hidden');
         }).done(function (data) {
-            avalon.log("avalonLog:ajaxInitLi.");
+            avalon.log("avalonLog:ajaxInitLi.27");
             //apiGetvUserInfoRoles
             //Dept:null,Email:"admin@cclmotors.com",HasRegistered:true,LoginProvider:null,RoleNames:["admin"],UserName:"admin@cclmotors.com"
             avalon.log(data);
@@ -37,6 +35,22 @@ var indexvm = avalon.define({
 
             //start other code   
             avalon.log(top.users);
+
+            //init menudata
+            var arrMenudata = ['public'];
+            arrMenudata.push(indexvm.user.domain);
+            var arrdata = { rolename: arrMenudata.concat(indexvm.user.userrole) };
+
+            avalon.log(arrdata);
+            $.ajax({
+                type: 'POST',
+                url: top.menusApi.rooturl + top.menusApi.apiUri,
+                data: arrdata,
+                headers: top.auth.headers
+            }).done(function (data) {
+                avalon.log(data);
+            }).fail(showerrIndex);
+
 
         }).fail(showerrIndex);
         //end     

@@ -22,7 +22,7 @@ $(function () {
         top.location.href = encodeURI(top.auth.setLoginhref);
 
     }
-    avalon.log("auth:");
+    avalon.log("auth:25");
     avalon.log(top.auth);
     avalon.log(top.users);
 

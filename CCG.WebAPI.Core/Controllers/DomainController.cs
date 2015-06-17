@@ -19,6 +19,7 @@ using CCG.WebAPI.Core.Results;
 using System.Threading.Tasks;
 using CCG.WebAPI.Core.helper;
 using System.Diagnostics;
+using CCG.WebAPI.Core.Models.viewModels;
 
 namespace CCG.WebAPI.Core.Controllers
 {
@@ -55,6 +56,20 @@ namespace CCG.WebAPI.Core.Controllers
             var models = Task<ICollection<domains>>.Run(() =>
             {
                 return domainManager.domains.ToList();
+            });
+            return await models;
+
+        }
+
+        [Authorize]
+        [HttpPost]
+        [Route("getmenus")]
+        public async Task<ICollection<menus>> getmenus(rolenames rolenames)
+        {
+
+            var models = Task<ICollection<menus>>.Run(() =>
+            {
+                return domainManager.menus.Where(m=>rolenames.rolename.Contains(m.menutype)).ToList();
             });
             return await models;
 
