@@ -69,6 +69,11 @@ var mailSet =
 users.domain = (GetQueryString('domain') || '').toUpperCase();
 users.userid = GetQueryString('userid') || '';
 users.rd_msg = GetQueryString('msg') || '';
-
+//init auth
+var gettokenKey = GetQueryString('tokenkey');
+if (gettokenKey) {
+    sessionStorage.setItem(auth.tokenKey, gettokenKey);
+    auth.headers.Authorization = 'Bearer ' + gettokenKey;
+}                                                     
 //init loginapi          
 loginApi.redirectUrl = GetQueryString('redirectUrl') || '';

@@ -18,56 +18,56 @@
     </div>
     <div id="topmenu" class="l-topmenu">
         <div class="l-topmenu-logo">
-            <span><strong>{{title.t1}}</strong> </span>
+            <span><strong>{{lang.title.t1}}</strong> </span>
         </div>
         <div class="l-topmenu-welcome">
             <p>
                 <strong>
-                    Domain :
+                    {{lang.tlogin.domain}} :
                     <span id="domain" class="text-info">{{user.domain}}</span>
                 </strong>
-                <strong>
-                    User ID :
+                <strong class="hidden">
+                    ID :
                     <span id="UserID" class="text-success">{{user.userid}}</span>
                 </strong>
                 <strong>
-                    Name :
+                    {{lang.tlogin.UserName}} :
                     <span id="Name" class="text-success">{{user.username}}</span>
                 </strong>
                 <strong ms-class="{{user.dept==null?'hidden':''}}">
-                    Dept :
+                    {{lang.tlogin.Dept}} :
                     <span id="Dept" class="text-info">{{user.dept}}</span>
                 </strong>
                 <strong>
-                    Group :
-                    <span id="Group" class="text-info">{{user.userrole.length>0?user.userrole[0]:''}}</span>
-                    <a href="#" ms-click="onLogout('Logout',this)" class="btn btn-warning btn-xs text-danger" role="button">Log Out</a>
+                    {{lang.tlogin.RoleNames}} :
+                    <span id="Group" class="text-info">{{user.userrole.length>0?user.userrole[0]:'No Role'}}</span>
+                    <a href="#" ms-click="onLogout('Logout',this)" class="btn btn-danger btn-xs text-danger" role="button">{{lang.tlogin.Logout}}</a>
                 </strong>
             </p>
         </div>
     </div>
     <div id="layout1" style="width: 99.6%; margin: 0 auto; margin-top: 4px;">
-        <div position="left" ms-attr-title="{{title.t2}}" id="accordion1">
-            <div ms-attr-title="{{title.t3}}">
+        <div position="left" id="accordion1" ms-attr-title="{{lang.title.t2}}">
+            <div ms-attr-title="{{lang.title.t3}}">
                 <div style="height: 7px;">
                 </div>
-                <a class="l-link" href="#" ms-click="addtab('auditMain', top.tclogin.title, '@manageUrlChangePassword?tfuserid='+top.users.userid)">{{language.tclogin.title}}</a>
+                <a class="l-link" href="#" ms-click="addtab('auditMain', top.tclogin.title, '@manageUrlChangePassword?tfuserid='+top.users.userid)">{{lang.tclogin.title}}</a>
                 <a class="l-link" href="#" ms-click="addtab('about', 'about', '@baseUrl?tfuserid='+top.users.userid)">about</a>
             </div>
-            <div ms-attr-title="{{title.t4}}">
+            <div ms-attr-title="{{lang.title.t4}}">
                 <div style="height: 7px;">
                 </div>
                 <a class="l-link" ms-visible="is_ADMIN" href="#" ms-click="addtab('adminMain', '管理中心', 'ConfigPages/adminMant.aspx?tfuserid='+top.users.userid)">管理中心</a>
             </div>
         </div>
         <div position="center" id="framecenter">
-            <div tabid="home" ms-attr-title="{{title.t5}}" style="height: 300px">
+            <div tabid="home" ms-attr-title="{{lang.title.t5}}" style="height: 300px">
                 <iframe frameborder="0" name="home" id="home" src="~/home.html"></iframe>
             </div>
         </div>
     </div>
     <div style="height: 32px; line-height: 32px; text-align: center;">
-        {{title.t6}}
+        {{lang.title.t6}}
     </div>
     <div style="display: none">
     </div>

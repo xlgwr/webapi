@@ -122,6 +122,6 @@ body {
 }
 
     .l-topmenu-welcome a {
-        color: Black;
+        /*color: Black;*/
         text-decoration: underline;
     }

@@ -60,6 +60,10 @@ function showerrAuth(err) {
     }
     //{Message:'',responseText:[],responseJSON}
 
+    if (!err.responseJSON) {
+        return;
+    }
+
     var vdata = err.responseJSON;//JSON.parse(err.responseText);//   
 
     //avalon.log(vdata);
