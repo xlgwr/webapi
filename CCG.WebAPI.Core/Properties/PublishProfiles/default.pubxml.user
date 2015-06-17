@@ -3358,7 +3358,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/16/2015 11:58:33</publishTime>
     </File>
     <File Include="Scripts/me/index2Jquery.js">
-      <publishTime>06/17/2015 18:39:39</publishTime>
+      <publishTime>06/18/2015 00:31:01</publishTime>
     </File>
     <File Include="Scripts/me/indexAvalon.js">
       <publishTime>06/08/2015 16:05:38</publishTime>
@@ -3424,7 +3424,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/17/2015 18:39:39</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>06/18/2015 00:13:43</publishTime>
+      <publishTime>06/18/2015 00:36:33</publishTime>
     </File>
     <File Include="Views/Home/Login.cshtml">
       <publishTime>06/17/2015 21:50:47</publishTime>

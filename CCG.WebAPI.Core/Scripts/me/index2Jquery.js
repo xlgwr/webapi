@@ -22,7 +22,7 @@ function initLigerUi() {
         });
 
         //面板
-        $("#accordion1").ligerAccordion({ height: height - 24, speed: null });
+        $("#accordion1").ligerAccordion({ height: height - 25, speed: null });
 
         $(".l-link").hover(function () {
             $(this).addClass("l-link-over");
