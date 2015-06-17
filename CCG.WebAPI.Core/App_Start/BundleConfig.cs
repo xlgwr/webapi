@@ -55,7 +55,7 @@ namespace CCG.WebAPI.Core
                         "~/Scripts/fix/iefix.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/avalon").Include(
-                        "~/bower_components/avalon/min/avalon.min.js"));
+                        "~/bower_components/avalon/dist/avalon.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/ligerUI").Include(
                         "~/Content/ligerUI/js/ligerui.min.js"));
