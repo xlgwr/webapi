@@ -85,7 +85,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/10/2015 14:09:43</publishTime>
     </File>
     <File Include="bin/CCG.WebAPI.Core.dll">
-      <publishTime>06/17/2015 19:39:03</publishTime>
+      <publishTime>06/17/2015 20:31:49</publishTime>
     </File>
     <File Include="bin/CCG.WebAPI.ECN.dll">
       <publishTime>06/09/2015 09:23:24</publishTime>
@@ -190,10 +190,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/17/2015 19:05:30</publishTime>
     </File>
     <File Include="bower_components/avalon/.bower.json">
-      <publishTime>06/17/2015 18:49:27</publishTime>
+      <publishTime>06/17/2015 20:10:53</publishTime>
     </File>
     <File Include="bower_components/avalon/avalon.js">
-      <publishTime>06/17/2015 18:49:27</publishTime>
+      <publishTime>06/17/2015 20:10:53</publishTime>
     </File>
     <File Include="bower_components/avalon/avalon.mobile.js">
       <publishTime>06/01/2015 11:54:49</publishTime>
@@ -214,40 +214,40 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/01/2015 11:54:50</publishTime>
     </File>
     <File Include="bower_components/avalon/bower.json">
-      <publishTime>06/17/2015 18:49:27</publishTime>
+      <publishTime>06/17/2015 20:10:53</publishTime>
     </File>
     <File Include="bower_components/avalon/dist/avalon.js">
-      <publishTime>06/17/2015 18:49:27</publishTime>
+      <publishTime>06/17/2015 20:10:53</publishTime>
     </File>
     <File Include="bower_components/avalon/dist/avalon.min.js">
-      <publishTime>06/17/2015 18:49:27</publishTime>
+      <publishTime>06/17/2015 20:31:16</publishTime>
     </File>
     <File Include="bower_components/avalon/dist/avalon.mobile.js">
-      <publishTime>06/17/2015 18:49:27</publishTime>
+      <publishTime>06/17/2015 20:10:53</publishTime>
     </File>
     <File Include="bower_components/avalon/dist/avalon.mobile.min.js">
-      <publishTime>06/17/2015 18:49:27</publishTime>
+      <publishTime>06/17/2015 20:10:53</publishTime>
     </File>
     <File Include="bower_components/avalon/dist/avalon.mobile.old.js">
-      <publishTime>06/17/2015 18:49:27</publishTime>
+      <publishTime>06/17/2015 20:10:53</publishTime>
     </File>
     <File Include="bower_components/avalon/dist/avalon.mobile.shim.js">
-      <publishTime>06/17/2015 18:49:27</publishTime>
+      <publishTime>06/17/2015 20:10:53</publishTime>
     </File>
     <File Include="bower_components/avalon/dist/avalon.modern.js">
-      <publishTime>06/17/2015 18:49:27</publishTime>
+      <publishTime>06/17/2015 20:10:53</publishTime>
     </File>
     <File Include="bower_components/avalon/dist/avalon.modern.min.js">
-      <publishTime>06/17/2015 18:49:27</publishTime>
+      <publishTime>06/17/2015 20:10:53</publishTime>
     </File>
     <File Include="bower_components/avalon/dist/avalon.modern.shim.js">
-      <publishTime>06/17/2015 18:49:27</publishTime>
+      <publishTime>06/17/2015 20:10:53</publishTime>
     </File>
     <File Include="bower_components/avalon/dist/avalon.shim.js">
-      <publishTime>06/17/2015 18:49:27</publishTime>
+      <publishTime>06/17/2015 20:10:53</publishTime>
     </File>
     <File Include="bower_components/avalon/gulpfile.js">
-      <publishTime>06/17/2015 18:49:27</publishTime>
+      <publishTime>06/17/2015 20:10:53</publishTime>
     </File>
     <File Include="bower_components/avalon/min/avalon.min.js">
       <publishTime>06/01/2015 11:54:50</publishTime>
@@ -262,10 +262,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/01/2015 11:54:50</publishTime>
     </File>
     <File Include="bower_components/avalon/package.json">
-      <publishTime>06/17/2015 18:49:27</publishTime>
+      <publishTime>06/17/2015 20:10:53</publishTime>
     </File>
     <File Include="bower_components/avalon/README.md">
-      <publishTime>06/17/2015 18:49:27</publishTime>
+      <publishTime>06/17/2015 20:10:53</publishTime>
     </File>
     <File Include="bower_components/avalon/test.html">
       <publishTime>06/01/2015 11:54:50</publishTime>
@@ -3367,7 +3367,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/08/2015 16:05:09</publishTime>
     </File>
     <File Include="Scripts/me/init.js">
-      <publishTime>06/17/2015 18:39:39</publishTime>
+      <publishTime>06/17/2015 19:55:13</publishTime>
     </File>
     <File Include="Scripts/me/initMessage.js">
       <publishTime>06/17/2015 18:39:39</publishTime>
@@ -3457,7 +3457,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/17/2015 18:39:39</publishTime>
     </File>
     <File Include="Views/Shared/_Login.cshtml">
-      <publishTime>06/17/2015 18:39:39</publishTime>
+      <publishTime>06/17/2015 20:26:52</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>06/17/2015 18:39:39</publishTime>
