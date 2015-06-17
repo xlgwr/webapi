@@ -59,6 +59,11 @@
                 </div>
                 <a class="l-link" ms-visible="is_ADMIN" href="#" ms-click="addtab('adminMain', '管理中心', 'ConfigPages/adminMant.aspx?tfuserid='+top.users.userid)">管理中心</a>
             </div>
+            <div ms-repeat="arrmenus" ms-attr-title="{{el.funcType}}">
+                <div style="height: 7px;">
+                </div>
+                <a class="l-link" href="#" ms-hover="l-link-over" ms-click="addtab(el.Id,el.displayname,el.mainUrl)">{{el.displayname}}</a>
+            </div>
         </div>
         <div position="center" id="framecenter">
             <div tabid="home" ms-attr-title="{{lang.title.t5}}" style="height: 300px">

@@ -317,69 +317,69 @@
     login.initDomain("Init domain");
 
 
-});
 
-function ajaxHelper(uri, method, data) {
-    avalon.log(uri);
+    function ajaxHelper(uri, method, data) {
+        avalon.log(uri);
 
-    return $.ajax({
-        type: method,
-        url: uri,
-        dataType: 'json',
-        contentType: 'application/json; charset=utf-8',
-        data: data ? JSON.stringify(data) : null
-    });
-}
-function showerr(err) {
-
-    avalon.log(this);
-    avalon.log(err);
-
-    $('#userid').focus();
-
-    avalon.vmodels.loginController.messagecss = "show alert-danger";
-    this.currbtn.disabled = false;
-    this.currbtn.className = 'btn btn-danger';
-
-    switch (err.status) {
-        case 404:
-            avalon.vmodels.loginController.message = "this URL:" + this.url + " was not found.Please check that.";
-            return;
-            break;
-        default:
-
+        return $.ajax({
+            type: method,
+            url: uri,
+            dataType: 'json',
+            contentType: 'application/json; charset=utf-8',
+            data: data ? JSON.stringify(data) : null
+        });
     }
+    function showerr(err) {
 
-    if (!err.responseJSON) {
-        avalon.vmodels.loginController.cssRegister = 'show';
-        avalon.vmodels.loginController.cssRegisterbtn = 'show';
+        avalon.log(this);
         avalon.log(err);
-        return;
-    }
-    //{Message:'',responseText:[],responseJSON}
-    var vdata = err.responseJSON//JSON.parse(err.responseText);
 
-    avalon.log(vdata);
+        $('#userid').focus();
 
-    //{error:'',error_description:''}
-    if (vdata.error) {
-        avalon.vmodels.loginController.cssRegister = 'show';
-        avalon.vmodels.loginController.cssRegisterbtn = 'show';
-        avalon.vmodels.loginController.message = vdata.error + "<br/>" + "1. " + vdata.error_description + "<br/>" + "2. " + top.messages.n6;
-        $('#password').focus();
-        return;
-    }
-    //{Message:'',ModelState:[]}
-    if (vdata.Message) {
-        //ModelState              
-        var errarr = [];
-        var icount = 1;
-        for (var i in vdata.ModelState) {
-            errarr.push(icount + "." + vdata.ModelState[i][0]);
-            icount++;
+        avalon.vmodels.loginController.messagecss = "show alert-danger";
+        this.currbtn.disabled = false;
+        this.currbtn.className = 'btn btn-danger';
+
+        switch (err.status) {
+            case 404:
+                avalon.vmodels.loginController.message = "this URL:" + this.url + " was not found.Please check that.";
+                return;
+                break;
+            default:
+
         }
-        avalon.vmodels.loginController.message = vdata.Message + "<br/>" + errarr.join("<br/><br/>");
+
+        if (!err.responseJSON) {
+            avalon.vmodels.loginController.cssRegister = 'show';
+            avalon.vmodels.loginController.cssRegisterbtn = 'show';
+            avalon.log(err);
+            return;
+        }
+        //{Message:'',responseText:[],responseJSON}
+        var vdata = err.responseJSON//JSON.parse(err.responseText);
+
+        avalon.log(vdata);
+
+        //{error:'',error_description:''}
+        if (vdata.error) {
+            avalon.vmodels.loginController.cssRegister = 'show';
+            avalon.vmodels.loginController.cssRegisterbtn = 'show';
+            avalon.vmodels.loginController.message = vdata.error + "<br/>" + "1. " + vdata.error_description + "<br/>" + "2. " + top.messages.n6;
+            $('#password').focus();
+            return;
+        }
+        //{Message:'',ModelState:[]}
+        if (vdata.Message) {
+            //ModelState              
+            var errarr = [];
+            var icount = 1;
+            for (var i in vdata.ModelState) {
+                errarr.push(icount + "." + vdata.ModelState[i][0]);
+                icount++;
+            }
+            avalon.vmodels.loginController.message = vdata.Message + "<br/>" + errarr.join("<br/><br/>");
+        }
+
+
     }
-
-
-}
+});

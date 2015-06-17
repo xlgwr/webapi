@@ -4,7 +4,8 @@
 var rooturl = '/';
 var remoteHost = 'http://localhost:9539/';     //for develop test
 //var remoteHost = 'http://172.16.122.61/webapicore/';
-
+//tab
+var height = 0;
 
 //define users all site page
 var users = {

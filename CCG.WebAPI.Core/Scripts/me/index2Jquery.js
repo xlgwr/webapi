@@ -1,43 +1,43 @@
 ﻿var tab = null;
 var accordion = null;
 var tree = null;
-var jsonmenu = [];
+var jsonmenu = []; 
+//init     
+function initLigerUi() {
+    $(function () {
+        avalon.log('JqueryLog:');
+        //
+        //$("#home").attr("src", "home.html");
+        //布局
+        $("#layout1").ligerLayout({ leftWidth: 190, height: '100%', heightDiff: -34, space: 4, onHeightChanged: f_heightChanged });
 
+        height = $(".l-layout-center").height();
 
-//init         
-$(function () {
-    avalon.log('JqueryLog:');
-    //
-    //$("#home").attr("src", "home.html");
-    //布局
-    $("#layout1").ligerLayout({ leftWidth: 190, height: '100%', heightDiff: -34, space: 4, onHeightChanged: f_heightChanged });
+        //Tab
+        $("#framecenter").ligerTab({
+            height: height,
+            onClose: function (a) {
+                ecnnbrs.ecnnbr = '';
+            }
+        });
 
-    var height = $(".l-layout-center").height();
+        //面板
+        $("#accordion1").ligerAccordion({ height: height - 24, speed: null });
 
-    //Tab
-    $("#framecenter").ligerTab({
-        height: height,
-        onClose: function (a) {
-            ecnnbrs.ecnnbr = '';
-        }
+        $(".l-link").hover(function () {
+            $(this).addClass("l-link-over");
+        }, function () {
+            $(this).removeClass("l-link-over");
+        });
+
+        tab = $("#framecenter").ligerGetTabManager();
+
+        //accordion = $("#accordion1").ligerGetAccordionManager();
+        //tree = $("#tree1").ligerGetTreeManager();
+        $("#pageloading").hide();
+
     });
-
-    //面板
-    $("#accordion1").ligerAccordion({ height: height - 24, speed: null });
-
-    $(".l-link").hover(function () {
-        $(this).addClass("l-link-over");
-    }, function () {
-        $(this).removeClass("l-link-over");
-    });
-
-    tab = $("#framecenter").ligerGetTabManager();
-
-    accordion = $("#accordion1").ligerGetAccordionManager();
-    //tree = $("#tree1").ligerGetTreeManager();
-    $("#pageloading").hide();
-
-});
+}
 function f_heightChanged(options) {
     if (tab)
         tab.addHeight(options.diff);

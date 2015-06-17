@@ -64,12 +64,19 @@ namespace CCG.WebAPI.Core.Controllers
         [Authorize]
         [HttpPost]
         [Route("getmenus")]
-        public async Task<ICollection<menus>> getmenus(rolenames rolenames)
+        public async Task<Dictionary<string, ICollection<menus>>> getmenus(rolenames rolenames)
         {
-
-            var models = Task<ICollection<menus>>.Run(() =>
+            var tmpdict = new Dictionary<string, ICollection<menus>>();
+            var models = Task<Dictionary<string, ICollection<menus>>>.Run(() =>
             {
-                return domainManager.menus.Where(m=>rolenames.rolename.Contains(m.menutype)).ToList();
+                var tmpmenus= domainManager.menus.Where(m=>rolenames.rolename.Contains(m.menutype)).OrderBy(m=>m.funcType).OrderBy(m=>m.orderId).ToList();
+
+                var tmpfunctype = tmpmenus.Select(m => m.funcType).Distinct().ToList();
+                foreach (var item in tmpfunctype)
+                {
+                    tmpdict.Add(item, tmpmenus.Where(m => m.funcType.Equals(item)).ToList());
+                }
+                return tmpdict;
             });
             return await models;
 
