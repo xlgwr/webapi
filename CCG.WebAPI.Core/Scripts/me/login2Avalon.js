@@ -31,7 +31,7 @@
         mailDomain: '',
         //ms-repeat
         //domains{Id: 5,displayname: "CCG",domain: "CCG.NET",isused: 0,mailDomain: "cclmotors.com",remark: "CCG.NET"}
-        arrDomains: {},
+        arrDomains: [],
         //check validate
         checkbase: function (prefix, flagRegister) {
             login.messagecss = "show alert-info";
@@ -94,7 +94,7 @@
 
                 login.messagecss = "show alert-success";
                 login.message = prefix + messages.n7;
-                //avalon.log(data);
+                avalon.log(data);
                 login.arrDomains = data;
 
                 //init domain maildomain

@@ -85,7 +85,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/10/2015 14:09:43</publishTime>
     </File>
     <File Include="bin/CCG.WebAPI.Core.dll">
-      <publishTime>06/17/2015 20:31:49</publishTime>
+      <publishTime>06/17/2015 20:53:58</publishTime>
     </File>
     <File Include="bin/CCG.WebAPI.ECN.dll">
       <publishTime>06/09/2015 09:23:24</publishTime>
@@ -187,7 +187,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/17/2015 19:16:22</publishTime>
     </File>
     <File Include="bower.json">
-      <publishTime>06/17/2015 19:05:30</publishTime>
+      <publishTime>06/17/2015 20:33:14</publishTime>
     </File>
     <File Include="bower_components/avalon/.bower.json">
       <publishTime>06/17/2015 20:10:53</publishTime>
@@ -220,7 +220,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/17/2015 20:10:53</publishTime>
     </File>
     <File Include="bower_components/avalon/dist/avalon.min.js">
-      <publishTime>06/17/2015 20:31:16</publishTime>
+      <publishTime>06/17/2015 20:12:34</publishTime>
     </File>
     <File Include="bower_components/avalon/dist/avalon.mobile.js">
       <publishTime>06/17/2015 20:10:53</publishTime>
@@ -3376,7 +3376,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/17/2015 18:39:39</publishTime>
     </File>
     <File Include="Scripts/me/login2Avalon.js">
-      <publishTime>06/17/2015 18:39:39</publishTime>
+      <publishTime>06/17/2015 20:55:01</publishTime>
     </File>
     <File Include="Scripts/me/loginAvalon.js">
       <publishTime>06/05/2015 08:21:48</publishTime>
