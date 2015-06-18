@@ -7,13 +7,13 @@ namespace CCG.WebAPI.Core.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class addMenusDisplayTitle : IMigrationMetadata
+    public sealed partial class initdb : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(addMenusDisplayTitle));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(initdb));
         
         string IMigrationMetadata.Id
         {
-            get { return "201506171317522_addMenusDisplayTitle"; }
+            get { return "201506180011101_initdb"; }
         }
         
         string IMigrationMetadata.Source

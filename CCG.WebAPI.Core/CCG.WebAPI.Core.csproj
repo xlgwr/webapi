@@ -242,17 +242,9 @@
     </Compile>
     <Compile Include="helper\Auth.cs" />
     <Compile Include="helper\getClientInfo.cs" />
-    <Compile Include="Migrations\201506151012564_initdb.cs" />
-    <Compile Include="Migrations\201506151012564_initdb.Designer.cs">
-      <DependentUpon>201506151012564_initdb.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201506160242285_addmenus.cs" />
-    <Compile Include="Migrations\201506160242285_addmenus.Designer.cs">
-      <DependentUpon>201506160242285_addmenus.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201506171317522_addMenusDisplayTitle.cs" />
-    <Compile Include="Migrations\201506171317522_addMenusDisplayTitle.Designer.cs">
-      <DependentUpon>201506171317522_addMenusDisplayTitle.cs</DependentUpon>
+    <Compile Include="Migrations\201506180011101_initdb.cs" />
+    <Compile Include="Migrations\201506180011101_initdb.Designer.cs">
+      <DependentUpon>201506180011101_initdb.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
@@ -946,14 +938,8 @@
     <Content Include="home.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201506151012564_initdb.resx">
-      <DependentUpon>201506151012564_initdb.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506160242285_addmenus.resx">
-      <DependentUpon>201506160242285_addmenus.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506171317522_addMenusDisplayTitle.resx">
-      <DependentUpon>201506171317522_addMenusDisplayTitle.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201506180011101_initdb.resx">
+      <DependentUpon>201506180011101_initdb.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

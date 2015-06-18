@@ -17,6 +17,7 @@ using CCG.WebAPI.Core.Models;
 using CCG.WebAPI.Core.Providers;
 using CCG.WebAPI.Core.Results;
 using CCG.WebAPI.Core.Models.viewModels;
+using CCG.WebAPI.Core.helper;
 
 namespace CCG.WebAPI.Core.Controllers
 {
@@ -244,6 +245,7 @@ namespace CCG.WebAPI.Core.Controllers
         }
 
         // GET api/Account/ExternalLogin
+        
         [OverrideAuthentication]
         [HostAuthentication(DefaultAuthenticationTypes.ExternalCookie)]
         [AllowAnonymous]

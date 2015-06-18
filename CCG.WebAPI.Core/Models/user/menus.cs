@@ -23,6 +23,10 @@ namespace CCG.WebAPI.Core.Models.user
         public string funcType { get; set; }
 
         [Required]
+        [StringLength(128)]
+        public string funcTypeTitle { get; set; }
+
+        [Required]
         public long orderId { get; set; }
 
 
@@ -33,10 +37,7 @@ namespace CCG.WebAPI.Core.Models.user
         [Required]
         [StringLength(128)]
         public string displayTitle { get; set; }
-        
-        [Required]
-        [StringLength(128)]
-        public string funcTypeTitle { get; set; }
+
 
         [Required]
         public string mainUrl { get; set; }

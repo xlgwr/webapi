@@ -19,6 +19,7 @@ namespace CCG.WebAPI.Core
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
             Database.SetInitializer<Models.ApplicationDbContext>(null);
         }
     }

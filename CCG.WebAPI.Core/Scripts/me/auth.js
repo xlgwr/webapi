@@ -33,7 +33,21 @@ $(function () {
     }).done(function (data) {
         avalon.log("auth:token is success.");
     }).error(showerrAuth);
-
+                     
+    //test get manageinfo
+    //?returnUrl={returnUrl}&generateState={generateState}
+    $.ajax({
+        type: 'GET',
+        url: encodeURI(top.loginApi.apiUriManageInfo + '?returnUrl=http://localhost:9539/&generateState=false'),
+        headers: top.auth.headers
+    }).done(function (data) {
+        avalon.log("auth manage:44");
+        avalon.log(data);
+        //self.result(data);
+    }).fail(function (err) {
+        //showError
+        avalon.log(err);
+    });
 })
 
 function showerrAuth(err) {

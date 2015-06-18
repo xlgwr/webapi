@@ -2,8 +2,9 @@
 //remote host set
 //gobal define                                          
 var rooturl = '/';
-//var remoteHost = 'http://localhost:9539/';     //for develop test
-var remoteHost = 'http://localhost/webapicore/';
+var remoteHost = 'http://localhost:9539/';     //for develop test
+//var remoteHost = 'http://localhost/webapicore/';
+//var remoteHost = 'http://172.16.122.61/webapicore/';
 //tab
 var height = 0;
 
@@ -18,7 +19,7 @@ var users = {
 };
 //defin auth.js
 var auth = {
-    apiGetUserInfoUrl: remoteHost + 'api/Account/UserInfo', 
+    apiGetUserInfoUrl: remoteHost + 'api/Account/UserInfo',
     apiGetvUserInfoRoles: remoteHost + 'api/Account/vUserInfoRoles',
     headers: { Authorization: '' },
     remoteLoginUrl: remoteHost + 'Home/Login/',
@@ -31,11 +32,12 @@ var auth = {
 var loginApi = {
     apiUri: 'api/domains/getDomains',
     apiUriDomain: 'api/domains/getDomains',
-    apiUrionRegister: 'api/Account/Register', 
+    apiUrionRegister: 'api/Account/Register',
     apiUrionChangePassword: 'api/Account/ChangePassword',
     apiUrionSetPassword: 'api/Account/reSetPassword',
-    apiUrionSetnoPassword: 'api/Account/SetPassword',
-    apiUrionLogout: 'api/Account/Logout',  
+    apiUrionSetnoPassword: 'api/Account/SetPassword',  
+    apiUriManageInfo: 'api/Account/ManageInfo', //?returnUrl={returnUrl}&generateState={generateState}
+    apiUrionLogout: 'api/Account/Logout',
     apiUrionLogs: 'api/domains/saveLogs',
     apiUrionLogin: 'Token',
     rooturl: rooturl,
@@ -77,6 +79,6 @@ var gettokenKey = GetQueryString('tokenkey');
 if (gettokenKey) {
     sessionStorage.setItem(auth.tokenKey, gettokenKey);
     auth.headers.Authorization = 'Bearer ' + gettokenKey;
-}                                                     
+}
 //init loginapi          
 loginApi.redirectUrl = GetQueryString('redirectUrl') || '';

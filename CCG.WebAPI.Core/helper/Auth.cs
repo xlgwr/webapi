@@ -12,11 +12,11 @@ using System.Web.Http.Results;
 
 namespace CCG.WebAPI.Core.helper
 {
-    public class Auth : FilterAttribute,  IAuthenticationFilter, IActionFilter
+    public class AuthAttribute : FilterAttribute,  IAuthenticationFilter, IActionFilter
     {
         public const string CookieName = "AccessToken";
         public string CaptureTokenUri { get;private set; }
-        public Auth(string captureTokenUri)
+        public AuthAttribute(string captureTokenUri)
         {
             this.CaptureTokenUri = captureTokenUri;
             //get { throw new NotImplementedException(); }

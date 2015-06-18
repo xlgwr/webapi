@@ -88,7 +88,8 @@
 
                             SetPassword.mailDomain = item.mailDomain;
                             //avalon.log("true:"+SetPassword.mailDomain)
-                            $('#password').focus();
+                            //$('#password').focus();
+                            $('#userid').focus();
                             break;
                         } else {
                             SetPassword.mailDomain = '';
@@ -206,7 +207,7 @@
 
                 this.currbtn.disabled = false;
                 this.currbtn.className = 'btn btn-success';
-             
+
                 avalon.log(loginApi);
 
                 if (loginApi.redirectUrl) {
@@ -282,70 +283,69 @@
     //avalon.log(avalon.vmodels);
     SetPassword.initDomain("Init domain");
 
+    function ajaxHelper(uri, method, data) {
+        avalon.log(uri);
 
+        return $.ajax({
+            type: method,
+            url: uri,
+            dataType: 'json',
+            contentType: 'application/json; charset=utf-8',
+            data: data ? JSON.stringify(data) : null
+        });
+    }
+    function showerr(err) {
+
+        avalon.log(this);
+        avalon.log(err);
+
+        $('#password').focus();
+
+        avalon.vmodels.SetPassword.messagecss = "show alert-danger";
+        this.currbtn.disabled = false;
+        this.currbtn.className = 'btn btn-danger';
+
+        switch (err.status) {
+            case 404:
+                avalon.vmodels.SetPassword.message = "this URL:" + this.url + " was not found.Please check that.";
+                return;
+                break;
+            default:
+
+        }
+
+        if (!err.responseJSON) {
+            avalon.vmodels.SetPassword.cssRegister = 'show';
+            avalon.vmodels.SetPassword.cssRegisterbtn = 'show';
+            avalon.log(err);
+            return;
+        }
+        //{Message:'',responseText:[],responseJSON}
+        var vdata = err.responseJSON//JSON.parse(err.responseText);
+
+        avalon.log(vdata);
+
+        //{error:'',error_description:''}
+        if (vdata.error) {
+            avalon.vmodels.SetPassword.cssRegister = 'show';
+            avalon.vmodels.SetPassword.cssRegisterbtn = 'show';
+            avalon.vmodels.SetPassword.message = vdata.error + "<br/>" + "1. " + vdata.error_description + "<br/>" + "2. " + top.messages.n6;
+            $('#password').focus();
+            return;
+        }
+        //{Message:'',ModelState:[]}
+        if (vdata.Message) {
+            //ModelState              
+            var errarr = [];
+            var icount = 1;
+            for (var i in vdata.ModelState) {
+                errarr.push(icount + "." + vdata.ModelState[i][0]);
+                icount++;
+            }
+            avalon.vmodels.SetPassword.message = vdata.Message + "<br/>" + errarr.join("<br/><br/>");
+        }
+
+
+    }
 });
 
-function ajaxHelper(uri, method, data) {
-    avalon.log(uri);
-
-    return $.ajax({
-        type: method,
-        url: uri,
-        dataType: 'json',
-        contentType: 'application/json; charset=utf-8',
-        data: data ? JSON.stringify(data) : null
-    });
-}
-function showerr(err) {
-
-    avalon.log(this);
-    avalon.log(err);
-
-    $('#password').focus();
-
-    avalon.vmodels.SetPassword.messagecss = "show alert-danger";
-    this.currbtn.disabled = false;
-    this.currbtn.className = 'btn btn-danger';
-
-    switch (err.status) {
-        case 404:
-            avalon.vmodels.SetPassword.message = "this URL:" + this.url + " was not found.Please check that.";
-            return;
-            break;
-        default:
-
-    }
-
-    if (!err.responseJSON) {
-        avalon.vmodels.SetPassword.cssRegister = 'show';
-        avalon.vmodels.SetPassword.cssRegisterbtn = 'show';
-        avalon.log(err);
-        return;
-    }
-    //{Message:'',responseText:[],responseJSON}
-    var vdata = err.responseJSON//JSON.parse(err.responseText);
-
-    avalon.log(vdata);
-
-    //{error:'',error_description:''}
-    if (vdata.error) {
-        avalon.vmodels.SetPassword.cssRegister = 'show';
-        avalon.vmodels.SetPassword.cssRegisterbtn = 'show';
-        avalon.vmodels.SetPassword.message = vdata.error + "<br/>" + "1. " + vdata.error_description + "<br/>" + "2. " + top.messages.n6;
-        $('#password').focus();
-        return;
-    }
-    //{Message:'',ModelState:[]}
-    if (vdata.Message) {
-        //ModelState              
-        var errarr = [];
-        var icount = 1;
-        for (var i in vdata.ModelState) {
-            errarr.push(icount + "." + vdata.ModelState[i][0]);
-            icount++;
-        }
-        avalon.vmodels.SetPassword.message = vdata.Message + "<br/>" + errarr.join("<br/><br/>");
-    }
-
-
-}

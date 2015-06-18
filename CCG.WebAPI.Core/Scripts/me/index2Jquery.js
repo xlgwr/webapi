@@ -35,14 +35,15 @@ function initLigerUi() {
         //accordion = $("#accordion1").ligerGetAccordionManager();
         //tree = $("#tree1").ligerGetTreeManager();
         $("#pageloading").hide();
-
+        // fix
+        $('#endhead').prev().removeClass('l-accordion-header l-accordion-toggle-close').addClass('disabled');
     });
 }
 function f_heightChanged(options) {
     if (tab)
         tab.addHeight(options.diff);
-    if (accordion && options.middleHeight - 24 > 0)
-        accordion.setHeight(options.middleHeight - 24);
+    if (accordion && options.middleHeight - 25 > 0)
+        accordion.setHeight(options.middleHeight - 25);
 }
 function f_addTab(tabid, text, url) {
     tab.addTabItem({ tabid: tabid, text: text, url: url });

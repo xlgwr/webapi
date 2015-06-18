@@ -70,7 +70,6 @@ namespace CCG.WebAPI.Core.Migrations
                         UserId = c.String(nullable: false, maxLength: 128),
                         ClaimType = c.String(),
                         ClaimValue = c.String(),
-                        Discriminator = c.String(nullable: false, maxLength: 128),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.AspNetUsers", t => t.UserId, cascadeDelete: true)
@@ -83,7 +82,6 @@ namespace CCG.WebAPI.Core.Migrations
                         LoginProvider = c.String(nullable: false, maxLength: 128),
                         ProviderKey = c.String(nullable: false, maxLength: 128),
                         UserId = c.String(nullable: false, maxLength: 128),
-                        Discriminator = c.String(nullable: false, maxLength: 128),
                     })
                 .PrimaryKey(t => new { t.LoginProvider, t.ProviderKey, t.UserId })
                 .ForeignKey("dbo.AspNetUsers", t => t.UserId, cascadeDelete: true)
@@ -95,7 +93,6 @@ namespace CCG.WebAPI.Core.Migrations
                     {
                         UserId = c.String(nullable: false, maxLength: 128),
                         RoleId = c.String(nullable: false, maxLength: 128),
-                        Discriminator = c.String(nullable: false, maxLength: 128),
                     })
                 .PrimaryKey(t => new { t.UserId, t.RoleId })
                 .ForeignKey("dbo.AspNetUsers", t => t.UserId, cascadeDelete: true)
@@ -136,12 +133,29 @@ namespace CCG.WebAPI.Core.Migrations
                 .PrimaryKey(t => new { t.Id, t.domain, t.UserName });
             
             CreateTable(
+                "dbo.menus",
+                c => new
+                    {
+                        Id = c.Long(nullable: false, identity: true),
+                        menutype = c.String(nullable: false, maxLength: 128),
+                        funcType = c.String(nullable: false, maxLength: 128),
+                        funcTypeTitle = c.String(nullable: false, maxLength: 128),
+                        orderId = c.Long(nullable: false),
+                        displayname = c.String(nullable: false, maxLength: 128),
+                        displayTitle = c.String(nullable: false, maxLength: 128),
+                        mainUrl = c.String(nullable: false),
+                        secondUrl = c.String(),
+                        remark = c.String(unicode: false, storeType: "text"),
+                        isused = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => new { t.Id, t.menutype });
+            
+            CreateTable(
                 "dbo.AspNetRoles",
                 c => new
                     {
                         Id = c.String(nullable: false, maxLength: 128),
                         Name = c.String(nullable: false, maxLength: 256),
-                        Discriminator = c.String(nullable: false, maxLength: 128),
                     })
                 .PrimaryKey(t => t.Id)
                 .Index(t => t.Name, unique: true, name: "RoleNameIndex");
@@ -166,6 +180,7 @@ namespace CCG.WebAPI.Core.Migrations
             DropIndex("dbo.logs", new[] { "Userid" });
             DropIndex("dbo.domains", new[] { "domain" });
             DropTable("dbo.AspNetRoles");
+            DropTable("dbo.menus");
             DropTable("dbo.mails");
             DropTable("dbo.mailItems");
             DropTable("dbo.AspNetUserRoles");
