@@ -1921,10 +1921,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/01/2015 08:58:24</publishTime>
     </File>
     <File Include="Content/commMe.css">
-      <publishTime>06/11/2015 11:39:36</publishTime>
+      <publishTime>06/19/2015 14:14:05</publishTime>
     </File>
     <File Include="Content/ieFix.css">
-      <publishTime>06/05/2015 14:24:18</publishTime>
+      <publishTime>06/19/2015 14:54:32</publishTime>
     </File>
     <File Include="Content/images/close.png">
       <publishTime>06/11/2015 11:22:08</publishTime>
@@ -3301,7 +3301,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/01/2015 08:58:24</publishTime>
     </File>
     <File Include="Scripts/fix/iefix.js">
-      <publishTime>06/18/2015 07:59:01</publishTime>
+      <publishTime>06/19/2015 14:32:44</publishTime>
     </File>
     <File Include="Scripts/jquery-2.1.4.js">
       <publishTime>06/01/2015 08:57:59</publishTime>
@@ -3370,7 +3370,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/08/2015 16:05:09</publishTime>
     </File>
     <File Include="Scripts/me/init.js">
-      <publishTime>06/19/2015 13:41:00</publishTime>
+      <publishTime>06/19/2015 14:12:32</publishTime>
     </File>
     <File Include="Scripts/me/initMessage.js">
       <publishTime>06/16/2015 11:13:13</publishTime>
@@ -3427,7 +3427,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/04/2015 12:52:42</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>06/18/2015 08:57:08</publishTime>
+      <publishTime>06/19/2015 14:12:27</publishTime>
     </File>
     <File Include="Views/Home/Login.cshtml">
       <publishTime>06/18/2015 09:16:43</publishTime>

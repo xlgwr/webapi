@@ -5,34 +5,55 @@ body.tabbody {
 }
 
 .autowith {
-    width: 98% !important;
+    margin-left: auto;
+    margin-right: auto;
+    width: 98%;
+}
+
+.autowith100 {
+    width:100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.autowith83 {
+    *width:83%!important;
+    _width:83%!important;
+    width:98%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .ms-controller {
     visibility: hidden;
 }
-.login{
-    width:369px; 
-    margin-left:auto; 
-    margin-right:auto;
-    margin-top:5px;
+
+.login {
+    width: 369px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
 }
-.loginIcon{
-    position:absolute;
-    right:0;
+
+.loginIcon {
+    position: absolute;
+    right: 0;
 }
-.clearMargin{
-    margin:0;
-    padding:0;
+
+.clearMargin {
+    margin: 0;
+    padding: 0;
 }
-.relative{
-    position:relative;
+
+.relative {
+    position: relative;
 }
-.fonth3{
-    font-size:x-large;
-    font-weight:bolder;
-    width:100%;
+
+.fonth3 {
+    font-size: x-large;
+    font-weight: bolder;
+    width: 100%;
 }
+
 .browser-updator {
     position: fixed;
     width: 100%;
@@ -44,6 +65,7 @@ body.tabbody {
     _position: absolute;
     _bottom: auto;
 }
+
 .browser-updator-wrapper {
     position: relative;
     zoom: 1;
@@ -53,6 +75,7 @@ body.tabbody {
     background: #8e8e8e;
     zoom: 1;
 }
+
 .browser-updator P {
     margin: 0;
     padding: 0;
@@ -61,10 +84,12 @@ body.tabbody {
     font-size: 12px;
     text-indent: 16px;
 }
-.browser-updator P A:hover {
-    color: #fff;
-    text-decoration: underline;
-}
+
+    .browser-updator P A:hover {
+        color: #fff;
+        text-decoration: underline;
+    }
+
 .browser-updator-chrome:hover {
     text-decoration: none !important;
 }
@@ -74,7 +99,7 @@ body.tabbody {
     text-decoration: none;
     margin-top: 1px;
     _margin-top: 6px;
-    font-weight:bolder;
+    font-weight: bolder;
 }
 
 .browser-updator-close {
@@ -87,4 +112,3 @@ body.tabbody {
     text-indent: -999em;
     overflow: hidden;
 }
-

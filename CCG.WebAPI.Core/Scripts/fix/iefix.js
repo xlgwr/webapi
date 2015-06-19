@@ -4,28 +4,29 @@
     $('#aclose').click(function () {
         $('#browserupdator').fadeOut(800);
     })
-   
+
     //login
     var tmpwidth = $('#loginbody').width();
 
     var browser = getBrowserInfo(); //浏览器名字+版本字符串
-   
+
     var verinfo = (browser + "").replace(/[^0-9.]/ig, "");//版本号
-   
+
     avalon.log(verinfo);
 
-    if (verinfo >= 8) {
-        $('#domain,#userid,#password,#confirmpassword')
-               .width(tmpwidth * 0.5, 0)
-    } else {
-        $('#domain,#userid,#password,#confirmpassword')
-              .width(tmpwidth * 0.85, 0)
-    }
+    //if (verinfo >= 8) {
+    //    $('#domain,#userid,#password,#confirmpassword')
+    //           .width(tmpwidth * 0.5, 0)
+    //} else {
+    //    $('#domain,#userid,#password,#confirmpassword')
+    //          .width(tmpwidth * 0.85, 0)
+    //}
 
-    $('#domain')
-        .height(20, 25);
-    $('#userid,#password,#confirmpassword')
-        .height(15, 25);
+    //$('#domain')
+    //    .height(20, 25);
+    //$('#userid,#password,#confirmpassword')
+    //    .height(15, 25);
+
 })
 function getBrowserInfo() {
     var agent = navigator.userAgent.toLowerCase();
