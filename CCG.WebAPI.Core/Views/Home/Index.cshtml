@@ -48,7 +48,7 @@
     </div>
     <div id="layout1" style="width: 99.6%; margin: 0 auto; margin-top: 4px;">
         <div position="left" id="accordion1" ms-attr-title="{{lang.title.t2}}">
-            <div ms-repeat="arrmenus" ms-attr-title="{{lang.title[$val[0].funcTypeTitle]}}" class="list-group autowith">
+            <div ms-repeat="arrmenus" ms-attr-title="{{lang.title[$val[0].funcTypeTitle]}}" class="list-group">
                 <a ms-repeat="$val" class="list-group-item list-group-item-success text-center autowith83" href="#" ms-hover="active" ms-click="addtab(el.Id,lang.title[el.displayTitle],rooturl+el.mainUrl)">{{($index+1)+'. '+lang.title[el.displayTitle]}}</a>
             </div>
             <div id="endhead" style="height:35px;"></div>

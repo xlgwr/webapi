@@ -3,8 +3,8 @@
 //gobal define                                          
 var rooturl = '/';
 //var remoteHost = 'http://localhost:9539/';     //for develop test
-//var remoteHost = 'http://localhost/webapicore/';
-var remoteHost = 'http://172.16.122.61/webapicore/';
+var remoteHost = 'http://localhost/webapicore/';
+//var remoteHost = 'http://172.16.122.61/webapicore/';
 //tab
 var height = 0;
 
