@@ -1,11 +1,11 @@
 ﻿* + html input {
-    *padding: 0 !important;
+    *padding: 3px !important;
     *margin: 0 !important;
     *line-height: 29px !important;
 }
 
 * + html select {
-    *padding: 0 !important;
+    *padding: 3px !important;
     *margin: 0 !important;
     *height: 30px !important;
 }
@@ -18,9 +18,26 @@
 * + html .form-horizontal input {
     *float: right !important;
     *width: 136%;
+    _float: right !important;
+    _width: 136%;
 }
 
 * + html .form-horizontal select {
     *float: right !important;
     *width: 136%;
+    *margin-left:15px!important;
+    _float: right !important;
+    _width: 136%;
+    _margin-left:15px!important;
+}
+
+.autofixwith {
+    *width: 100%;
+    *padding: 3px!important;
+    *margin-left: auto;
+    *margin-right: auto;
+    _width: 100%;
+    _padding: 3px!important;
+    _margin-left: auto;
+    _margin-right: auto;
 }
