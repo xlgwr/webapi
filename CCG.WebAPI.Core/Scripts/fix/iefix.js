@@ -14,6 +14,29 @@
 
     avalon.log(verinfo);
 
+    if (verinfo < 8) {
+        var tmpwindowwidth = $(window).width();
+        if ($(this).width() <= 765) {
+            $('#divdomain').addClass('autowith100');
+            $('#domain,#userid,#password,#confirmpassword')
+               .width(tmpwidth * 0.75, 0);
+        }
+
+        $(window).resize(function () {
+            avalon.log($(this).width());
+            $('#divdomain').addClass('autowith100');
+            if ($(this).width() <= 765) {
+                $('#domain,#userid,#password,#confirmpassword')
+                   .width(tmpwidth * 0.75, 0);
+            } else {
+                $('#domain,#userid,#password,#confirmpassword')
+                 .width(tmpwidth * 0.90, 0);
+                $('#divdomain').removeClass('autowith100');
+            }
+        });
+    }
+
+
     //if (verinfo >= 8) {
     //    $('#domain,#userid,#password,#confirmpassword')
     //           .width(tmpwidth * 0.5, 0)

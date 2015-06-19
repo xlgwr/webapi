@@ -1,24 +1,26 @@
 ﻿* + html input {
     *padding: 0 !important;
-    *margin: 0 !important;   
-    *line-height: 29px !important; 
-    *width:85%;   
+    *margin: 0 !important;
+    *line-height: 29px !important;
 }
+
 * + html select {
     *padding: 0 !important;
-    *margin: 0 !important;   
-    *height:30px!important;
-    *width:85%;
+    *margin: 0 !important;
+    *height: 30px !important;
 }
-* + html .form-horizontal .control-label{
-    *margin-left:5px!important;
-    *text-align:left!important;
+
+* + html .form-horizontal .control-label {
+    *margin-left: 5px !important;
+    *text-align: left !important;
 }
-* + html .panel-body .form-horizontal input{
-    *float:right!important;
-    *width:136%;
+
+* + html .form-horizontal input {
+    *float: right !important;
+    *width: 136%;
 }
-* + html .panel-body .form-horizontal select{
-    *float:right!important;
-    *width:136%;
+
+* + html .form-horizontal select {
+    *float: right !important;
+    *width: 136%;
 }

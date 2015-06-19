@@ -7,17 +7,20 @@ body.tabbody {
 .autowith {
     margin-left: auto;
     margin-right: auto;
+    padding:0!important;
     width: 98%;
 }
 
 .autowith100 {
     width:100%;
+    padding:0!important;
     margin-left: auto;
     margin-right: auto;
 }
 .autowith83 {
     *width:83%!important;
     _width:83%!important;
+    padding:0!important;
     width:98%;
     margin-left: auto;
     margin-right: auto;
