@@ -1,7 +1,8 @@
 ﻿var tab = null;
 var accordion = null;
 var tree = null;
-var jsonmenu = []; 
+var jsonmenu = [];
+var tabItems = [];
 //init     
 function initLigerUi() {
     $(function () {
@@ -16,8 +17,27 @@ function initLigerUi() {
         //Tab
         $("#framecenter").ligerTab({
             height: height,
+            showSwitchInTab: true,
+            showSwitch: true,
+            onAfterAddTabItem: function (tabdata) {
+                tabItems.push(tabdata);
+                saveTabStatus();
+            },
+            onAfterRemoveTabItem: function (tabid) {
+                for (var i = 0; i < tabItems.length; i++) {
+                    var o = tabItems[i];
+                    if (o.tabid == tabid) {
+                        tabItems.splice(i, 1);
+                        saveTabStatus();
+                        break;
+                    }
+                }
+            },
+            onReload: function (tabdata) {
+                var tabid = tabdata.tabid;               
+            },
             onClose: function (a) {
-                ecnnbrs.ecnnbr = '';
+                //ecnnbrs.ecnnbr = '';
             }
         });
 
@@ -47,4 +67,8 @@ function f_heightChanged(options) {
 }
 function f_addTab(tabid, text, url) {
     tab.addTabItem({ tabid: tabid, text: text, url: url });
+}      
+           
+function saveTabStatus() {
+    $.cookie('liger-home-tab', JSON2.stringify(tabItems));
 }

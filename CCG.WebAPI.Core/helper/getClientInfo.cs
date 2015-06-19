@@ -114,6 +114,7 @@ namespace CCG.WebAPI.Core.helper
             model.pcSystem = cp;
 
             model.lognTime = DateTime.Now;
+            model.reflashlognTime = DateTime.Now;
 
             return model;
         }     //获取电脑名

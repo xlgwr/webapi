@@ -35,11 +35,13 @@ namespace CCG.WebAPI.Core.Migrations
                         clienturl = c.String(),
                         pcSystem = c.String(),
                         lognTime = c.DateTime(nullable: false),
+                        reflashlognTime = c.DateTime(nullable: false),
                         remark = c.String(),
                         Userid = c.String(maxLength: 128),
                     })
                 .PrimaryKey(t => new { t.Id, t.domain, t.UserName })
                 .ForeignKey("dbo.AspNetUsers", t => t.Userid)
+                .Index(t => t.lognTime)
                 .Index(t => t.Userid);
             
             CreateTable(
@@ -178,6 +180,7 @@ namespace CCG.WebAPI.Core.Migrations
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
             DropIndex("dbo.logs", new[] { "Userid" });
+            DropIndex("dbo.logs", new[] { "lognTime" });
             DropIndex("dbo.domains", new[] { "domain" });
             DropTable("dbo.AspNetRoles");
             DropTable("dbo.menus");

@@ -29,7 +29,10 @@ namespace CCG.WebAPI.Core.Models.user
         public string pcIE { get; set; }
         public string clienturl { get; set; }
         public string pcSystem { get; set; }
+
+        [Index(Order=0)]
         public DateTime lognTime { get; set; }
+        public DateTime reflashlognTime { get; set; }
         public string remark { get; set; }
 
         [ForeignKey("ApplicationUser")]
