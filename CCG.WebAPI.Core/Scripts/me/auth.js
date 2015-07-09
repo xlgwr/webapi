@@ -29,6 +29,8 @@ $(function () {
     $.ajax({
         type: 'GET',
         url: encodeURI(top.auth.apiGetvUserInfoRoles),
+        dataType: 'json',
+        contentType: 'application/json; charset=utf-8',
         headers: top.auth.headers
     }).done(function (data) {
         avalon.log("auth:token is success.");
@@ -38,7 +40,9 @@ $(function () {
     //?returnUrl={returnUrl}&generateState={generateState}
     $.ajax({
         type: 'GET',
-        url: encodeURI(top.loginApi.apiUriManageInfo + '?returnUrl=http://localhost:9539/&generateState=false'),
+        url: encodeURI(top.loginApi.apiUriManageInfo + '?returnUrl=http://localhost:9539/&generateState=false'),  
+        dataType: 'json',
+        contentType: 'application/json; charset=utf-8',
         headers: top.auth.headers
     }).done(function (data) {
         avalon.log("auth manage:44");

@@ -25,7 +25,9 @@ require(["avalon", 'domReady!'], function (avalon) {
             $.ajax({
                 type: 'GET',
                 url: top.auth.apiGetvUserInfoRoles,
-                headers: top.auth.headers
+                headers: top.auth.headers,
+                dataType: 'json',
+                contentType: 'application/json; charset=utf-8'
             }).done(function (data) {
                 avalon.log("avalonLog:ajaxInitLi.27");
                 //apiGetvUserInfoRoles

@@ -68,7 +68,9 @@
             $.ajax({
                 type: 'GET',
                 url: tmpurl,
-                headers: top.auth.headers
+                //headers: top.auth.headers,                
+                dataType: 'json',
+                contentType: 'application/json; charset=utf-8'
             }).complete(function () {
                 $("#" + ChangePassword.$id).removeClass('hidden');
             }).done(function (data) {
