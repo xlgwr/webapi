@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace CCG.WebAPI.Core.Controllers
 {
-    [Authorize]
+    [AllowAnonymous]
     public class ManageController : Controller
     {
         public ActionResult index(string title)
@@ -21,7 +21,7 @@ namespace CCG.WebAPI.Core.Controllers
             return View();
         }
 
-        [Authorize(Roles = "admin")]
+
         public ActionResult SetPassword(string title)
         {
             ViewBag.Title = title;

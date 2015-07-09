@@ -158,6 +158,7 @@ namespace CCG.WebAPI.Core.Controllers
         }
 
         // POST api/Account/SetPassword
+        [Authorize(Roles = "admin")]
         [Route("SetPassword")]
         public async Task<IHttpActionResult> SetPassword(SetPasswordBindingModel model)
         {
