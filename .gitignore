@@ -47,4 +47,6 @@ session.
 /CCG.*/bin/*
 /CCG.*/obj/*
 
+/CCG.*/Web.config
+
 
