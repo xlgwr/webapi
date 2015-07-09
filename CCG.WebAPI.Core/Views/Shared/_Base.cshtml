@@ -1,5 +1,5 @@
 ﻿@{
-    var rootUrl = Url.Content("~/");
+    var currrooturl = Url.Content("~/");
 }
 <!DOCTYPE html>
 <html>
@@ -15,7 +15,6 @@
         });
     </script>
     @Styles.Render("~/Content/commMe")
-    @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/avalon")
     @Scripts.Render("~/bundles/me")
 
@@ -25,7 +24,7 @@
     <![endif]-->
 
 </head>
-<body id="baseBody" class="container-fluid" rooturl="@rootUrl">
+<body id="baseBody" class="container-fluid" rooturl="@currrooturl">
 
     @RenderBody()
 

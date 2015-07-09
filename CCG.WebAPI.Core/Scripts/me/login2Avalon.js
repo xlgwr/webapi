@@ -1,11 +1,10 @@
 ﻿require(["avalon", 'domReady!'], function (avalon) {
     'use strict';
     //init 
-    rooturl = $("#baseBody").attr('rooturl');
-    loginApi.rooturl = rooturl;
+    var currrooturl = $("#baseBody").attr('rooturl');
 
     avalon.log("avalon:8");
-    avalon.log(loginApi);
+    avalon.log(top.loginApi);
 
     //start define
     var login = avalon.define({
@@ -14,8 +13,7 @@
         messagecss: "info",
         messageErr: top.users.rd_msg,
         messageErrcss: 'hidden',
-        rooturl: rooturl,
-        iloginApi: loginApi,
+        iloginApi: top.loginApi,
         //is register
         cssRegister: 'hidden',
         cssRegisterbtn: 'hidden',
@@ -68,7 +66,7 @@
             avalon.log(data);
             $.ajax({
                 type: 'POST',
-                url: rooturl + login.iloginApi.apiUrionRegister,//'/webapiECNDev/api/Account/Register',
+                url: login.iloginApi.apiUrionRegister,//'/webapiECNDev/api/Account/Register',
                 contentType: 'application/json; charset=utf-8',
                 data: JSON.stringify(data)
             }).done(function (data) {
@@ -83,7 +81,7 @@
 
             login.messagecss = "show alert-info";
             login.message = prefix + messages.n4;
-            var tmpurl = rooturl + login.iloginApi.apiUriDomain;
+            var tmpurl = login.iloginApi.apiUriDomain;
             $.ajax({
                 type: 'GET',
                 url: tmpurl,
@@ -157,7 +155,7 @@
 
                 //ajax option
                 type: 'POST',
-                url: rooturl + login.iloginApi.apiUrionRegister,
+                url:login.iloginApi.apiUrionRegister,
                 contentType: 'application/json; charset=utf-8',
                 data: JSON.stringify(data)
 
@@ -211,7 +209,7 @@
 
                 //ajax option
                 type: 'POST',
-                url: rooturl + login.iloginApi.apiUrionLogin,
+                url: login.iloginApi.apiUrionLogin,
                 data: data
 
             }).done(function (data) {
@@ -230,7 +228,7 @@
                     currbtn: currbtn,
                     //ajax option
                     type: 'POST',
-                    url: rooturl + login.iloginApi.apiUrionLogs,
+                    url: login.iloginApi.apiUrionLogs,
                     data: savelogdata
                 }).done(function (sdata) {
                     avalon.log(sdata);
@@ -242,9 +240,9 @@
                     this.currbtn.disabled = false;
                     this.currbtn.className = 'btn btn-success';
 
-                    if (loginApi.redirectUrl) {
-                        login.message = prefix + ": Success.正在转向：" + decodeURI(loginApi.redirectUrl);
-                        top.location.href = encodeURI(loginApi.redirectUrl + "?domain=" + login.domain + "&userid=" + login.userid) + "&tokenkey=" + this.sdata.access_token;
+                    if (top.loginApi.redirectUrl) {
+                        login.message = prefix + ": Success.正在转向：" + decodeURI(top.loginApi.redirectUrl);
+                        top.location.href = encodeURI(top.loginApi.redirectUrl + "?domain=" + login.domain + "&userid=" + login.userid) + "&tokenkey=" + this.sdata.access_token;
                     } else {
                         login.cssonLogout = 'show';
                     }

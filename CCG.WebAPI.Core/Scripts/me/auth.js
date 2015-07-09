@@ -6,7 +6,7 @@ if (gettokenKey) {
 
 $(function () {
     //init top basegody define
-    top.auth.rooturl = $("#baseBody").attr('rooturl');
+    var currrooturl = $("#baseBody").attr('rooturl');
     //url to loginin url add curr url
     top.auth.setLoginhref = top.auth.remoteLoginUrl + "?redirectUrl=" + top.auth.topcurrUrl + "&domain=" + top.users.domain + "&userid=" + top.users.userid;
 
@@ -35,12 +35,12 @@ $(function () {
     }).done(function (data) {
         avalon.log("auth:token is success.");
     }).error(showerrAuth);
-                     
+
     //test get manageinfo
     //?returnUrl={returnUrl}&generateState={generateState}
     $.ajax({
         type: 'GET',
-        url: encodeURI(top.loginApi.rooturl+ top.loginApi.apiUriManageInfo + '?returnUrl=/&generateState=false'),
+        url: encodeURI(top.loginApi.apiUriManageInfo + '?returnUrl=/&generateState=false'),
         dataType: 'json',
         contentType: 'application/json; charset=utf-8',
         headers: top.auth.headers

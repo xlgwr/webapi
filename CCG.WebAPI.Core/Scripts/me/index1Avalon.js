@@ -1,14 +1,6 @@
-﻿rooturl = $("#baseBody").attr('rooturl');
-loginApi.rooturl = rooturl;
-top.menusApi.rooturl = rooturl;
+﻿require(["avalon", 'domReady!'], function (avalon) {
 
-require(["avalon", 'domReady!'], function (avalon) {
-
-    var gettokenKey = GetQueryString('tokenkey');
-    if (gettokenKey) {
-        sessionStorage.setItem(top.auth.tokenKey, gettokenKey);
-        top.auth.headers.Authorization = 'Bearer ' + gettokenKey;
-    }
+    var currrooturl = $("#baseBody").attr('rooturl');      
     //avalon     
     var indexvm = avalon.define({
         $id: "indexvm",
@@ -16,6 +8,8 @@ require(["avalon", 'domReady!'], function (avalon) {
         showbody: 'hidden',
         is_ADMIN: false,
         jsonlidata: [],
+        //url
+        currrooturl: currrooturl,
         //language
         lang: { title: top.linksTitleIndex, tlogin: top.tlogin, tclogin: top.tclogin },
         //ms-duplex
@@ -66,7 +60,7 @@ require(["avalon", 'domReady!'], function (avalon) {
                     avalon.log(top.menusApi);
                     $.ajax({
                         type: 'POST',
-                        url: encodeURI(rooturl + top.menusApi.apiUri),
+                        url: encodeURI(top.menusApi.apiUri),
                         data: arrdata,
                         headers: top.auth.headers
                     }).done(function (data) {

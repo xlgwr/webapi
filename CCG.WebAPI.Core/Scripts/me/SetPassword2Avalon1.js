@@ -1,11 +1,10 @@
 ﻿require(["avalon", 'domReady!'], function (avalon) {
     'use strict';
     //init 
-    rooturl = $("#baseBody").attr('rooturl');
-    loginApi.rooturl = rooturl;
+    var currrooturl = $("#baseBody").attr('rooturl');
 
     avalon.log("avalon:8");
-    avalon.log(loginApi);
+    avalon.log(top.loginApi);
     avalon.log(top.auth);
 
     //start define
@@ -15,8 +14,7 @@
         messagecss: "info",
         messageErr: top.users.rd_msg,
         messageErrcss: 'hidden',
-        rooturl: rooturl,
-        iloginApi: loginApi,
+        iloginApi: top.loginApi,
         //is register
         cssRegister: 'show',
         cssRegisterbtn: 'hidden',
@@ -64,7 +62,7 @@
 
             SetPassword.messagecss = "show alert-info";
             SetPassword.message = prefix + messages.n4;
-            var tmpurl = rooturl + SetPassword.iloginApi.apiUriDomain;
+            var tmpurl = SetPassword.iloginApi.apiUriDomain;
             $.ajax({
                 type: 'GET',
                 url: tmpurl,
@@ -137,7 +135,7 @@
 
                 //ajax option
                 type: 'POST',
-                url: rooturl + SetPassword.iloginApi.apiUrionRegister,
+                url: SetPassword.iloginApi.apiUrionRegister,
                 contentType: 'application/json; charset=utf-8',
                 data: JSON.stringify(data)
 
@@ -184,7 +182,7 @@
                 currbtn: currbtn,
                 //ajax option
                 type: 'POST',
-                url: rooturl + SetPassword.iloginApi.apiUrionSetPassword,
+                url: SetPassword.iloginApi.apiUrionSetPassword,
                 data: data,
                 headers: top.auth.headers
 
@@ -208,11 +206,11 @@
                 this.currbtn.disabled = false;
                 this.currbtn.className = 'btn btn-success';
 
-                avalon.log(loginApi);
+                avalon.log(top.loginApi);
 
-                if (loginApi.redirectUrl) {
-                    // SetPassword.message = prefix + ": Success.正在转向：" + decodeURI(loginApi.redirectUrl);
-                    // top.location.href = encodeURI(loginApi.redirectUrl + "?domain=" + SetPassword.domain + "&userid=" + SetPassword.userid) + "&tokenkey=" + data.access_token;
+                if (top.loginApi.redirectUrl) {
+                    // SetPassword.message = prefix + ": Success.正在转向：" + decodeURI(top.loginApi.redirectUrl);
+                    // top.location.href = encodeURI(top.loginApi.redirectUrl + "?domain=" + SetPassword.domain + "&userid=" + SetPassword.userid) + "&tokenkey=" + data.access_token;
                 } else {
                     //SetPassword.cssonLogout = 'show';
                 }

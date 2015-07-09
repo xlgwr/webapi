@@ -85,7 +85,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/10/2015 14:09:43</publishTime>
     </File>
     <File Include="bin/CCG.WebAPI.Core.dll">
-      <publishTime>07/09/2015 13:15:03</publishTime>
+      <publishTime>07/09/2015 18:13:56</publishTime>
     </File>
     <File Include="bin/CCG.WebAPI.ECN.dll">
       <publishTime>06/09/2015 09:23:24</publishTime>
@@ -187,13 +187,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/01/2015 08:43:42</publishTime>
     </File>
     <File Include="bower.json">
-      <publishTime>06/10/2015 17:00:40</publishTime>
+      <publishTime>07/09/2015 15:23:38</publishTime>
     </File>
     <File Include="bower_components/avalon/.bower.json">
-      <publishTime>06/18/2015 08:01:48</publishTime>
+      <publishTime>07/09/2015 15:22:36</publishTime>
     </File>
     <File Include="bower_components/avalon/avalon.js">
-      <publishTime>06/18/2015 08:01:47</publishTime>
+      <publishTime>07/09/2015 15:22:35</publishTime>
     </File>
     <File Include="bower_components/avalon/avalon.mobile.js">
       <publishTime>06/01/2015 11:54:49</publishTime>
@@ -214,40 +214,40 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/01/2015 11:54:50</publishTime>
     </File>
     <File Include="bower_components/avalon/bower.json">
-      <publishTime>06/18/2015 08:01:47</publishTime>
+      <publishTime>07/09/2015 15:22:35</publishTime>
     </File>
     <File Include="bower_components/avalon/dist/avalon.js">
-      <publishTime>06/18/2015 08:01:47</publishTime>
+      <publishTime>07/09/2015 15:22:35</publishTime>
     </File>
     <File Include="bower_components/avalon/dist/avalon.min.js">
-      <publishTime>06/18/2015 08:01:47</publishTime>
+      <publishTime>07/09/2015 15:22:35</publishTime>
     </File>
     <File Include="bower_components/avalon/dist/avalon.mobile.js">
-      <publishTime>06/18/2015 08:01:47</publishTime>
+      <publishTime>07/09/2015 15:22:35</publishTime>
     </File>
     <File Include="bower_components/avalon/dist/avalon.mobile.min.js">
-      <publishTime>06/18/2015 08:01:47</publishTime>
+      <publishTime>07/09/2015 15:22:35</publishTime>
     </File>
     <File Include="bower_components/avalon/dist/avalon.mobile.old.js">
-      <publishTime>06/18/2015 08:01:47</publishTime>
+      <publishTime>07/09/2015 15:22:35</publishTime>
     </File>
     <File Include="bower_components/avalon/dist/avalon.mobile.shim.js">
-      <publishTime>06/18/2015 08:01:47</publishTime>
+      <publishTime>07/09/2015 15:22:35</publishTime>
     </File>
     <File Include="bower_components/avalon/dist/avalon.modern.js">
-      <publishTime>06/18/2015 08:01:47</publishTime>
+      <publishTime>07/09/2015 15:22:35</publishTime>
     </File>
     <File Include="bower_components/avalon/dist/avalon.modern.min.js">
-      <publishTime>06/18/2015 08:01:47</publishTime>
+      <publishTime>07/09/2015 15:22:35</publishTime>
     </File>
     <File Include="bower_components/avalon/dist/avalon.modern.shim.js">
-      <publishTime>06/18/2015 08:01:47</publishTime>
+      <publishTime>07/09/2015 15:22:35</publishTime>
     </File>
     <File Include="bower_components/avalon/dist/avalon.shim.js">
-      <publishTime>06/18/2015 08:01:47</publishTime>
+      <publishTime>07/09/2015 15:22:35</publishTime>
     </File>
     <File Include="bower_components/avalon/gulpfile.js">
-      <publishTime>06/18/2015 08:01:47</publishTime>
+      <publishTime>07/09/2015 15:22:36</publishTime>
     </File>
     <File Include="bower_components/avalon/min/avalon.min.js">
       <publishTime>06/01/2015 11:54:50</publishTime>
@@ -262,55 +262,55 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/01/2015 11:54:50</publishTime>
     </File>
     <File Include="bower_components/avalon/package.json">
-      <publishTime>06/18/2015 08:01:47</publishTime>
+      <publishTime>07/09/2015 15:22:36</publishTime>
     </File>
     <File Include="bower_components/avalon/README.md">
-      <publishTime>06/18/2015 08:01:47</publishTime>
+      <publishTime>07/09/2015 15:22:34</publishTime>
     </File>
     <File Include="bower_components/avalon/test.html">
       <publishTime>06/01/2015 11:54:50</publishTime>
     </File>
     <File Include="bower_components/html5shiv/.bower.json">
-      <publishTime>06/10/2015 17:00:40</publishTime>
+      <publishTime>07/09/2015 15:23:48</publishTime>
     </File>
     <File Include="bower_components/html5shiv/bower.json">
-      <publishTime>06/10/2015 17:00:40</publishTime>
+      <publishTime>07/09/2015 15:23:48</publishTime>
     </File>
     <File Include="bower_components/html5shiv/dist/html5shiv-printshiv.js">
-      <publishTime>06/10/2015 17:00:40</publishTime>
+      <publishTime>07/09/2015 15:23:48</publishTime>
     </File>
     <File Include="bower_components/html5shiv/dist/html5shiv-printshiv.min.js">
-      <publishTime>06/10/2015 17:00:40</publishTime>
+      <publishTime>07/09/2015 15:23:48</publishTime>
     </File>
     <File Include="bower_components/html5shiv/dist/html5shiv.js">
-      <publishTime>06/10/2015 17:00:40</publishTime>
+      <publishTime>07/09/2015 15:23:48</publishTime>
     </File>
     <File Include="bower_components/html5shiv/dist/html5shiv.min.js">
-      <publishTime>06/10/2015 17:00:40</publishTime>
+      <publishTime>07/09/2015 15:23:48</publishTime>
     </File>
     <File Include="bower_components/html5shiv/Gruntfile.js">
-      <publishTime>06/10/2015 17:00:40</publishTime>
+      <publishTime>07/09/2015 15:23:48</publishTime>
     </File>
     <File Include="bower_components/html5shiv/package.json">
-      <publishTime>06/10/2015 17:00:40</publishTime>
+      <publishTime>07/09/2015 15:23:48</publishTime>
     </File>
     <File Include="bower_components/html5shiv/readme.md">
-      <publishTime>06/10/2015 17:00:40</publishTime>
+      <publishTime>07/09/2015 15:23:48</publishTime>
     </File>
     <File Include="bower_components/jquery/.bower.json">
-      <publishTime>06/01/2015 13:33:42</publishTime>
+      <publishTime>07/09/2015 15:23:50</publishTime>
     </File>
     <File Include="bower_components/jquery/bower.json">
-      <publishTime>06/01/2015 13:33:42</publishTime>
+      <publishTime>07/09/2015 15:23:48</publishTime>
     </File>
     <File Include="bower_components/jquery/dist/jquery.js">
-      <publishTime>06/01/2015 13:33:42</publishTime>
+      <publishTime>07/09/2015 15:23:48</publishTime>
     </File>
     <File Include="bower_components/jquery/dist/jquery.min.js">
-      <publishTime>06/01/2015 13:33:42</publishTime>
+      <publishTime>07/09/2015 15:23:48</publishTime>
     </File>
     <File Include="bower_components/jquery/dist/jquery.min.map">
-      <publishTime>06/01/2015 13:33:42</publishTime>
+      <publishTime>07/09/2015 15:23:48</publishTime>
     </File>
     <File Include="bower_components/jquery/jquery-1.3.2.min.js">
       <publishTime>06/01/2015 13:33:42</publishTime>
@@ -322,253 +322,253 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/01/2015 13:33:42</publishTime>
     </File>
     <File Include="bower_components/jquery/MIT-LICENSE.txt">
-      <publishTime>06/01/2015 13:33:42</publishTime>
+      <publishTime>07/09/2015 15:23:48</publishTime>
     </File>
     <File Include="bower_components/jquery/src/ajax.js">
-      <publishTime>06/01/2015 13:33:42</publishTime>
+      <publishTime>07/09/2015 15:23:48</publishTime>
     </File>
     <File Include="bower_components/jquery/src/ajax/jsonp.js">
-      <publishTime>06/01/2015 13:33:42</publishTime>
+      <publishTime>07/09/2015 15:23:48</publishTime>
     </File>
     <File Include="bower_components/jquery/src/ajax/load.js">
-      <publishTime>06/01/2015 13:33:42</publishTime>
+      <publishTime>07/09/2015 15:23:48</publishTime>
     </File>
     <File Include="bower_components/jquery/src/ajax/parseJSON.js">
-      <publishTime>06/01/2015 13:33:42</publishTime>
+      <publishTime>07/09/2015 15:23:48</publishTime>
     </File>
     <File Include="bower_components/jquery/src/ajax/parseXML.js">
-      <publishTime>06/01/2015 13:33:42</publishTime>
+      <publishTime>07/09/2015 15:23:48</publishTime>
     </File>
     <File Include="bower_components/jquery/src/ajax/script.js">
-      <publishTime>06/01/2015 13:33:42</publishTime>
+      <publishTime>07/09/2015 15:23:48</publishTime>
     </File>
     <File Include="bower_components/jquery/src/ajax/var/nonce.js">
-      <publishTime>06/01/2015 13:33:42</publishTime>
+      <publishTime>07/09/2015 15:23:48</publishTime>
     </File>
     <File Include="bower_components/jquery/src/ajax/var/rquery.js">
-      <publishTime>06/01/2015 13:33:42</publishTime>
+      <publishTime>07/09/2015 15:23:48</publishTime>
     </File>
     <File Include="bower_components/jquery/src/ajax/xhr.js">
-      <publishTime>06/01/2015 13:33:42</publishTime>
+      <publishTime>07/09/2015 15:23:48</publishTime>
     </File>
     <File Include="bower_components/jquery/src/attributes.js">
-      <publishTime>06/01/2015 13:33:43</publishTime>
+      <publishTime>07/09/2015 15:23:48</publishTime>
     </File>
     <File Include="bower_components/jquery/src/attributes/attr.js">
-      <publishTime>06/01/2015 13:33:43</publishTime>
+      <publishTime>07/09/2015 15:23:48</publishTime>
     </File>
     <File Include="bower_components/jquery/src/attributes/classes.js">
-      <publishTime>06/01/2015 13:33:43</publishTime>
+      <publishTime>07/09/2015 15:23:48</publishTime>
     </File>
     <File Include="bower_components/jquery/src/attributes/prop.js">
-      <publishTime>06/01/2015 13:33:43</publishTime>
+      <publishTime>07/09/2015 15:23:48</publishTime>
     </File>
     <File Include="bower_components/jquery/src/attributes/support.js">
-      <publishTime>06/01/2015 13:33:43</publishTime>
+      <publishTime>07/09/2015 15:23:48</publishTime>
     </File>
     <File Include="bower_components/jquery/src/attributes/val.js">
-      <publishTime>06/01/2015 13:33:43</publishTime>
+      <publishTime>07/09/2015 15:23:48</publishTime>
     </File>
     <File Include="bower_components/jquery/src/callbacks.js">
-      <publishTime>06/01/2015 13:33:43</publishTime>
+      <publishTime>07/09/2015 15:23:48</publishTime>
     </File>
     <File Include="bower_components/jquery/src/core.js">
-      <publishTime>06/01/2015 13:33:43</publishTime>
+      <publishTime>07/09/2015 15:23:48</publishTime>
     </File>
     <File Include="bower_components/jquery/src/core/access.js">
-      <publishTime>06/01/2015 13:33:43</publishTime>
+      <publishTime>07/09/2015 15:23:48</publishTime>
     </File>
     <File Include="bower_components/jquery/src/core/init.js">
-      <publishTime>06/01/2015 13:33:43</publishTime>
+      <publishTime>07/09/2015 15:23:48</publishTime>
     </File>
     <File Include="bower_components/jquery/src/core/parseHTML.js">
-      <publishTime>06/01/2015 13:33:43</publishTime>
+      <publishTime>07/09/2015 15:23:48</publishTime>
     </File>
     <File Include="bower_components/jquery/src/core/ready.js">
-      <publishTime>06/01/2015 13:33:43</publishTime>
+      <publishTime>07/09/2015 15:23:48</publishTime>
     </File>
     <File Include="bower_components/jquery/src/core/var/rsingleTag.js">
-      <publishTime>06/01/2015 13:33:43</publishTime>
+      <publishTime>07/09/2015 15:23:48</publishTime>
     </File>
     <File Include="bower_components/jquery/src/css.js">
-      <publishTime>06/01/2015 13:33:43</publishTime>
+      <publishTime>07/09/2015 15:23:49</publishTime>
     </File>
     <File Include="bower_components/jquery/src/css/addGetHookIf.js">
-      <publishTime>06/01/2015 13:33:43</publishTime>
+      <publishTime>07/09/2015 15:23:49</publishTime>
     </File>
     <File Include="bower_components/jquery/src/css/curCSS.js">
-      <publishTime>06/01/2015 13:33:43</publishTime>
+      <publishTime>07/09/2015 15:23:49</publishTime>
     </File>
     <File Include="bower_components/jquery/src/css/defaultDisplay.js">
-      <publishTime>06/01/2015 13:33:43</publishTime>
+      <publishTime>07/09/2015 15:23:49</publishTime>
     </File>
     <File Include="bower_components/jquery/src/css/hiddenVisibleSelectors.js">
-      <publishTime>06/01/2015 13:33:43</publishTime>
+      <publishTime>07/09/2015 15:23:49</publishTime>
     </File>
     <File Include="bower_components/jquery/src/css/support.js">
-      <publishTime>06/01/2015 13:33:43</publishTime>
+      <publishTime>07/09/2015 15:23:49</publishTime>
     </File>
     <File Include="bower_components/jquery/src/css/swap.js">
-      <publishTime>06/01/2015 13:33:43</publishTime>
+      <publishTime>07/09/2015 15:23:49</publishTime>
     </File>
     <File Include="bower_components/jquery/src/css/var/cssExpand.js">
-      <publishTime>06/01/2015 13:33:43</publishTime>
+      <publishTime>07/09/2015 15:23:49</publishTime>
     </File>
     <File Include="bower_components/jquery/src/css/var/isHidden.js">
-      <publishTime>06/01/2015 13:33:43</publishTime>
+      <publishTime>07/09/2015 15:23:49</publishTime>
     </File>
     <File Include="bower_components/jquery/src/css/var/rmargin.js">
-      <publishTime>06/01/2015 13:33:43</publishTime>
+      <publishTime>07/09/2015 15:23:49</publishTime>
     </File>
     <File Include="bower_components/jquery/src/css/var/rnumnonpx.js">
-      <publishTime>06/01/2015 13:33:43</publishTime>
+      <publishTime>07/09/2015 15:23:49</publishTime>
     </File>
     <File Include="bower_components/jquery/src/data.js">
-      <publishTime>06/01/2015 13:33:43</publishTime>
+      <publishTime>07/09/2015 15:23:49</publishTime>
     </File>
     <File Include="bower_components/jquery/src/data/accepts.js">
-      <publishTime>06/01/2015 13:33:43</publishTime>
+      <publishTime>07/09/2015 15:23:49</publishTime>
     </File>
     <File Include="bower_components/jquery/src/data/support.js">
-      <publishTime>06/01/2015 13:33:43</publishTime>
+      <publishTime>07/09/2015 15:23:49</publishTime>
     </File>
     <File Include="bower_components/jquery/src/deferred.js">
-      <publishTime>06/01/2015 13:33:43</publishTime>
+      <publishTime>07/09/2015 15:23:49</publishTime>
     </File>
     <File Include="bower_components/jquery/src/deprecated.js">
-      <publishTime>06/01/2015 13:33:43</publishTime>
+      <publishTime>07/09/2015 15:23:49</publishTime>
     </File>
     <File Include="bower_components/jquery/src/dimensions.js">
-      <publishTime>06/01/2015 13:33:43</publishTime>
+      <publishTime>07/09/2015 15:23:49</publishTime>
     </File>
     <File Include="bower_components/jquery/src/effects.js">
-      <publishTime>06/01/2015 13:33:43</publishTime>
+      <publishTime>07/09/2015 15:23:49</publishTime>
     </File>
     <File Include="bower_components/jquery/src/effects/animatedSelector.js">
-      <publishTime>06/01/2015 13:33:43</publishTime>
+      <publishTime>07/09/2015 15:23:49</publishTime>
     </File>
     <File Include="bower_components/jquery/src/effects/support.js">
-      <publishTime>06/01/2015 13:33:43</publishTime>
+      <publishTime>07/09/2015 15:23:49</publishTime>
     </File>
     <File Include="bower_components/jquery/src/effects/Tween.js">
-      <publishTime>06/01/2015 13:33:43</publishTime>
+      <publishTime>07/09/2015 15:23:49</publishTime>
     </File>
     <File Include="bower_components/jquery/src/event.js">
-      <publishTime>06/01/2015 13:33:43</publishTime>
+      <publishTime>07/09/2015 15:23:49</publishTime>
     </File>
     <File Include="bower_components/jquery/src/event/ajax.js">
-      <publishTime>06/01/2015 13:33:43</publishTime>
+      <publishTime>07/09/2015 15:23:49</publishTime>
     </File>
     <File Include="bower_components/jquery/src/event/alias.js">
-      <publishTime>06/01/2015 13:33:43</publishTime>
+      <publishTime>07/09/2015 15:23:49</publishTime>
     </File>
     <File Include="bower_components/jquery/src/event/support.js">
-      <publishTime>06/01/2015 13:33:43</publishTime>
+      <publishTime>07/09/2015 15:23:49</publishTime>
     </File>
     <File Include="bower_components/jquery/src/exports/amd.js">
-      <publishTime>06/01/2015 13:33:43</publishTime>
+      <publishTime>07/09/2015 15:23:49</publishTime>
     </File>
     <File Include="bower_components/jquery/src/exports/global.js">
-      <publishTime>06/01/2015 13:33:43</publishTime>
+      <publishTime>07/09/2015 15:23:49</publishTime>
     </File>
     <File Include="bower_components/jquery/src/intro.js">
-      <publishTime>06/01/2015 13:33:43</publishTime>
+      <publishTime>07/09/2015 15:23:49</publishTime>
     </File>
     <File Include="bower_components/jquery/src/jquery.js">
-      <publishTime>06/01/2015 13:33:43</publishTime>
+      <publishTime>07/09/2015 15:23:49</publishTime>
     </File>
     <File Include="bower_components/jquery/src/manipulation.js">
-      <publishTime>06/01/2015 13:33:44</publishTime>
+      <publishTime>07/09/2015 15:23:49</publishTime>
     </File>
     <File Include="bower_components/jquery/src/manipulation/support.js">
-      <publishTime>06/01/2015 13:33:43</publishTime>
+      <publishTime>07/09/2015 15:23:49</publishTime>
     </File>
     <File Include="bower_components/jquery/src/manipulation/var/rcheckableType.js">
-      <publishTime>06/01/2015 13:33:44</publishTime>
+      <publishTime>07/09/2015 15:23:49</publishTime>
     </File>
     <File Include="bower_components/jquery/src/manipulation/_evalUrl.js">
-      <publishTime>06/01/2015 13:33:44</publishTime>
+      <publishTime>07/09/2015 15:23:49</publishTime>
     </File>
     <File Include="bower_components/jquery/src/offset.js">
-      <publishTime>06/01/2015 13:33:44</publishTime>
+      <publishTime>07/09/2015 15:23:49</publishTime>
     </File>
     <File Include="bower_components/jquery/src/outro.js">
-      <publishTime>06/01/2015 13:33:44</publishTime>
+      <publishTime>07/09/2015 15:23:49</publishTime>
     </File>
     <File Include="bower_components/jquery/src/queue.js">
-      <publishTime>06/01/2015 13:33:44</publishTime>
+      <publishTime>07/09/2015 15:23:49</publishTime>
     </File>
     <File Include="bower_components/jquery/src/queue/delay.js">
-      <publishTime>06/01/2015 13:33:44</publishTime>
+      <publishTime>07/09/2015 15:23:49</publishTime>
     </File>
     <File Include="bower_components/jquery/src/selector-sizzle.js">
-      <publishTime>06/01/2015 13:33:44</publishTime>
+      <publishTime>07/09/2015 15:23:49</publishTime>
     </File>
     <File Include="bower_components/jquery/src/selector.js">
-      <publishTime>06/01/2015 13:33:44</publishTime>
+      <publishTime>07/09/2015 15:23:49</publishTime>
     </File>
     <File Include="bower_components/jquery/src/serialize.js">
-      <publishTime>06/01/2015 13:33:44</publishTime>
+      <publishTime>07/09/2015 15:23:49</publishTime>
     </File>
     <File Include="bower_components/jquery/src/sizzle/dist/sizzle.js">
-      <publishTime>06/01/2015 13:33:44</publishTime>
+      <publishTime>07/09/2015 15:23:49</publishTime>
     </File>
     <File Include="bower_components/jquery/src/sizzle/dist/sizzle.min.js">
-      <publishTime>06/01/2015 13:33:44</publishTime>
+      <publishTime>07/09/2015 15:23:49</publishTime>
     </File>
     <File Include="bower_components/jquery/src/sizzle/dist/sizzle.min.map">
-      <publishTime>06/01/2015 13:33:44</publishTime>
+      <publishTime>07/09/2015 15:23:49</publishTime>
     </File>
     <File Include="bower_components/jquery/src/support.js">
-      <publishTime>06/01/2015 13:33:44</publishTime>
+      <publishTime>07/09/2015 15:23:49</publishTime>
     </File>
     <File Include="bower_components/jquery/src/traversing.js">
-      <publishTime>06/01/2015 13:33:44</publishTime>
+      <publishTime>07/09/2015 15:23:49</publishTime>
     </File>
     <File Include="bower_components/jquery/src/traversing/findFilter.js">
-      <publishTime>06/01/2015 13:33:44</publishTime>
+      <publishTime>07/09/2015 15:23:49</publishTime>
     </File>
     <File Include="bower_components/jquery/src/traversing/var/rneedsContext.js">
-      <publishTime>06/01/2015 13:33:44</publishTime>
+      <publishTime>07/09/2015 15:23:49</publishTime>
     </File>
     <File Include="bower_components/jquery/src/var/class2type.js">
-      <publishTime>06/01/2015 13:33:44</publishTime>
+      <publishTime>07/09/2015 15:23:49</publishTime>
     </File>
     <File Include="bower_components/jquery/src/var/concat.js">
-      <publishTime>06/01/2015 13:33:44</publishTime>
+      <publishTime>07/09/2015 15:23:50</publishTime>
     </File>
     <File Include="bower_components/jquery/src/var/deletedIds.js">
-      <publishTime>06/01/2015 13:33:44</publishTime>
+      <publishTime>07/09/2015 15:23:50</publishTime>
     </File>
     <File Include="bower_components/jquery/src/var/hasOwn.js">
-      <publishTime>06/01/2015 13:33:44</publishTime>
+      <publishTime>07/09/2015 15:23:50</publishTime>
     </File>
     <File Include="bower_components/jquery/src/var/indexOf.js">
-      <publishTime>06/01/2015 13:33:44</publishTime>
+      <publishTime>07/09/2015 15:23:50</publishTime>
     </File>
     <File Include="bower_components/jquery/src/var/pnum.js">
-      <publishTime>06/01/2015 13:33:44</publishTime>
+      <publishTime>07/09/2015 15:23:50</publishTime>
     </File>
     <File Include="bower_components/jquery/src/var/push.js">
-      <publishTime>06/01/2015 13:33:44</publishTime>
+      <publishTime>07/09/2015 15:23:50</publishTime>
     </File>
     <File Include="bower_components/jquery/src/var/rnotwhite.js">
-      <publishTime>06/01/2015 13:33:44</publishTime>
+      <publishTime>07/09/2015 15:23:50</publishTime>
     </File>
     <File Include="bower_components/jquery/src/var/slice.js">
-      <publishTime>06/01/2015 13:33:44</publishTime>
+      <publishTime>07/09/2015 15:23:50</publishTime>
     </File>
     <File Include="bower_components/jquery/src/var/strundefined.js">
-      <publishTime>06/01/2015 13:33:44</publishTime>
+      <publishTime>07/09/2015 15:23:50</publishTime>
     </File>
     <File Include="bower_components/jquery/src/var/support.js">
-      <publishTime>06/01/2015 13:33:44</publishTime>
+      <publishTime>07/09/2015 15:23:50</publishTime>
     </File>
     <File Include="bower_components/jquery/src/var/toString.js">
-      <publishTime>06/01/2015 13:33:44</publishTime>
+      <publishTime>07/09/2015 15:23:50</publishTime>
     </File>
     <File Include="bower_components/jquery/src/wrap.js">
-      <publishTime>06/01/2015 13:33:44</publishTime>
+      <publishTime>07/09/2015 15:23:50</publishTime>
     </File>
     <File Include="bower_components/json2/.bower.json">
       <publishTime>06/10/2015 16:58:07</publishTime>
@@ -1888,19 +1888,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/01/2015 12:10:33</publishTime>
     </File>
     <File Include="bower_components/normalize.css/.bower.json">
-      <publishTime>06/08/2015 14:16:48</publishTime>
+      <publishTime>07/09/2015 15:23:48</publishTime>
     </File>
     <File Include="bower_components/normalize.css/bower.json">
-      <publishTime>06/08/2015 14:16:48</publishTime>
+      <publishTime>07/09/2015 15:23:48</publishTime>
     </File>
     <File Include="bower_components/normalize.css/LICENSE.md">
-      <publishTime>06/08/2015 14:16:48</publishTime>
+      <publishTime>07/09/2015 15:23:48</publishTime>
     </File>
     <File Include="bower_components/normalize.css/normalize.css">
-      <publishTime>06/08/2015 14:16:48</publishTime>
+      <publishTime>07/09/2015 15:23:48</publishTime>
     </File>
     <File Include="bower_components/normalize.css/README.md">
-      <publishTime>06/08/2015 14:16:48</publishTime>
+      <publishTime>07/09/2015 15:23:48</publishTime>
     </File>
     <File Include="Content/bootstrap-theme.css">
       <publishTime>06/01/2015 08:58:24</publishTime>
@@ -3334,7 +3334,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/10/2015 17:43:02</publishTime>
     </File>
     <File Include="Scripts/me/auth.js">
-      <publishTime>07/09/2015 09:19:44</publishTime>
+      <publishTime>07/09/2015 18:14:43</publishTime>
     </File>
     <File Include="Scripts/me/avalon.adminMant.js">
       <publishTime>05/30/2015 08:32:29</publishTime>
@@ -3349,10 +3349,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/15/2015 11:13:44</publishTime>
     </File>
     <File Include="Scripts/me/ChangePassword2Avalon.js">
-      <publishTime>07/09/2015 08:49:51</publishTime>
+      <publishTime>07/09/2015 17:38:49</publishTime>
     </File>
     <File Include="Scripts/me/index1Avalon.js">
-      <publishTime>07/09/2015 11:43:36</publishTime>
+      <publishTime>07/09/2015 18:27:12</publishTime>
     </File>
     <File Include="Scripts/me/index1Jquery.js">
       <publishTime>06/16/2015 11:49:03</publishTime>
@@ -3370,7 +3370,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/08/2015 16:05:09</publishTime>
     </File>
     <File Include="Scripts/me/init.js">
-      <publishTime>07/09/2015 10:44:03</publishTime>
+      <publishTime>07/09/2015 18:11:15</publishTime>
     </File>
     <File Include="Scripts/me/initMessage.js">
       <publishTime>06/16/2015 11:13:13</publishTime>
@@ -3379,7 +3379,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/12/2015 15:04:11</publishTime>
     </File>
     <File Include="Scripts/me/login2Avalon.js">
-      <publishTime>07/09/2015 08:50:36</publishTime>
+      <publishTime>07/09/2015 18:08:10</publishTime>
     </File>
     <File Include="Scripts/me/loginAvalon.js">
       <publishTime>06/05/2015 08:21:48</publishTime>
@@ -3397,7 +3397,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/16/2015 10:25:24</publishTime>
     </File>
     <File Include="Scripts/me/SetPassword2Avalon1.js">
-      <publishTime>07/09/2015 08:16:52</publishTime>
+      <publishTime>07/09/2015 17:37:33</publishTime>
     </File>
     <File Include="Scripts/modernizr-2.8.3.js">
       <publishTime>06/01/2015 08:54:05</publishTime>
@@ -3427,10 +3427,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/04/2015 12:52:42</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>07/09/2015 08:17:10</publishTime>
+      <publishTime>07/09/2015 18:27:18</publishTime>
     </File>
     <File Include="Views/Home/Login.cshtml">
-      <publishTime>07/09/2015 09:23:36</publishTime>
+      <publishTime>07/09/2015 16:46:02</publishTime>
     </File>
     <File Include="Views/Home/Manage.cshtml">
       <publishTime>06/15/2015 09:09:46</publishTime>
@@ -3454,7 +3454,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/01/2015 08:51:51</publishTime>
     </File>
     <File Include="Views/Shared/_Base.cshtml">
-      <publishTime>06/12/2015 14:49:22</publishTime>
+      <publishTime>07/09/2015 17:32:33</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
       <publishTime>06/01/2015 11:58:38</publishTime>
@@ -3469,7 +3469,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/01/2015 08:51:51</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>07/09/2015 13:15:04</publishTime>
+      <publishTime>07/09/2015 16:23:10</publishTime>
     </File>
   </ItemGroup>
 </Project>

@@ -12,7 +12,9 @@ namespace CCG.WebAPI.Core
             //2.X
             bundles.Add(new ScriptBundle("~/bundles/jquerylast").Include(
                        "~/Scripts/jquery-{version}.js",
-                       "~/Scripts/jquery.cookie.js"));
+                       "~/Scripts/jquery.cookie.js",
+                       "~/Scripts/bootstrap.js",
+                      "~/Scripts/respond.js"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
@@ -50,7 +52,9 @@ namespace CCG.WebAPI.Core
             //base js
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/bower_components/jquery/dist/jquery.min.js",
-                       "~/Scripts/jquery.cookie.js"
+                        "~/Scripts/jquery.cookie.js",
+                        "~/Scripts/bootstrap.js",
+                        "~/Scripts/respond.js"
                         ));
 
             bundles.Add(new ScriptBundle("~/bundles/iefix").Include(

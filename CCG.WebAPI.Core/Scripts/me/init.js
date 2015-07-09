@@ -1,10 +1,12 @@
 ﻿/* File Created: May 5, 2015 */
 //remote host set
 //gobal define                                          
-var rooturl = '/';
-//var remoteHost = 'http://localhost:9539/';     //for develop test
+var currrooturl = '/';
+
+//for develop test                              
+//var remoteHost = 'http://localhost:9539/';
 //var remoteHost = 'http://localhost/webapicore/';
-var remoteHost = 'http://172.16.122.60/webapicore/';
+//var remoteHost = 'http://172.16.122.60/webapicore/';
 //tab
 var height = 0;
 
@@ -30,28 +32,28 @@ var auth = {
 
 //login of api
 var loginApi = {
-    apiUri: 'api/domains/getDomains',
-    apiUriDomain: 'api/domains/getDomains',
-    apiUrionRegister: 'api/Account/Register',
-    apiUrionChangePassword: 'api/Account/ChangePassword',
-    apiUrionSetPassword: 'api/Account/reSetPassword',
-    apiUrionSetnoPassword: 'api/Account/SetPassword',  
-    apiUriManageInfo: 'api/Account/ManageInfo', //?returnUrl={returnUrl}&generateState={generateState}
-    apiUrionLogout: 'api/Account/Logout',
-    apiUrionLogs: 'api/domains/saveLogs',
-    apiUrionLogin: 'Token',
-    rooturl: rooturl,
+    apiUri: remoteHost + 'api/domains/getDomains',
+    apiUriDomain: remoteHost + 'api/domains/getDomains',
+    apiUrionRegister: remoteHost + 'api/Account/Register',
+    apiUrionChangePassword: remoteHost + 'api/Account/ChangePassword',
+    apiUrionSetPassword: remoteHost + 'api/Account/reSetPassword',
+    apiUrionSetnoPassword: remoteHost + 'api/Account/SetPassword',
+    apiUriManageInfo: remoteHost + 'api/Account/ManageInfo', //?returnUrl={returnUrl}&generateState={generateState}
+    apiUrionLogout: remoteHost + 'api/Account/Logout',
+    apiUrionLogs: remoteHost + 'api/domains/saveLogs',
+    apiUrionLogin: remoteHost + 'Token',
+    rooturl: remoteHost,   //rooturl
     redirectUrl: ''
 }
 //menu of api
 var menusApi = {
-    apiUri: 'api/domains/getmenus',
-    rooturl: rooturl
+    apiUri: remoteHost + 'api/domains/getmenus',
+    rooturl: remoteHost
 }
 var mailApi = {
-    apiUrl: 'api/Mail',
+    apiUrl: remoteHost + 'api/Mail',
     mailDomain: 'cclmotors.com',
-    rooturl: rooturl
+    rooturl: remoteHost
 }
 //mail set
 var mailSet =

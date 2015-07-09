@@ -930,13 +930,6 @@
     <Content Include="Views\Manage\index.cshtml" />
     <Content Include="Views\Manage\ChangePassword.cshtml" />
     <Content Include="Views\Manage\SetPassword.cshtml" />
-    <None Include="Web.config.bak" />
-    <None Include="Web.config.Debug.bak">
-      <DependentUpon>Web.config.bak</DependentUpon>
-    </None>
-    <None Include="Web.config.Release.bak">
-      <DependentUpon>Web.config.bak</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
