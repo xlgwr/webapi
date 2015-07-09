@@ -2,11 +2,11 @@
   "name": "webApi",
   "version": "0.0.0",
   "dependencies": {
-    "avalon": "~1.4.3",
-    "jquery": "1.11.x",
-    "normalize.css": "~3.0.3",
+    "avalon": "~1.x.x",
+    "jquery": "~1.x.x",
+    "normalize.css": "~3.x.x",
     "json2": "*",
-    "html5shiv": "~3.7.2"
+    "html5shiv": "~3.7.x"
   },
   "authors": [
     "'xlgwr' <xlgwr@163.com>"

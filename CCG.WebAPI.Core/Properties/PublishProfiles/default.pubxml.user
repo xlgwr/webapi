@@ -85,7 +85,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/10/2015 14:09:43</publishTime>
     </File>
     <File Include="bin/CCG.WebAPI.Core.dll">
-      <publishTime>07/09/2015 12:02:14</publishTime>
+      <publishTime>07/09/2015 13:15:03</publishTime>
     </File>
     <File Include="bin/CCG.WebAPI.ECN.dll">
       <publishTime>06/09/2015 09:23:24</publishTime>
@@ -3469,7 +3469,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/01/2015 08:51:51</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>07/09/2015 09:54:28</publishTime>
+      <publishTime>07/09/2015 13:15:04</publishTime>
     </File>
   </ItemGroup>
 </Project>
