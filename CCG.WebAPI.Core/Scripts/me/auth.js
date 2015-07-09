@@ -40,7 +40,7 @@ $(function () {
     //?returnUrl={returnUrl}&generateState={generateState}
     $.ajax({
         type: 'GET',
-        url: encodeURI(top.loginApi.apiUriManageInfo + '?returnUrl=http://localhost:9539/&generateState=false'),  
+        url: encodeURI(top.loginApi.rooturl+ top.loginApi.apiUriManageInfo + '?returnUrl=/&generateState=false'),
         dataType: 'json',
         contentType: 'application/json; charset=utf-8',
         headers: top.auth.headers
