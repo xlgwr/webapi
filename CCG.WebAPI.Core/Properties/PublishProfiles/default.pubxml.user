@@ -85,7 +85,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/10/2015 14:09:43</publishTime>
     </File>
     <File Include="bin/CCG.WebAPI.Core.dll">
-      <publishTime>06/19/2015 13:32:28</publishTime>
+      <publishTime>07/09/2015 12:02:14</publishTime>
     </File>
     <File Include="bin/CCG.WebAPI.ECN.dll">
       <publishTime>06/09/2015 09:23:24</publishTime>
@@ -3334,7 +3334,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/10/2015 17:43:02</publishTime>
     </File>
     <File Include="Scripts/me/auth.js">
-      <publishTime>07/09/2015 08:57:41</publishTime>
+      <publishTime>07/09/2015 09:19:44</publishTime>
     </File>
     <File Include="Scripts/me/avalon.adminMant.js">
       <publishTime>05/30/2015 08:32:29</publishTime>
@@ -3352,7 +3352,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/09/2015 08:49:51</publishTime>
     </File>
     <File Include="Scripts/me/index1Avalon.js">
-      <publishTime>07/09/2015 08:49:19</publishTime>
+      <publishTime>07/09/2015 11:43:36</publishTime>
     </File>
     <File Include="Scripts/me/index1Jquery.js">
       <publishTime>06/16/2015 11:49:03</publishTime>
@@ -3370,7 +3370,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/08/2015 16:05:09</publishTime>
     </File>
     <File Include="Scripts/me/init.js">
-      <publishTime>07/09/2015 08:51:35</publishTime>
+      <publishTime>07/09/2015 10:44:03</publishTime>
     </File>
     <File Include="Scripts/me/initMessage.js">
       <publishTime>06/16/2015 11:13:13</publishTime>
@@ -3430,7 +3430,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/09/2015 08:17:10</publishTime>
     </File>
     <File Include="Views/Home/Login.cshtml">
-      <publishTime>06/18/2015 09:16:43</publishTime>
+      <publishTime>07/09/2015 09:23:36</publishTime>
     </File>
     <File Include="Views/Home/Manage.cshtml">
       <publishTime>06/15/2015 09:09:46</publishTime>
@@ -3469,7 +3469,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/01/2015 08:51:51</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>07/09/2015 08:57:57</publishTime>
+      <publishTime>07/09/2015 09:54:28</publishTime>
     </File>
   </ItemGroup>
 </Project>

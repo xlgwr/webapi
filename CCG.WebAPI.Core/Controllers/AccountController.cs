@@ -245,7 +245,7 @@ namespace CCG.WebAPI.Core.Controllers
         }
 
         // GET api/Account/ExternalLogin
-        
+
         [OverrideAuthentication]
         [HostAuthentication(DefaultAuthenticationTypes.ExternalCookie)]
         [AllowAnonymous]

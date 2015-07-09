@@ -1,7 +1,14 @@
 ﻿rooturl = $("#baseBody").attr('rooturl');
 loginApi.rooturl = rooturl;
+top.menusApi.rooturl = rooturl;
 
 require(["avalon", 'domReady!'], function (avalon) {
+
+    var gettokenKey = GetQueryString('tokenkey');
+    if (gettokenKey) {
+        sessionStorage.setItem(top.auth.tokenKey, gettokenKey);
+        top.auth.headers.Authorization = 'Bearer ' + gettokenKey;
+    }
     //avalon     
     var indexvm = avalon.define({
         $id: "indexvm",
@@ -21,13 +28,16 @@ require(["avalon", 'domReady!'], function (avalon) {
             f_addTab(tabid, text, url);
         },
         initli: function () {
+            avalon.log('index:24');
+            avalon.log(top.auth.headers);
+            avalon.log(top.auth.headers.Authorization);
             //init userinfo
             $.ajax({
                 type: 'GET',
                 url: top.auth.apiGetvUserInfoRoles,
-                headers: top.auth.headers,
                 dataType: 'json',
-                contentType: 'application/json; charset=utf-8'
+                contentType: 'application/json; charset=utf-8',
+                headers: top.auth.headers
             }).done(function (data) {
                 avalon.log("avalonLog:ajaxInitLi.27");
                 //apiGetvUserInfoRoles
@@ -48,27 +58,35 @@ require(["avalon", 'domReady!'], function (avalon) {
                 arrMenudata.push(indexvm.user.domain);
                 var arrdata = { rolename: arrMenudata.concat(indexvm.user.userrole) };
 
-                avalon.log(arrdata);
-                $.ajax({
-                    type: 'POST',
-                    url: rooturl + top.menusApi.apiUri,
-                    data: arrdata,
-                    headers: top.auth.headers
-                }).done(function (data) {
-                    avalon.log(data);
 
-                    for (var i in data) {
+                setTimeout(function () {
+                    avalon.log('getmenus:63');
+                    avalon.log(arrdata);
+                    avalon.log(top.auth.headers);
+                    avalon.log(top.menusApi);
+                    $.ajax({
+                        type: 'POST',
+                        url: encodeURI(rooturl + top.menusApi.apiUri),
+                        data: arrdata,
+                        headers: top.auth.headers
+                    }).done(function (data) {
+                        avalon.log(data);
 
-                    }
+                        for (var i in data) {
 
-                    indexvm.arrmenus = data;
+                        }
+
+                        indexvm.arrmenus = data;
 
 
-                    /*************************************************/
-                    //init ui
-                    initLigerUi();
-                    /**************************************************/
-                }).fail(showerrIndex);
+                        /*************************************************/
+                        //init ui
+
+                        initLigerUi();
+
+                        /**************************************************/
+                    }).fail(showerrIndex);
+                }, 10);
 
 
             }).fail(showerrIndex);
@@ -109,7 +127,9 @@ require(["avalon", 'domReady!'], function (avalon) {
                 return;
                 break;
             case 401:
+                avalon.log('index err 401: 112');
                 avalon.log(messages.n5);
+                //error auth
                 top.location.href = encodeURI(top.auth.setLoginhref + "&msg=" + messages.n5);
                 break;
             case 404:

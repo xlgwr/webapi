@@ -23,6 +23,8 @@ using CCG.WebAPI.Core.Models.viewModels;
 
 namespace CCG.WebAPI.Core.Controllers
 {
+    //[Authorize]
+    [OverrideAuthorization]
     [RoutePrefix("api/domains")]
     public class DomainController : ApiController
     {
@@ -40,11 +42,11 @@ namespace CCG.WebAPI.Core.Controllers
         {
             get
             {
-                var dd= _domainManager ?? Request.GetOwinContext().Get<ApplicationDbContext>();
+                var dd = _domainManager ?? Request.GetOwinContext().Get<ApplicationDbContext>();
                 return dd;
             }
             private set
-            {               
+            {
                 _domainManager = value;
             }
         }
@@ -61,15 +63,16 @@ namespace CCG.WebAPI.Core.Controllers
 
         }
 
-        [Authorize]
         [HttpPost]
-        [Route("getmenus")]
+        [OverrideAuthentication]
+        [HostAuthentication(DefaultAuthenticationTypes.ExternalBearer)]
+        [Route("getmenus")]      
         public async Task<Dictionary<string, ICollection<menus>>> getmenus(rolenames rolenames)
         {
             var tmpdict = new Dictionary<string, ICollection<menus>>();
             var models = Task<Dictionary<string, ICollection<menus>>>.Run(() =>
             {
-                var tmpmenus= domainManager.menus.Where(m=>rolenames.rolename.Contains(m.menutype)).OrderBy(m=>m.funcType).OrderBy(m=>m.orderId).ToList();
+                var tmpmenus = domainManager.menus.Where(m => rolenames.rolename.Contains(m.menutype)).OrderBy(m => m.funcType).OrderBy(m => m.orderId).ToList();
 
                 var tmpfunctype = tmpmenus.Select(m => m.funcType).Distinct().ToList();
                 foreach (var item in tmpfunctype)

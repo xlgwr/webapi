@@ -50,6 +50,7 @@ $(function () {
         //self.result(data);
     }).fail(function (err) {
         //showError
+        avalon.log("auth fail:53");
         avalon.log(err);
     });
 })
